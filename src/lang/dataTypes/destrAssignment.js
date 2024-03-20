@@ -99,4 +99,26 @@ let visitor = {
 };
 
 let {name, years: age, isAdmin = false} = visitor;
-console.log(name, age, isAdmin)
+console.log(name, age, isAdmin);
+
+
+// task 2 - the maximal salary
+let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+};
+
+function topSalary(salaries) {
+	let result = null;
+	let max = 0;
+	for (let [name, value] of Object.entries(salaries)) {
+		if (value > max) {
+			max = value;
+			result = name;
+		}
+	}
+	return result;
+}
+
+console.log(topSalary(salaries));
