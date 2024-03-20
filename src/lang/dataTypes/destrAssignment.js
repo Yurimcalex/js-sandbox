@@ -35,11 +35,11 @@ let phraze = 'Do it Ok Buddy!';
 let [w1, ...restWords] = phraze.split(' ');
 console.log(w1, restWords);
 
-let [name, lastName = getLastName()] = ['Piter'];
+let [fname, lastName = getLastName()] = ['Piter'];
 function getLastName() {
 	return 'Stoyankivich';
 }
-console.log(name, lastName);
+console.log(fname, lastName);
 
 
 let options = {
@@ -91,3 +91,12 @@ function f({title = 'Title', width = 100, height = 100, item2 = []} = {}) {
 	return;
 }
 
+
+// task 1 - destructuring assignment
+let visitor = {
+  name: "John",
+  years: 30
+};
+
+let {name, years: age, isAdmin = false} = visitor;
+console.log(name, age, isAdmin)
