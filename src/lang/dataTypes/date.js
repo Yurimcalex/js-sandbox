@@ -109,3 +109,11 @@ console.log(`Loading started ${performance.now()}ms ago`);
 // task 1 - create a date
 let feb20_2012 = new Date(2012, 1, 20, 3, 12, 0, 0);
 console.log(feb20_2012);
+
+
+// task 2 - show a weekday
+function getWeekDay(date) {
+	return ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'][date.getDay()];
+}
+
+console.log(getWeekDay(new Date(2012, 0, 3)));
