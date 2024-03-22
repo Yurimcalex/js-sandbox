@@ -175,3 +175,32 @@ function getSecondsToTomorrow() {
 	let tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
 	return Math.round((tomorrow - now) / 1000);
 }
+
+
+// task 8 - format the relative date
+function formatDate(date) {
+	let diff = new Date - date;
+	let s = diff / 1000;
+	let m = s / 60;
+	let h = m / 60;
+	if (s < 1) return 'right now';
+	else if (m < 1) return `${Math.round(s)} sec. ago`;
+	else if (h < 1) return `${Math.round(m)} min. ago`;
+	else {
+		let components = [
+			date.getDate(),
+			date.getMonth() + 1,
+			date.getFullYear().toString().slice(2),
+			date.getHours(),
+			date.getMinutes()
+		];
+		let delim = ['.', '.', ' ', ':', ''];
+		return components.map(c => c < 10 ? '0' + c : c + '')
+										 .reduce((acc, c, i) => acc + c + delim[i], '');
+	}
+}
+
+console.log(formatDate(new Date(new Date - 1)));
+console.log(formatDate(new Date(new Date - 30 * 1000)));
+console.log(formatDate(new Date(new Date - 5 * 60 * 1000)));
+console.log(formatDate(new Date(new Date - 86400 * 1000)));
