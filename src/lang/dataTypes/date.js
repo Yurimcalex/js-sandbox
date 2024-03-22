@@ -141,3 +141,11 @@ let date4 = new Date(2015, 0, 2);
 console.log( getDateAgo(date4, 1) === 1 );
 console.log( getDateAgo(date4, 2) === 31 );
 console.log( getDateAgo(date4, 365) === 2 );
+
+
+// task 5 - last day of month
+function getLastDayOfMonth(year, month) {
+	return (new Date(year, month + 1, 0)).getDate();
+}
+
+console.log(getLastDayOfMonth(2012, 1));
