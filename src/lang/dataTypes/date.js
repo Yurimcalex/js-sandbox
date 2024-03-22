@@ -104,3 +104,8 @@ let ms = Date.parse('2012-01-26T13:51:50.417-01:00');
 console.log(new Date(ms));
 
 console.log(`Loading started ${performance.now()}ms ago`);
+
+
+// task 1 - create a date
+let feb20_2012 = new Date(2012, 1, 20, 3, 12, 0, 0);
+console.log(feb20_2012);
