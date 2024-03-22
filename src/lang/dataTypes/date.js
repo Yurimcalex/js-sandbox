@@ -126,3 +126,18 @@ function getLocalDay(date) {
 }
 
 console.log(getLocalDay(new Date(2012, 0, 3)));
+
+
+// task 4 which day of month was many days ago
+function getDateAgo(date, days) {
+	let copyDate = new Date(date.getTime());
+	return copyDate.getDate(
+		copyDate.setDate(copyDate.getDate() - days)
+	);
+}
+
+let date4 = new Date(2015, 0, 2);
+
+console.log( getDateAgo(date4, 1) === 1 );
+console.log( getDateAgo(date4, 2) === 31 );
+console.log( getDateAgo(date4, 365) === 2 );
