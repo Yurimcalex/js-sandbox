@@ -82,3 +82,31 @@ let employee = {
 
 let employeeJSON = JSON.stringify(employee);
 let employeeFromJSON = JSON.parse(employeeJSON);
+
+
+// task 2 - exclude backreferences
+let room = {
+  number: 23
+};
+
+let meetup = {
+  title: "Conference",
+  occupiedBy: [{name: "John"}, {name: "Alice"}],
+  place: room
+};
+
+// circular references
+room.occupiedBy = meetup;
+meetup.self = meetup;
+
+// let meetupJSON = JSON.stringify(meetup, function replacer(key, value) {
+// 	// self -> meetup
+// 	if (value === this) return undefined;
+// 	// room[occupiedBy] -> meetup
+// 	if (this === room && value === meetup) return undefined;
+// 	return value; 
+// });
+let meetupJSON = JSON.stringify(meetup, function replacer(k, v) {
+	return (k != '' && v == meetup) ? undefined : v;
+})
+console.log(meetupJSON);
