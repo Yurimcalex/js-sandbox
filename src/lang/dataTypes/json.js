@@ -72,3 +72,13 @@ let numbers = "[0, 1, 2, 3]";
 console.log(JSON.parse(numbers, function (key, value) {
 	return typeof value === 'number' ? value * 10 : value;
 }));
+
+
+// task - turn the object into JSON and back
+let employee = {
+  name: "John Smith",
+  age: 35
+};
+
+let employeeJSON = JSON.stringify(employee);
+let employeeFromJSON = JSON.parse(employeeJSON);
