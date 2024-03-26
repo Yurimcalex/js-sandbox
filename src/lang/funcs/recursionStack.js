@@ -180,3 +180,26 @@ function printList2(list) {
 }
 
 printList2(list1);
+
+
+// Task 5 - output a single-linked list in the reverse order
+function printReverseList(list) {
+	let tmp = list;
+	let links = [];
+	while (tmp) {
+		links.push(tmp);
+		tmp = tmp.next;
+	}
+	links.reverse().forEach(link => console.log(link.value));
+}
+
+function prinReverseList1(list) {
+	if (!list.next) {
+		console.log(list.value);
+		return;
+	};
+	prinReverseList1(list.next);
+	console.log(list.value);
+}
+
+prinReverseList1(list1);
