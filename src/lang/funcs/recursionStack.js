@@ -147,3 +147,36 @@ function fib2(n) {
 }
 
 //console.log(fib2(5));
+
+
+// Task 4 - output a single-linked list
+let list1 = {
+  value: 1,
+  next: {
+    value: 2,
+    next: {
+      value: 3,
+      next: {
+        value: 4,
+        next: null
+      }
+    }
+  }
+};
+
+function printList1(list) {
+	let link = list;
+	while (true) {
+		console.log(link.value);
+		link = link.next;
+		if (!link) return;
+	}
+}
+
+function printList2(list) {
+	console.log(list.value);
+	if (!list.next) return;
+	printList2(list.next);
+}
+
+printList2(list1);
