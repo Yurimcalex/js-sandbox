@@ -95,3 +95,22 @@ function removeLink(link, step) {
 removeLink(list, 1);
 
 console.log(list);
+
+
+// Task 1 - sum all numbers till the given one
+function sumTo1(n) {
+	let result = n;
+	while (n--) result += n;
+	return result;
+}
+
+function sumTo2(n) {
+	if (n === 1) return n;
+	return n + sumTo2(n - 1);
+}
+
+function sumTo3(n) {
+	return n * (1 + n) / 2;
+}
+
+console.log(sumTo3(100));
