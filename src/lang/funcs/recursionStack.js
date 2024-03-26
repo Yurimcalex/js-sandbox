@@ -123,3 +123,27 @@ function factorial(n) {
 }
 
 console.log(factorial(5));
+
+
+// Task 3 - fibonacci numbers
+// Fn = Fn-1 + Fn-2
+// First two numbers are 1, then 2(1+1), then 3(1+2), 5(2+3) and so on: 1, 1, 2, 3, 5, 8, 13, 21 ...
+function fib1(n) {
+	let next = 1, fn = 0, sn = 1;
+	while (--n) {
+		next = fn + sn;
+		fn = sn;
+		sn = next;
+	}
+	return next;
+}
+
+console.log(fib1(77));
+
+
+function fib2(n) {
+	if (n <= 1) return n;
+	return fib2(n - 1) + fib2(n - 2);
+}
+
+//console.log(fib2(5));
