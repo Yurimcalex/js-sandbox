@@ -99,3 +99,19 @@ function Counter() {
 
 let counter = new Counter();
 console.log(counter.up(), counter.up(), counter.down());
+
+
+// Task 5 - function in if
+{
+
+	let phrase = "Hello";
+
+	if (true) {
+	  let user = "John";
+	  function sayHi() {
+	    alert(`${phrase}, ${user}`);
+	  }
+	}
+
+	//sayHi();
+}
