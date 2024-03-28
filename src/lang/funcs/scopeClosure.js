@@ -67,3 +67,20 @@ sayHi();
 	let work = makeWorker();
 	work();
 }
+
+
+// Task 3 - are counters independent
+{
+	function makeCounter() {
+		let count = 0;
+		return function () {
+			return count++;
+		}
+	}
+
+	let counter1 = makeCounter();
+	let counter2 = makeCounter();
+
+	console.log(counter1(), counter1());
+	console.log(counter2(), counter2());
+}
