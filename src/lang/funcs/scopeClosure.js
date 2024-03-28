@@ -84,3 +84,18 @@ sayHi();
 	console.log(counter1(), counter1());
 	console.log(counter2(), counter2());
 }
+
+
+// Task 4 - counter object
+function Counter() {
+	let count = 0;
+	this.up = function () {
+		return ++count;
+	};
+	this.down = function () {
+		return --count;
+	}
+}
+
+let counter = new Counter();
+console.log(counter.up(), counter.up(), counter.down());
