@@ -43,3 +43,12 @@ greeting('John', 'Silva');
 
 	f();
 }
+
+
+// Task 1 - does a function pickup latest changes
+let name = 'Ithan';
+function sayHi() {
+	console.log('Hi, ' + name);
+}
+name = 'Patrik';
+sayHi();
