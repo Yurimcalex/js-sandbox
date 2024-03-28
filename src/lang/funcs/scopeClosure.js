@@ -52,3 +52,18 @@ function sayHi() {
 }
 name = 'Patrik';
 sayHi();
+
+
+// Task 2 - Which variables are available
+{
+	function makeWorker() {
+		let name = 'Boris';
+		return function () {
+			console.log(name);
+		};
+	}
+
+	let name = 'Ivi';
+	let work = makeWorker();
+	work();
+}
