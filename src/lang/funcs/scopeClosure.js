@@ -170,3 +170,32 @@ function byField(name) {
 
 console.log(users.sort(byField('name')));
 console.log(users.sort(byField('age')));
+
+
+// Task 10 - army of functions
+function makeArmy() {
+	let shooters = [];
+	for (let i = 0; i < 10; i += 1) {
+		let shooter = function () {
+			console.log(i);
+		}
+		shooters.push(shooter);
+	}
+	return shooters;
+}
+
+function makeArmy1() {
+	let shooters = [];
+	let i = 0;
+	while (i < 10) {
+		let shooter = (function (i) {
+			return function () { console.log(i) };
+		})(i);
+		shooters.push(shooter);
+		i++;
+	}
+	return shooters;
+}
+
+let army = makeArmy1();
+army.forEach(sh => sh());
