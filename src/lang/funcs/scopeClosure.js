@@ -155,3 +155,18 @@ let arr = [1, 2, 3, 4, 5, 6, 7];
 
 console.log(arr.filter(inBetween(3, 6)));
 console.log(arr.filter(inArray([1, 2, 10])));
+
+
+// Task 9 - sort be field
+let users = [
+  { name: "John", age: 20, surname: "Johnson" },
+  { name: "Pete", age: 18, surname: "Peterson" },
+  { name: "Ann", age: 19, surname: "Hathaway" }
+];
+
+function byField(name) {
+	return (a, b) => a[name] > b[name] ? 1 : -1; 
+}
+
+console.log(users.sort(byField('name')));
+console.log(users.sort(byField('age')));
