@@ -125,3 +125,14 @@ function sum(a) {
 }
 
 console.log(sum(1)(2), sum(5)(-1));
+
+
+// Task 7 - is variable visible
+let x = 1;
+
+function func() {
+	console.log(x);
+	let x = 2;
+}
+
+func();
