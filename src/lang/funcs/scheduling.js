@@ -49,3 +49,28 @@ function sayPhrase(phrase, from) {
 //   if (start + 100 < Date.now()) alert(times);
 //   else setTimeout(run);
 // });
+
+
+// Task 1 - output every second
+function printNumbers1(from, to) {
+	let curr = from;
+	let timerId = setInterval(() => {
+		console.log(curr);
+		if (curr === to) clearInterval(timerId);
+		curr++;
+	}, 1000);
+}
+
+//printNumbers1(1, 10);
+
+
+function printNumbers2(from, to) {
+	let curr = from - 1;
+	let timerId = setTimeout(function tick() {
+		console.log(++curr);
+		if (curr === to) clearTimeout(timerId);
+		else setTimeout(tick, 1000);
+	}, 1000);
+}
+
+//printNumbers2(1, 10);
