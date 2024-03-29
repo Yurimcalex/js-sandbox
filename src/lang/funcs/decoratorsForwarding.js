@@ -127,3 +127,18 @@ spySum(1, 2, 3, 4, 5);
 for (let args of spySum.calls) {
 	console.log('call:' + args.join());
 }
+
+
+// Delaying decorator
+function sayPhrase(phrase) {
+	console.log(phrase);
+}
+
+function delay(f, ms) {
+	return function () {
+		setTimeout(() => f.apply(this, arguments), ms);
+	};
+}
+
+let sayPhrase3000 = delay(sayPhrase, 3000);
+sayPhrase3000('Hey!');
