@@ -79,3 +79,24 @@ let sayYes = function sy(arg) {
 let gf = sayYes;
 sayYes = null;
 gf();
+
+
+// Set and decrease for counter
+function makeCounter1() {
+	let count = 0;
+	function counter() {
+		return count++;
+	}
+	counter.set = function (value) {
+		count = value;
+	};
+	counter.decrease = function () {
+		count--;
+	};
+	return counter;
+}
+
+let counter1 = makeCounter1();
+counter1.set(10);
+counter1.decrease();
+console.log(counter1());
