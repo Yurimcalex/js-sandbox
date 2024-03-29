@@ -104,3 +104,26 @@ let o = {};
 o.meth = wrapper(someFunc);
 o.meth();
 console.log(o);
+
+
+// Spy decorator
+function sum(...args) {
+	return;
+}
+
+function spy(f) {
+	function fn() {
+		fn.calls.push([...arguments]);
+		return f.apply(this, arguments);	
+	}
+	fn.calls = [];
+	return fn;
+}
+
+let spySum = spy(sum);
+spySum(1, 2);
+spySum(1, 2, 3, 4, 5);
+
+for (let args of spySum.calls) {
+	console.log('call:' + args.join());
+}
