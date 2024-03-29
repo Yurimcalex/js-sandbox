@@ -74,3 +74,11 @@ function printNumbers2(from, to) {
 }
 
 //printNumbers2(1, 10);
+
+
+// Task 2 - what will setTimeout show
+let i = 0;
+setTimeout(() => console.log(i), 100); // ?
+for(let j = 0; j < 100000000; j++) {
+  i++;
+}
