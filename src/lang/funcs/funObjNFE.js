@@ -100,3 +100,32 @@ let counter1 = makeCounter1();
 counter1.set(10);
 counter1.decrease();
 console.log(counter1());
+
+
+// Sum with an arbitrary amount of brackets
+function sum(n) {
+	sum.numbers.push(n);
+	return sum;
+}
+sum.numbers = [];
+sum.toString = function () {
+	return sum.numbers.reduce((s, n) => s + n, 0);
+};
+
+
+function sum1(first) {
+	let s = first;
+
+	function f(n) {
+		s += n;
+		return f;
+	}
+
+	f.toString = function () {
+		return s;
+	}
+
+	return f;
+}
+
+console.log(sum1(0)(1)(2)(3)(4)(5) == 15);
