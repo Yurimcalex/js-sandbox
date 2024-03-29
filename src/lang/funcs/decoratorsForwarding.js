@@ -141,4 +141,43 @@ function delay(f, ms) {
 }
 
 let sayPhrase3000 = delay(sayPhrase, 3000);
-sayPhrase3000('Hey!');
+//sayPhrase3000('Hey!');
+
+
+// Debounce decorator
+function debounce(f, ms) {
+	let callTime = 0;
+	let callArgs = [];
+
+	return function (...args) {
+		let now = Date.now();
+		callArgs = args;
+		setTimeout(() => {
+			if (now - callTime >= ms) {
+				f.apply(this, callArgs);
+				callTime = now;
+			}
+		}, ms);
+	};
+}
+
+
+function debounce1(func, ms) {
+  let timeout;
+  return function() {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, arguments), ms);
+  };
+}
+
+
+let sayHey = function (name) {
+	console.log('Hey! ' + name);
+};
+
+let shd = debounce(sayHey, 1000);
+
+shd('John');
+setTimeout(() => shd('Piter'), 500);
+setTimeout(() => shd('Sam'), 1700);
+setTimeout(() => shd('Gorge'), 800);
