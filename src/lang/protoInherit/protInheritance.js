@@ -156,3 +156,26 @@ console.log(pockets.glasses, head.glasses);
 	rabbit.eat();
 	console.log(rabbit.full);
 }
+
+
+// Task 4 - why are both hamsters full
+let hamster = {
+  stomach: [],
+
+  eat(food) {
+    this.stomach.push(food);
+  }
+};
+
+let speedy = {
+	stomach: [],
+  __proto__: hamster
+};
+
+let lazy = {
+	stomach: [],
+  __proto__: hamster
+};
+
+speedy.eat('apple');
+console.log(lazy.stomach);
