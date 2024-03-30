@@ -113,3 +113,26 @@ man.sayNow('Greeting!');
 		user.loginFail.bind(user)
 	);
 }
+
+
+// Task 5 - partial application for login
+{
+	function askPassword(ok, fail) {
+	  let password = prompt("Password?", '');
+	  if (password == "rockstar") ok();
+	  else fail();
+	}
+
+	let user = {
+	  name: 'John',
+
+	  login(result) {
+	    alert( this.name + (result ? ' logged in' : ' failed to log in') );
+	  }
+	};
+
+	askPassword(
+		user.login.bind(user, true),
+		user.login.bind(user, false)
+	);
+}
