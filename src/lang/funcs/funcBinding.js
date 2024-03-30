@@ -74,3 +74,14 @@ man.sayNow('Greeting!');
 	f = f.bind({ name: 'Bob' }).bind({ name: 'Alie' });
 	f();
 }
+
+
+// Task 3 - function property after bind
+{
+	function sayHi() {
+		console.log(this.name);
+	}
+	sayHi.x = 100;
+	let bound = sayHi.bind({ name: 'Lola' });
+	console.log(bound.x);
+}
