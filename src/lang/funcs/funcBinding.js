@@ -64,3 +64,13 @@ man.sayNow('Greeting!');
 	let user = { g: f.bind(null) };
 	user.g();
 }
+
+
+// Task 2 - second bind
+{
+	function f() {
+		console.log(this.name);
+	}
+	f = f.bind({ name: 'Bob' }).bind({ name: 'Alie' });
+	f();
+}
