@@ -139,3 +139,20 @@ let pockets = {
 };
 
 console.log(pockets.glasses, head.glasses);
+
+
+// Task 3 - where does it write
+{
+	let animal = {
+	  eat() {
+	    this.full = true;
+	  }
+	};
+
+	let rabbit = {
+	  __proto__: animal
+	};
+
+	rabbit.eat();
+	console.log(rabbit.full);
+}
