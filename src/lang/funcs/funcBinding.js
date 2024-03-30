@@ -56,3 +56,11 @@ let man = {
 
 man.sayNow = partial(man.say, new Date().getHours() + ':' + new Date().getMinutes());
 man.sayNow('Greeting!');
+
+
+// Task 1 - bound function as a method
+{
+	function f() { console.log(this) }
+	let user = { g: f.bind(null) };
+	user.g();
+}
