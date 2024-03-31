@@ -27,3 +27,27 @@ function Dog(name) {
 
 let puffy = new Dog('Puffy');
 let niffy = new puffy.constructor('Niffy');
+
+
+// Task 1 - changing prototype
+{
+	function Rabbit() {}
+	Rabbit.prototype = {
+	  eats: true
+	};
+
+	let rabbit = new Rabbit();
+	//console.log(rabbit.eats);
+
+	//Rabbit.prototype = {};
+	//console.log(rabbit.eats);
+
+	//Rabbit.prototype.eats = false;
+	//console.log(rabbit.eats);
+
+	//delete rabbit.eats;
+	//console.log(rabbit.eats);
+
+	delete Rabbit.prototype.eats;
+	console.log(rabbit.eats);
+}
