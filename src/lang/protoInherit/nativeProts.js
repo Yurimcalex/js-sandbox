@@ -37,3 +37,15 @@ let obj1 = {
 
 obj1.join = Array.prototype.join;
 console.log(obj1.join('-'));
+
+
+// Task 1 - add method f.defer(ms) to functions
+Function.prototype.defer = function (ms) {
+	setTimeout(() => this(), ms);
+};
+
+function f() {
+	console.log('tada!');
+}
+
+f.defer(1000);
