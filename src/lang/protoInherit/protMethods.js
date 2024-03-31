@@ -26,3 +26,19 @@ console.log(rabbitClone);
 let obj = Object.create(null);
 obj['__proto__'] = 'some value';
 console.log(obj);
+
+
+// Task 1 - add toString to the dictionary
+let dict = Object.create(null);
+dict.apple = 'Apple';
+dict['__proto__'] = 'test';
+Object.defineProperty(dict, 'toString', {
+	value: function () {
+		return Object.keys(this).join();
+	}
+});
+
+console.log(dict.toString());
+for (let key in dict) {
+	console.log(key);
+}
