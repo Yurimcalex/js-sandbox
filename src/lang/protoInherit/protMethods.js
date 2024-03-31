@@ -42,3 +42,18 @@ console.log(dict.toString());
 for (let key in dict) {
 	console.log(key);
 }
+
+
+// Task 2 - the difference between calls
+function Rabbit(name) {
+  this.name = name;
+}
+Rabbit.prototype.sayHi = function() {
+  console.log(this.name);
+};
+
+let rabbit1 = new Rabbit("Rabbit");
+rabbit1.sayHi();
+Rabbit.prototype.sayHi();
+Object.getPrototypeOf(rabbit1).sayHi();
+rabbit1['__proto__'].sayHi();
