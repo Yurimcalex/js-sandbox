@@ -49,3 +49,17 @@ function f() {
 }
 
 f.defer(1000);
+
+
+// Task 2 - add the decorating defer to functions
+function g(a, b) {
+	console.log(a, b);
+}
+
+Function.prototype.defer1 = function (ms) {
+	return (...args) => {
+		setTimeout(() => this.apply(this, args), ms);
+	};
+};
+
+g.defer1(2000)(1, 2);
