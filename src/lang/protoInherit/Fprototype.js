@@ -51,3 +51,16 @@ let niffy = new puffy.constructor('Niffy');
 	delete Rabbit.prototype.eats;
 	console.log(rabbit.eats);
 }
+
+
+// Task 2 - create anobject with the same constructor
+function City() {}
+let city1 = new City();
+let city2 = new city1.constructor();
+console.log(city1, city2);
+
+function Town(name) { this.name = name; }
+Town.prototype = {};
+let town1 = new Town('Yosu');
+let town2 = new town1.constructor('Shintu');
+console.log(town1, town2);
