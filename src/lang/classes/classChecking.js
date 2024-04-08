@@ -35,3 +35,14 @@ let pen = {
 };
 
 console.log({}.toString.call(pen));
+
+
+// Task 1 - Strange instanceof
+function A() {}
+function B() {}
+
+A.prototype = B.prototype = {};
+
+let a = new A();
+
+console.log( a instanceof B );
