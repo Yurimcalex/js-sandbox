@@ -76,3 +76,55 @@ try {
 		throw err;
 	}
 }
+
+
+// Wrapping exeptions
+class ReadError extends Error {
+	constructor(message, cause) {
+		super(message);
+		this.cause = cause;
+		this.name = 'ReadError';
+	}
+}
+
+function validateUser(user) {
+	if (!user.age) {
+		throw new PropertyRequiredError('age');
+	}
+	if (!user.name) {
+		throw new PropertyRequiredError('name');
+	}
+}
+
+function readUser_2(json) {
+	let user;
+	try {
+		user = JSON.parse(json);
+	} catch (err) {
+		if (err instanceof SyntaxError) {
+			throw new ReadError('Syntax Error', err);
+		} else {
+			throw err;
+		}
+	}
+
+	try {
+		validateUser(user);
+	} catch (err) {
+		if (err instanceof ValidationError) {
+			throw new ReadError('Validation Error', err);
+		} else {
+			throw err;
+		}
+	}
+}
+
+try {
+	readUser_2('{ ... }');
+} catch (err) {
+	if (err instanceof ReadError) {
+		console.log('Original eror: ' + err.cause);
+	} else {
+		throw err;
+	}
+}
