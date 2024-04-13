@@ -8,3 +8,14 @@ let promise2 = new Promise(function (resolve, reject) {
 		reject(new Error('Error'));
 	}, 1000);
 });
+
+
+// Consumers: then, catch
+promise2.then(
+	result => console.log(result),
+	err => console.log(err.message)
+);
+
+promise1.then((result) => console.log(result));
+
+promise2.catch((err) => console.log(err.message));
