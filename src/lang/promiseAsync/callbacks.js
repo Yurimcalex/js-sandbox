@@ -45,4 +45,57 @@ anotherAsyncAction(10, function (err, value) {
 	} else {
 		console.log(value * 10);
 	}
-})
+});
+
+
+// Pyramid of Doom
+anotherAsyncAction(1, (err, value) => {
+	if (err) {
+		console.log(err);
+	} else {
+		console.log(value);
+		anotherAsyncAction(2, (err, value) => {
+			if (err) {
+				console.log(err);
+			} else {
+				console.log(value);
+				anotherAsyncAction(3, (err, value) => {
+					if (err) {
+						console.log(err);
+					} else {
+						console.log(value);
+					}
+				});
+			}
+		});
+	}
+});
+
+
+function step3(err, value) {
+	if (err) {
+		console.log(err);
+	} else {
+		console.log(value);
+	}
+}
+
+function step2(err, value) {
+	if (err) {
+		console.log(err);
+	} else {
+		console.log(value);
+		anotherAsyncAction(3, step3);
+	}
+}
+
+function step1(err, value) {
+	if (err) {
+		console.log(err);
+	} else {
+		console.log(value);
+		anotherAsyncAction(2, step2);
+	}
+}
+
+anotherAsyncAction(1, step1);
