@@ -1,11 +1,13 @@
 // Custom errors, extending Error
 // Extending Error
-class ValidationError extends Error {
+class MyError extends Error {
 	constructor(message) {
 		super(message);
-		this.name = 'ValidationError';
+		this.name = this.constructor.name;
 	}
 }
+
+class ValidationError extends MyError {}
 
 
 function test() {
@@ -35,6 +37,39 @@ try {
 } catch (err) {
 	if (err instanceof ValidationError) {
 		console.log('Invalid data ' + err.message);
+	} else if (err instanceof SyntaxError) {
+		console.log('JSON syntax error ' + err.message);
+	} else {
+		throw err;
+	}
+}
+
+
+// Further inheritance
+class PropertyRequiredError extends ValidationError {
+	constructor(property) {
+		super('No property: ' + property);
+		this.property = property;
+	}
+}
+
+function readUser_1(json) {
+	let user = JSON.parse(json);
+	if (!user.name) {
+		throw new PropertyRequiredError('name');
+	}
+	if (!user.age) {
+		throw new PropertyRequiredError('age');
+	}
+	return user;
+}
+
+try {
+	let user = readUser_1('{ "name": "Bob" }');
+} catch (err) {
+	if (err instanceof ValidationError) {
+		console.log('Invalid data: ' + err.message);
+		console.log(err.name, err.property);
 	} else if (err instanceof SyntaxError) {
 		console.log('JSON syntax error ' + err.message);
 	} else {
