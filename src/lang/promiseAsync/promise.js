@@ -68,3 +68,13 @@ let promise = new Promise(function(resolve, reject) {
 });
 
 promise.then(alert);
+
+
+// Task 2 - Delay with a promise
+function delay(ms) {
+	return new Promise(function (resolve, _reject) {
+		setTimeout(resolve, ms);
+	});
+}
+
+delay(3000).then(() => console.log('after 3 sec'));
