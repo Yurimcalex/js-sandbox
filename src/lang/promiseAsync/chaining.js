@@ -85,3 +85,51 @@ new Promise(function (resolve, reject) {
 		return new Thenable(result);
 	})
 	.then(result => console.log(result));
+
+
+// Bigger example: fetch
+fetch('https://jsonplaceholder.typicode.com/users/1')
+  .then((response) => response.json())
+  .then((user) => fetch(`https://jsonplaceholder.typicode.com/posts?userId=${user.id}`))
+  .then(response => response.json())
+  .then(posts => {
+  	return new Promise(function (resolve, reject) {
+  		setTimeout(() => {
+  			resolve(posts);
+  		}, 1000);
+  	});
+  })
+  .then(posts => fetch(`https://jsonplaceholder.typicode.com/posts/${posts[0].id}/comments`))
+  .then(response => response.json())
+  .then(comments => console.log(comments));
+
+
+
+function loadUser(id) {
+	return fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+  	.then((response) => response.json())
+}
+
+function loadUserPosts(user) {
+	return fetch(`https://jsonplaceholder.typicode.com/posts?userId=${user.id}`)
+	  .then(response => response.json())
+}
+
+function doSomeStuffWithPosts(posts) {
+	return new Promise(function (resolve, reject) {
+		setTimeout(() => {
+			resolve(posts);
+		}, 1000);
+	});
+}
+
+function loadPostComments(posts) {
+	return fetch(`https://jsonplaceholder.typicode.com/posts/${posts[0].id}/comments`)
+	  .then(response => response.json())
+}
+
+loadUser(1)
+	.then(user => loadUserPosts(user))
+	.then(posts => doSomeStuffWithPosts(posts))
+	.then(posts => loadPostComments(posts))
+	.then(comments => console.log(comments));
