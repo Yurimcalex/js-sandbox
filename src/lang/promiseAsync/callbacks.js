@@ -27,3 +27,22 @@ coolAsyncAction('Hello', () => {
 		});
 	});
 });
+
+
+// Handling errors
+function anotherAsyncAction(value, callback) {
+	let rand = Math.random();
+	if (rand > 0.5) {
+		setTimeout(() => callback(null, value), 1000);
+	} else {
+		setTimeout(() => callback(new Error('Bad value')), 2000);
+	}
+}
+
+anotherAsyncAction(10, function (err, value) {
+	if (err) {
+		console.log(err.message);
+	} else {
+		console.log(value * 10);
+	}
+})
