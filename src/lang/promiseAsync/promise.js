@@ -35,3 +35,26 @@ promise3
 	.catch(err => console.log(err.message))
 	.finally(() => console.log('settled!'))
 	.then(result => console.log(result + '!'));
+
+
+// Example: loadScript
+function loadScript(src, callback) {
+	return new Promise(function (resolve, reject) {
+		let script = document.createElement('script');
+		script.src = src;
+
+		script.onload = () => resolve(script);
+		script.onerror = () => reject(new Error(`Script load error for ${src}`));
+
+		document.head.append(script);
+	});
+}
+
+let promise4 = loadScript("https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js");
+
+promise4.then(
+  script => console.log(`${script.src} is loaded!`),
+  error => console.log(`Error: ${error.message}`)
+);
+
+promise4.then(script => console.log('Another handler...'));
