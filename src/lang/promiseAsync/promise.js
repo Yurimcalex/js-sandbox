@@ -19,3 +19,19 @@ promise2.then(
 promise1.then((result) => console.log(result));
 
 promise2.catch((err) => console.log(err.message));
+
+
+// Cleanup: finally
+let promise3 = new Promise(function (resolve, reject) {
+	setTimeout(() => {
+		let rand = Math.random();
+		if (rand > 0.5) resolve('ok');
+		reject(new Error('too small!'));
+	}, 2000);
+});
+
+promise3
+	//.then(result => console.log(result))
+	.catch(err => console.log(err.message))
+	.finally(() => console.log('settled!'))
+	.then(result => console.log(result + '!'));
