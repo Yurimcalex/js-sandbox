@@ -66,3 +66,22 @@ loadScript('path').then(script => {
 	})
 })
 	.catch(err => console.log(err.message));
+
+
+// Thenables
+class Thenable {
+	constructor(n) {
+		this.n = n;
+	}
+	then(resolve, reject) {
+		setTimeout(() => resolve(this.n + 10), 1000);
+	}
+}
+
+new Promise(function (resolve, reject) {
+	resolve(1);
+})
+	.then(result => {
+		return new Thenable(result);
+	})
+	.then(result => console.log(result));
