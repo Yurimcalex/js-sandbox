@@ -65,3 +65,11 @@ window.addEventListener('unhandledrejection', function(event) {
   console.log(event.promise);
   console.log(event.reason);
 });
+
+
+// Error in setTimeout
+new Promise(function(resolve, reject) {
+  setTimeout(() => {
+    throw new Error("Whoops!");
+  }, 1000);
+}).catch(err => console.log(err.message));
