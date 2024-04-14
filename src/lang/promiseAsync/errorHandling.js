@@ -12,3 +12,25 @@ new Promise(function (resolve, reject) {
 	.catch(err => console.log(err));
 
 
+// Implicit try...catch
+new Promise((resolve, reject) => {
+	throw new Error('Error throwed inside the promise!');
+}).catch(err => console.log(err.message));
+
+new Promise((resolve, reject) => {
+	reject(new Error('Error throwed inside the promise!'));
+}).catch(err => console.log(err.message));
+
+new Promise((resolve, reject) => {
+	resolve(1);
+})
+	.then(result => {
+		throw new Error('Error throwed inside a handler!');
+	})
+	.catch(err => console.log(err.message));
+
+new Promise((resolve, reject) => {
+	resolve(1);
+})
+	.then(result => itWillbeErr())
+	.catch(err => console.log(err.message));
