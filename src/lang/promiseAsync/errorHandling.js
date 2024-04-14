@@ -34,3 +34,23 @@ new Promise((resolve, reject) => {
 })
 	.then(result => itWillbeErr())
 	.catch(err => console.log(err.message));
+
+
+// Rethrowing
+new Promise((resolve, reject) => {
+	throw new Error('Error inside the executor');
+})
+	.catch(err => console.log('Error successfuly handled!'))
+	.then(() => console.log('Hadler is working!'));
+
+new Promise((resolve, reject) => {
+	throw new Error('Error!!!');
+})
+	.catch(err => {
+		if (err instanceof SyntaxError) {
+			console.log('Handled!');
+		}
+		throw err;
+	})
+	.then(() => console.log('Hey! I wanna work!'))
+	.catch(err => console.log(err.message));
