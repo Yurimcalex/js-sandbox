@@ -54,3 +54,14 @@ new Promise((resolve, reject) => {
 	})
 	.then(() => console.log('Hey! I wanna work!'))
 	.catch(err => console.log(err.message));
+
+
+// Unhandled rejections
+new Promise((resolve, reject) => {
+	throw new Error('Unhandled Error!');
+}).then(result => console.log(result));
+
+window.addEventListener('unhandledrejection', function(event) {
+  console.log(event.promise);
+  console.log(event.reason);
+});
