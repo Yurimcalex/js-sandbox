@@ -108,3 +108,20 @@ Promise.any([
 		console.log(error.errors[0]);
 		console.log(error.errors[1]);
 	});
+
+
+// Promise.resolve/reject
+let cache = new Map();
+
+function loadCached(url) {
+	if (cache.has(url)) {
+		return Promise.resolve(cache.get(url));
+	}
+
+	return fetch(url)
+		.then(response => response.json())
+		.then(data => {
+			cache.set(url, data);
+			return data;
+		});
+}
