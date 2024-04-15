@@ -44,3 +44,27 @@ Promise.all([
 	2,
 	3
 ]).then(results => console.log(results));
+
+
+// Promise.allSettled
+let userUrls = [
+  'https://api.github.com/users/iliakan',
+  'https://api.github.com/users/remy',
+  'https://no-such-url'
+];
+
+Promise.allSettled(userUrls.map(url => fetch(url)))
+	.then(results => {
+		let success = [];
+		results.forEach((res, ind) => {
+			if (res.status === 'fulfilled') {
+				success.push(res.value);
+			}
+			if (res.status === 'rejected') {
+				console.log(userUrls[ind], res.reason);
+			}
+		});
+		return success;
+	})
+	.then(resps => Promise.all(resps.map(r => r.json())))
+	.then(users => console.log(users));
