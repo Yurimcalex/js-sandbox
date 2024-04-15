@@ -88,3 +88,23 @@ Promise.race([
 	new Promise((resolve, reject) => setTimeout(() => reject(new Error('Err!')), 2000))
 ])
 	.then(winner => console.log(winner));
+
+
+// Promise.any
+Promise.any([
+	new Promise((resolve, reject) => setTimeout(() => reject(new Error('Err!')), 500)),
+	new Promise(resolve => setTimeout(() => resolve(10), 1000)),
+	new Promise(resolve => setTimeout(() => resolve(20), 2000))
+])
+	.then(firstFulfilled => console.log(firstFulfilled));
+
+
+Promise.any([
+	new Promise((resolve, reject) => setTimeout(() => reject(new Error('Err-1!')), 500)),
+	new Promise((resolve, reject) => setTimeout(() => reject(new Error('Err-2!')), 1000))
+])
+	.catch(error => {
+		console.log(error.constructor.name);
+		console.log(error.errors[0]);
+		console.log(error.errors[1]);
+	});
