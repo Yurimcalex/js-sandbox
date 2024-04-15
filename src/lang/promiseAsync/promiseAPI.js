@@ -68,3 +68,14 @@ Promise.allSettled(userUrls.map(url => fetch(url)))
 	})
 	.then(resps => Promise.all(resps.map(r => r.json())))
 	.then(users => console.log(users));
+
+
+// Polyfill
+if (!Promise.allSettled) {
+	const rejectHandler = reason => ({ status: 'rejected', reason });
+	const resolveHandler = value => ({ status: 'fulfilled', value });
+	Promise.allSettled = function (promises) {
+		const convertedPromises = promises.map(p => Promise.resolve(p).then(resolveHandler, rejectHandler));
+		return Promise.all(convertedPromises);
+	};
+}
