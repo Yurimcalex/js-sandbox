@@ -79,3 +79,12 @@ if (!Promise.allSettled) {
 		return Promise.all(convertedPromises);
 	};
 }
+
+
+// Promise.race
+Promise.race([
+	new Promise(resolve => setTimeout(() => resolve(1), 1000)),
+	new Promise(resolve => setTimeout(() => resolve(2), 500)),
+	new Promise((resolve, reject) => setTimeout(() => reject(new Error('Err!')), 2000))
+])
+	.then(winner => console.log(winner));
