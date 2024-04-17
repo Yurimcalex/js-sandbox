@@ -99,3 +99,27 @@ function* gen3() {
 
 let numbs1 = [...gen3()];
 console.log(numbs1);
+
+
+// yield is a two-way street
+function* gen4() {
+	let result = yield '2 + 2 = ?';
+	console.log(result);
+}
+
+let g = gen4();
+let question = g.next().value;
+g.next(4);
+
+
+function* questionsGen() {
+	let ask1 = yield '2 + 2 = ?';
+	console.log(ask1);
+	let ask2 = yield '3 * 3 = ?';
+	console.log(ask2);
+}
+
+let gq = questionsGen();
+gq.next();
+gq.next(4);
+gq.next(9);
