@@ -69,3 +69,33 @@ let range1 = {
 };
 
 console.log([...range1]);
+
+
+// Generator composition
+function* gen2(start, end) {
+	for (let i = start; i <= end; i += 1) {
+		yield i;
+	}
+}
+
+
+function* generatePasswordCodes() {
+	yield* gen2(48, 57);
+	yield* gen2(65, 90);
+	yield* gen2(97, 122);
+}
+
+let str = '';
+for (let code of generatePasswordCodes()) {
+	str += String.fromCharCode(code);
+}
+console.log(str);
+
+
+function* gen3() {
+	yield* genSeq1();
+	yield* generateSequence();
+}
+
+let numbs1 = [...gen3()];
+console.log(numbs1);
