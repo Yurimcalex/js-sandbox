@@ -34,3 +34,38 @@ for (let v of genSeq1()) {
 
 let numbs = [0, ...genSeq1()];
 console.log(numbs);
+
+
+// Using generators for iterables
+let range = {
+	from: 1,
+	to: 5,
+	[Symbol.iterator]() {
+		return {
+			curr: this.from,
+			last: this.to,
+			next() {
+				if (this.curr <= this.last) {
+					return { done: false, value: this.curr++ };
+				} else {
+					return { done: true };
+				}
+			}
+		};
+	}
+};
+
+console.log([...range]);
+
+
+let range1 = {
+	from: 1,
+	to: 7,
+	*[Symbol.iterator]() {
+		for (let i = this.from; i <= this.to; i += 1) {
+			yield i;
+		}
+	}
+};
+
+console.log([...range1]);
