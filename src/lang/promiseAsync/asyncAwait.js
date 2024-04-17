@@ -62,3 +62,23 @@ class Waiter {
 
 new Waiter()
 	.wait().then(result => console.log(result));
+
+
+// Error handling
+async function f3() {
+	try {
+		let response = await fetch('nowhere!');
+		let result = await response.json();
+	} catch (err) {
+		console.log(err.message);
+	}
+}
+
+f3();
+
+
+async function f4() {
+	let response = await fetch('does not exist');
+}
+
+f4().catch(err => console.log(err.message));
