@@ -169,3 +169,18 @@ gq.next(9);
 	console.log(g.return('Opapa'));
 	console.log(g.next());
 }
+
+
+// Task 1 - Pseudo-random generator
+function* pseudoRandom(seed) {
+	let getNext = (prev) => prev * 16807 % 2147483647;
+	let prev = seed;
+	while (true) {
+		yield (prev = getNext(prev));
+	}
+}
+
+let pg = pseudoRandom(1);
+console.log(pg.next().value);
+console.log(pg.next().value);
+console.log(pg.next().value);
