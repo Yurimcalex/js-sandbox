@@ -123,3 +123,33 @@ let gq = questionsGen();
 gq.next();
 gq.next(4);
 gq.next(9);
+
+
+// generator.throw
+{
+	function* gen() {
+		try {
+			let result = yield 1;
+		} catch(err) {
+			console.log(err.message);
+		}
+	}
+
+	let g = gen();
+	g.next();
+	g.throw(new Error('Error inside a generator!'));
+
+
+	function* gen1() {
+		let result = yield 'from gen1';
+		console.log(result);
+	}
+
+	let g1 = gen1();
+	g1.next();
+	try {
+		g1.throw(new Error('Error from gen1'));
+	} catch (err) {
+		console.log(err.message);
+	}
+}
