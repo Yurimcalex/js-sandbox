@@ -153,3 +153,19 @@ gq.next(9);
 		console.log(err.message);
 	}
 }
+
+
+// generator.return
+{
+	function* gen() {
+		yield 1;
+		yield 2;
+		yield 3;
+	}
+
+	let g = gen();
+
+	console.log(g.next());
+	console.log(g.return('Opapa'));
+	console.log(g.next());
+}
