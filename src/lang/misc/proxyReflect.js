@@ -54,3 +54,39 @@ numbs.push(1);
 numbs.push(2);
 console.log(numbs.length);
 //numbs.push('test');
+
+
+// Iteration with 'ownKeys' and 'getOwnPropertyDescriptor'
+let user = {
+	name: 'Ithan',
+	age: 30,
+	_password: '****'
+};
+
+user = new Proxy(user, {
+	ownKeys(target) {
+		return Object.keys(target).filter(key => !key.startsWith('_'));	
+	}
+});
+
+for (let key in user) {
+	console.log(key);
+}
+
+console.log(Object.keys(user));
+console.log(Object.values(user));
+
+
+let balls = {};
+balls = new Proxy(balls, {
+	ownKeys(target) {
+		return ['key1', 'key2', 'key3'];
+	},
+	getOwnPropertyDescriptor(target, prop) {
+		return {
+			enumerable: true,
+			configurable: true
+		};
+	}
+});
+console.log(Object.keys(balls));
