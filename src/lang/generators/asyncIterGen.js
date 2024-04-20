@@ -46,3 +46,26 @@ let asyncRange = {
 		console.log(n);
 	}
 })();
+
+
+// Recall generators
+function* genSeq(start, end) {
+	for (let i = start; i <= end; i += 1) {
+		yield i;
+	}
+}
+
+console.log([...genSeq(1, 3)]);
+
+
+let rangeWithGen = {
+	from: 1,
+	to: 5,
+	*[Symbol.iterator]() {
+		for (let i = this.from; i <= this.to; i += 1) {
+			yield i;
+		}
+	}
+};
+
+console.log([...rangeWithGen]);
