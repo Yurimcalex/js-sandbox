@@ -90,3 +90,59 @@ balls = new Proxy(balls, {
 	}
 });
 console.log(Object.keys(balls));
+
+
+// Protected properties with 'deleteProperty' and other traps
+let fruit = {
+	name: 'apple',
+	_secret: '****'
+};
+
+fruit = new Proxy(fruit, {
+	get(target, prop) {
+		if (prop.startsWith('_')) {
+			throw new Error('Access denied');
+		}
+		let value = target[prop];
+		return (typeof value === 'function') ? value.bind(target) : value;
+	},
+	set(target, prop, value) {
+		if (prop.startsWith('_')) {
+			throw new Error('Access denied');
+		} else {
+			target[prop] = value;
+			return true;
+		}
+	},
+	deleteProperty(target, prop) {
+		if (prop.startsWith('_')) {
+			throw new Error('Access denied');
+		} else {
+			delete target[prop];
+			return true;
+		}
+	},
+	ownKeys(target) {
+		return Object.keys(target).filter(key => !key.startsWith('_'));
+	}
+});
+
+try {
+	console.log(fruit._secret);
+} catch (err) {
+	console.log(err.message);
+}
+
+try {
+	fruit._secret = '...';
+} catch (err) {
+	console.log(err.message);
+}
+
+try {
+	delete fruit._secret;
+} catch (err) {
+	console.log(err.message);
+}
+
+for (let key in fruit) console.log(key);
