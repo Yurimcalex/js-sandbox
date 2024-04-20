@@ -162,3 +162,36 @@ range = new Proxy(range, {
 
 console.log(3 in range);
 console.log(30 in range);
+
+
+// Wrapping functions: 'apply'
+function delay(f, ms) {
+	return function () {
+		setTimeout(() => f.apply(this, arguments), ms);
+	};
+}
+
+function sayHi(user) {
+	console.log(`Hi, ${user}!`);
+}
+
+console.log(sayHi.length);
+sayHi = delay(sayHi, 1000);
+console.log(sayHi.length);
+
+
+function delay_p(f, ms) {
+	return new Proxy(f, {
+		apply(target, thisArg, args) {
+			setTimeout(() => target.apply(thisArg, args), ms);
+		}
+	});
+}
+
+function sayBye() {
+	console.log('Bye!');
+}
+
+sayBye = delay_p(sayBye, 1000);
+console.log(sayBye.length);
+sayBye();
