@@ -69,3 +69,18 @@ let rangeWithGen = {
 };
 
 console.log([...rangeWithGen]);
+
+
+// Async generators
+async function* genSequence(start, end) {
+	for (let i = start; i <= end; i += 1) {
+		await new Promise(resolve => setTimeout(resolve, 1000));
+		yield i;
+	}
+}
+
+(async () => {
+	for await (let n of genSequence(1, 3)) {
+		console.log(n, ' <--');
+	}
+})();
