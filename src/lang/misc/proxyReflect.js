@@ -35,3 +35,22 @@ dictionary = new Proxy(dictionary, {
 });
 
 console.log(dictionary['Hello'], dictionary['Welcome']);
+
+
+// Validation with 'set' trap
+let numbs = [];
+numbs = new Proxy(numbs, {
+	set(target, prop, value) {
+		if (typeof value === 'number') {
+			target[prop] = value;
+			return true;
+		} else {
+			return false;
+		}
+	}
+});
+
+numbs.push(1);
+numbs.push(2);
+console.log(numbs.length);
+//numbs.push('test');
