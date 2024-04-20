@@ -195,3 +195,29 @@ function sayBye() {
 sayBye = delay_p(sayBye, 1000);
 console.log(sayBye.length);
 sayBye();
+
+
+// Reflect
+let game = {};
+Reflect.set(game, 'stars', 100);
+console.log(game.stars);
+
+
+let car = {
+	name: 'Lamba'
+};
+
+car = new Proxy(car, {
+	get(target, prop, receiver) {
+		console.log(`GET ${prop}`);
+		return Reflect.get(target, prop, receiver);
+	},
+	set(target, prop, val, receiver) {
+		console.log(`SET ${prop}`);
+		return Reflect.set(target, prop, val, receiver);
+	}
+});
+
+car.name;
+car.name = 'Lamba Super';
+car.color = 'blue';
