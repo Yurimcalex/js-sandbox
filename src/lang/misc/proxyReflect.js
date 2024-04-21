@@ -298,3 +298,26 @@ let visitor = new Visitor('Paul');
 console.log(allUsers.has(visitor));
 visitor = new Proxy(visitor, {});
 console.log(allUsers.has(visitor));
+
+
+// Revocable proxies
+{
+	let object = {
+	  data: "Valuable data"
+	};
+
+	let {proxy, revoke} = Proxy.revocable(object, {});
+	console.log(proxy.data);
+	//revoke();
+	//console.log(proxy.data);
+}
+
+{
+	let revokes = new WeakMap();
+	let object = { data: 'some important data ...' };
+	let {proxy, revoke} = Proxy.revocable(object, {});
+	revokes.set(proxy, revoke);
+	revoke = revokes.get(proxy);
+	revoke();
+	//console.log(proxy.data);
+}
