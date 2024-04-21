@@ -221,3 +221,28 @@ car = new Proxy(car, {
 car.name;
 car.name = 'Lamba Super';
 car.color = 'blue';
+
+
+// Proxying a getter
+let carrot = {
+	_weight: 500,
+	get weight() {
+		return this._weight;
+	}
+};
+
+let carrotProxy = new Proxy(carrot, {
+	get(target, prop, receiver) {
+		//return target[prop];
+		return Reflect.get(target, prop, receiver);
+	}
+});
+
+console.log(carrotProxy.weight);
+
+let frenchCarrot = {
+	__proto__: carrotProxy,
+	_weight: 350
+};
+
+console.log(frenchCarrot.weight);
