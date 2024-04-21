@@ -321,3 +321,26 @@ console.log(allUsers.has(visitor));
 	revoke();
 	//console.log(proxy.data);
 }
+
+
+// Task 1 - Error on reading non-existent property
+let rabbit = {
+	name: 'Bunny'
+};
+
+function wrap(target) {
+	return new Proxy(target, {
+		get(target, prop, receiver) {
+			if (prop in target) return Reflect.get(...arguments);
+			throw new ReferenceError(`Property doesn't exist: "${prop}"`);
+		}
+	});
+}
+
+rabbit = wrap(rabbit);
+console.log(rabbit.name);
+try {
+	console.log(rabbit.age);
+} catch (err) {
+	console.log(err.message);
+}
