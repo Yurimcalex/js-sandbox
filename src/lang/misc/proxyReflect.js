@@ -246,3 +246,21 @@ let frenchCarrot = {
 };
 
 console.log(frenchCarrot.weight);
+
+
+// Proxy limitations
+let map = new Map();
+let mapProxy = new Proxy(map, {});
+//mapProxy.set('test', 1);
+
+
+let map_1 = new Map();
+let map_1Proxy = new Proxy(map_1, {
+	get(target, prop, receiver) {
+		let value = Reflect.get(...arguments);
+		return typeof value === 'function' ? value.bind(target) : value;
+	}
+});
+
+map_1Proxy.set('test', 1);
+console.log(map_1Proxy.get('test'));
