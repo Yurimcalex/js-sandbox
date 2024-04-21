@@ -344,3 +344,16 @@ try {
 } catch (err) {
 	console.log(err.message);
 }
+
+
+// Accessing array[-1]
+let array = [1, 2, 3];
+array = new Proxy(array, {
+	get(target, prop, receiver) {
+		let ind = prop;
+		if (ind < 0) ind = target.length - -ind;
+		return Reflect.get(target, ind, receiver); 
+	}
+});
+
+console.log(array[-1], array[-2]);
