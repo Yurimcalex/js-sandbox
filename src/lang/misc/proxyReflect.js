@@ -357,3 +357,23 @@ array = new Proxy(array, {
 });
 
 console.log(array[-1], array[-2]);
+
+
+// Observable
+function makeObservable(target) {
+	let setHandlers = [];
+	let proxy = new Proxy(target, {
+		set(target, prop, value, receiver) {
+			Reflect.set(...arguments);
+			setHandlers.forEach(f => f(prop, value));
+			return true;
+		}
+	});
+	proxy.observe = (f) => setHandlers.push(f);
+	return proxy; 
+}
+
+let leaf = {};
+leaf = makeObservable(leaf);
+leaf.observe((key, value) => console.log(`SET ${key}=${value}`));
+leaf.tree = 'Oak';
