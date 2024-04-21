@@ -267,19 +267,34 @@ console.log(map_1Proxy.get('test'));
 
 
 // Private fields
-class User {
-	#name = 'Guest';
-	getName() {
-		return this.#name;
+// class User {
+// 	#name = 'Guest';
+// 	getName() {
+// 		return this.#name;
+// 	}
+// }
+
+// let u = new User();
+// u = new Proxy(u, {
+// 	get(target, prop, receiver) {
+// 		let value = Reflect.get(...arguments);
+// 		return typeof value === 'function' ? value.bind(target) : value;
+// 	}
+// });
+
+// console.log(user.getName());
+
+
+// Proxy != target
+let allUsers = new Set();
+class Visitor {
+	constructor(name) {
+		this.name = name;
+		allUsers.add(this);
 	}
 }
 
-let u = new User();
-u = new Proxy(u, {
-	get(target, prop, receiver) {
-		let value = Reflect.get(...arguments);
-		return typeof value === 'function' ? value.bind(target) : value;
-	}
-});
-
-console.log(user.getName());
+let visitor = new Visitor('Paul');
+console.log(allUsers.has(visitor));
+visitor = new Proxy(visitor, {});
+console.log(allUsers.has(visitor));
