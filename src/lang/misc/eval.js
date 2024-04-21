@@ -32,3 +32,15 @@ let n = 1000;
 
 let f1 = new Function('a', 'b', 'console.log(a + b)');
 f1(10, 50);
+
+
+// Task 1 - Eval-calculator
+class Calculator {
+	calc() {
+		let input = prompt('Expression', '');
+		return eval(input);
+	}
+}
+
+let calculator = new Calculator();
+console.log(calculator.calc());
