@@ -264,3 +264,22 @@ let map_1Proxy = new Proxy(map_1, {
 
 map_1Proxy.set('test', 1);
 console.log(map_1Proxy.get('test'));
+
+
+// Private fields
+class User {
+	#name = 'Guest';
+	getName() {
+		return this.#name;
+	}
+}
+
+let u = new User();
+u = new Proxy(u, {
+	get(target, prop, receiver) {
+		let value = Reflect.get(...arguments);
+		return typeof value === 'function' ? value.bind(target) : value;
+	}
+});
+
+console.log(user.getName());
