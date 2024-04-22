@@ -1,3 +1,4 @@
+'use strict';
 // Reference Type
 let user = {
 	name: 'Mirco',
@@ -6,4 +7,13 @@ let user = {
 };
 
 console.log(user.hi());
-(user.name === 'Mirco' ? user.hi : user.bye)();
+//(user.name === 'Mirco' ? user.hi : user.bye)();
+
+
+// Syntax check
+let user1 = {
+  name: "John",
+  go: function() { alert(this.name) }
+};
+
+//(user1.go)()
