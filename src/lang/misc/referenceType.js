@@ -17,3 +17,16 @@ let user1 = {
 };
 
 //(user1.go)()
+
+
+// Task 2 - Explain the value of this
+let obj, method;
+
+obj = {
+  go: function() { console.log(this); }
+};
+
+obj.go();
+(obj.go)();
+(method = obj.go)();
+(obj.go || obj.stop)();
