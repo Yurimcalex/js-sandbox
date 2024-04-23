@@ -31,3 +31,35 @@ function weakRefCache(fetchImg) {
 }
 
 const getCachedImg = weakRefCache(fetchImg);
+
+
+// FinalizationRegistry
+let rabbit = {
+	name: 'bunny'
+};
+
+const registry = new FinalizationRegistry((heldValue) => {
+	console.log(`${heldValue} has been collected by the garbage collector.`);
+});
+
+registry.register(rabbit, rabbit.name);
+
+
+function weakRefCache_improved(fetchImg) {
+	const imgCache = new Map();
+	const registry = new FinalizationRegistry((imgName) => {
+		const cachedImg = imgCache.get(imgName);
+		if (cachedImg && !cachedImg.deref()) imgCache.delete(imgName);
+	});
+
+	return (imgName) => {
+		const cachedImg = imgCache.get(imgName);
+		if (cachedImg?.deref()) {
+			return cachedImg?.deref();
+		}
+
+		const newImg = fetchImg(imgName);
+		imgCache.set(imgName, new WeakRef(newImg));
+		registry.register(newImg, imgName);
+	};
+}
