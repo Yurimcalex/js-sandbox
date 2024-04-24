@@ -85,3 +85,11 @@ console.log(8 >> 2);
 // Task 1 - Bitwise operator and value
 console.log(toBin(123));
 console.log(123 ^ 0, 0 ^ 123, ~~123);
+
+
+// Task 2 - Checking if a number is an integer
+function isInteger(n) {
+	return (n ^ 0) === n;
+}
+
+console.log(isInteger(1), isInteger(1.5), isInteger(-0.5));
