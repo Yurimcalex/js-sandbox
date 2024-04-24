@@ -99,3 +99,9 @@ console.log(isInteger(1), isInteger(1.5), isInteger(-0.5));
 console.log((1 ^ 2) === (2 ^ 1));
 console.log((1 & 2) === (2 & 1));
 console.log((1 | 2) === (2 | 1));
+
+
+// Task 4 - Why are the results different
+console.log(123456789 ^ 0);
+console.log(2 ** 32);
+console.log(12345678912345 ^ 0);
