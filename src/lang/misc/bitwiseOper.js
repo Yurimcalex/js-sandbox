@@ -80,3 +80,8 @@ if (~str1.indexOf('g')) {
 // Multiplication and division by powers of 2
 console.log(3 << 3);
 console.log(8 >> 2);
+
+
+// Task 1 - Bitwise operator and value
+console.log(toBin(123));
+console.log(123 ^ 0, 0 ^ 123, ~~123);
