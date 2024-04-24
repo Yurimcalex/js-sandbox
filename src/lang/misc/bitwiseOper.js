@@ -64,3 +64,19 @@ console.log(editor & ACCESS_ARTICLE_EDIT);
 const articleMan = ACCESS_ARTICLE_VIEW | ACCESS_ARTICLE_EDIT;
 console.log(guest & articleMan);
 console.log(editor & articleMan);
+
+
+// Rounding
+console.log(~~1.3);
+console.log(2.123 ^ 0);
+console.log(1.3 * 5.3 ^ 0);
+
+// Checking for −1
+let str1 = 'checking';
+if (~str1.indexOf('g')) {
+	console.log('found');
+}
+
+// Multiplication and division by powers of 2
+console.log(3 << 3);
+console.log(8 >> 2);
