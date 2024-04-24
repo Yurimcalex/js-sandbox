@@ -93,3 +93,9 @@ function isInteger(n) {
 }
 
 console.log(isInteger(1), isInteger(1.5), isInteger(-0.5));
+
+
+// Task 3 - Are the operations ^, |, & symmetric
+console.log((1 ^ 2) === (2 ^ 1));
+console.log((1 & 2) === (2 & 1));
+console.log((1 | 2) === (2 | 1));
