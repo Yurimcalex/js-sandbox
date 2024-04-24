@@ -51,3 +51,9 @@ console.log(date.toLocaleString('ua', {
 	year: 'numeric',
 	month: 'long'
 }));
+
+
+// Task 1 - Sort the array with the letter ё
+let animals = ["тигр", "ёж", "енот", "ехидна", "АИСТ", "ЯК"];
+animals.sort((w1, w2) => w1.localeCompare(w2, 'ru'));
+console.log(animals);
