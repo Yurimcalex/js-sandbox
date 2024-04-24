@@ -35,3 +35,32 @@ console.log(toBin(-9), toBin(-9 >> 2), -9 >> 2);
 
 
 console.log(toBin(-9), toBin(-9 >>> 2), -9 >>> 2);
+
+
+// Using bitwise operators
+// Mask
+// read     write    view   change  rights
+// article  article  goods  goods   management
+/*guest*/  [1, 0, 1, 0, 0, toBin(10100)/*20*/];
+/*editor*/ [1, 1, 1, 1, 0, toBin(11110)/*30*/];
+/*admin*/  [1, 1, 1, 1, 1, toBin(11111)/*31*/];
+
+const ACCESS_ADMIN = 1;         // 00001
+const ACCESS_GOODS_EDIT = 2;    // 00010
+const ACCESS_GOODS_VIEW = 4;    // 00100
+const ACCESS_ARTICLE_EDIT = 8;  // 01000
+const ACCESS_ARTICLE_VIEW = 16; // 10000
+
+// 10100
+const guest = ACCESS_GOODS_VIEW | ACCESS_ARTICLE_VIEW;
+// 11110
+const editor = guest | ACCESS_ARTICLE_EDIT | ACCESS_GOODS_EDIT;
+// 11111
+const admin = editor | ACCESS_ADMIN;
+
+console.log(editor & ACCESS_ADMIN);
+console.log(editor & ACCESS_ARTICLE_EDIT);
+
+const articleMan = ACCESS_ARTICLE_VIEW | ACCESS_ARTICLE_EDIT;
+console.log(guest & articleMan);
+console.log(editor & articleMan);
