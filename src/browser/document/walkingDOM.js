@@ -50,3 +50,9 @@ console.log(
 	document.body.firstElementChild,
 	document.body.lastElementChild.previousElementSibling
 );
+
+
+// More links: tables
+console.log(table.rows);
+console.log(table.tBodies);
+console.log(table.rows[1].cells);
