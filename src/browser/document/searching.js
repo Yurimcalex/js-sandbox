@@ -24,3 +24,9 @@ for (let link of document.querySelector('.links').children) {
 		link.style.color = 'transparent';
 	}
 }
+
+
+// closest
+let chapter = document.querySelector('.chapter');
+chapter.closest('ul').style.border = '1px solid gray';
+chapter.closest('.library').style.background = 'lightgray';
