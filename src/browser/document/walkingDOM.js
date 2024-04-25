@@ -24,3 +24,9 @@ for (let node of document.body.childNodes) {
 
 let bodyElms = Array.from(document.body.childNodes);
 console.log(bodyElms.pop());
+
+
+// Siblings and the parent
+console.log(document.body.parentNode === document.documentElement);
+console.log(document.head.nextSibling);
+console.log(document.body.previousSibling);
