@@ -56,3 +56,13 @@ document
 	.querySelector('.book').appendChild(document.createElement('li'));
 
 console.log(liCollection.length);
+
+
+// Task 1 - Search for elements
+// let ageTable = document.getElementById('age-table');
+// let labels = ageTable.getElementsByTagName('label');
+// let firstTd = ageTable.querySelector('td');
+// let form = document.getElementsByName('search')[0];
+// let firstInput = form.querySelector('input');
+// let inputs = form.querySelectorAll('input');
+// let lastInput = inputs[inputs.length - 1];
