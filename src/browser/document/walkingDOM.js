@@ -56,3 +56,9 @@ console.log(
 console.log(table.rows);
 console.log(table.tBodies);
 console.log(table.rows[1].cells);
+
+
+// Task 1 DOM children
+let div = document.body.firstElementChild;
+let ul = div.nextElementSibling;
+let li = ul.lastElementChild;
