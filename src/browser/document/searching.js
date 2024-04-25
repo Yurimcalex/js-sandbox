@@ -42,3 +42,17 @@ console.log(chapters);
 
 
 console.log(document.getElementsByName('inp'));
+
+
+// Live collections
+let liCollection = document
+	.body
+	.querySelector('.book')
+	.getElementsByTagName('li');
+console.log(liCollection.length);
+
+document
+	.body
+	.querySelector('.book').appendChild(document.createElement('li'));
+
+console.log(liCollection.length);
