@@ -67,3 +67,10 @@ let li = ul.lastElementChild;
 // Task 2 - The sibling question
 console.log(document.body.lastChild.nextSibling);
 console.log(document.body.children[0].previousSibling);
+
+
+// Task 3 - Select all diagonal cells
+let rows = Array.from(table1.rows);
+rows.forEach((row, ind) => {
+	row.cells[ind].style.backgroundColor = 'red';
+});
