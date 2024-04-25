@@ -58,7 +58,12 @@ console.log(table.tBodies);
 console.log(table.rows[1].cells);
 
 
-// Task 1 DOM children
+// Task 1 - DOM children
 let div = document.body.firstElementChild;
 let ul = div.nextElementSibling;
 let li = ul.lastElementChild;
+
+
+// Task 2 - The sibling question
+console.log(document.body.lastChild.nextSibling);
+console.log(document.body.children[0].previousSibling);
