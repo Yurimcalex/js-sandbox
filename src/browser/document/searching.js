@@ -30,3 +30,15 @@ for (let link of document.querySelector('.links').children) {
 let chapter = document.querySelector('.chapter');
 chapter.closest('ul').style.border = '1px solid gray';
 chapter.closest('.library').style.background = 'lightgray';
+
+
+// getElementsBy*
+let lis = ulContainer.getElementsByTagName('li');
+console.log(lis);
+let chapters = document
+	.querySelector('.book')
+	.getElementsByClassName('chapter');
+console.log(chapters);
+
+
+console.log(document.getElementsByName('inp'));
