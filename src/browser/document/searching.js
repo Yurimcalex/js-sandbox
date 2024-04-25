@@ -10,3 +10,9 @@ let lastLis = document.querySelectorAll('ul > li:last-child');
 for (let li of lastLis) {
 	console.log(li.innerHTML);
 }
+
+
+// querySelector
+let ulContainer = document.querySelector('.ul-container');
+let firstLi = ulContainer.querySelector('ul > li:first-child');
+firstLi.style.color = 'purple';
