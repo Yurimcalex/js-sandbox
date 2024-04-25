@@ -16,3 +16,11 @@ if (document.body.hasChildNodes()) {
 	console.log(document.body.firstChild, '<-- first elem of body');
 	console.log(document.body.lastChild, '<-- last elem of body');
 }
+
+// DOM collections
+for (let node of document.body.childNodes) {
+	console.log(node);
+}
+
+let bodyElms = Array.from(document.body.childNodes);
+console.log(bodyElms.pop());
