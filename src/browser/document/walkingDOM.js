@@ -30,3 +30,23 @@ console.log(bodyElms.pop());
 console.log(document.body.parentNode === document.documentElement);
 console.log(document.head.nextSibling);
 console.log(document.body.previousSibling);
+
+
+// Element-only navigation
+console.log('------------element-only navigation-----------');
+console.log(document.documentElement.parentNode);
+console.log(document.documentElement.parentElement);
+
+let elem = window.innerDiv;
+while (elem = elem.parentElement) {
+	console.log(elem);
+}
+
+for (let elem of document.body.children) {
+	console.log(elem);
+}
+
+console.log(
+	document.body.firstElementChild,
+	document.body.lastElementChild.previousElementSibling
+);
