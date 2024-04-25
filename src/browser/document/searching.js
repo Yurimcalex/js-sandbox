@@ -16,3 +16,11 @@ for (let li of lastLis) {
 let ulContainer = document.querySelector('.ul-container');
 let firstLi = ulContainer.querySelector('ul > li:first-child');
 firstLi.style.color = 'purple';
+
+
+// matches
+for (let link of document.querySelector('.links').children) {
+	if (link.matches('a[href$=zip]')) {
+		link.style.color = 'transparent';
+	}
+}
