@@ -28,3 +28,11 @@ let elem = document.body;
 console.log(elem.nodeType, 'body');
 console.log(elem.firstChild.nodeType, 'text');
 console.log(document.nodeType);
+
+
+// Tag: nodeName and TagName
+console.log(document.body.tagName);
+console.log(document.body.nodeName);
+
+console.log(document.tagName);
+console.log(document.nodeName);
