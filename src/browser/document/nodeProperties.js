@@ -21,3 +21,10 @@ console.log(document.body instanceof EventTarget);
 
 //console.dir(document.body);
 console.log(document.body);
+
+
+// The nodeType property
+let elem = document.body;
+console.log(elem.nodeType, 'body');
+console.log(elem.firstChild.nodeType, 'text');
+console.log(document.nodeType);
