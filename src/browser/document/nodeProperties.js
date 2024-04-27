@@ -36,3 +36,10 @@ console.log(document.body.nodeName);
 
 console.log(document.tagName);
 console.log(document.nodeName);
+
+
+// innerHTML: the contents
+console.log(container1.innerHTML);
+container1.innerHTML = '<div><h1>Header 1</h1></div>';
+container1.innerHTML += '<h2>Header 2</h2>';
+container1.innerHTML += '<script>alert("Ups!")</script>';
