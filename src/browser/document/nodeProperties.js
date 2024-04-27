@@ -43,3 +43,11 @@ console.log(container1.innerHTML);
 container1.innerHTML = '<div><h1>Header 1</h1></div>';
 container1.innerHTML += '<h2>Header 2</h2>';
 container1.innerHTML += '<script>alert("Ups!")</script>';
+
+
+// outerHTML: full HTML of the element
+console.log(container1.outerHTML);
+
+let container2 = document.querySelector('.container2');
+container2.outerHTML = '<b>something new ...</b>';
+console.log(container2.outerHTML);
