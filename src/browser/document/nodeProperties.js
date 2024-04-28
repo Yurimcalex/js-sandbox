@@ -98,3 +98,14 @@ console.log(document.body.lastChild.nodeType);
 let body = document.body;
 body.innerHTML = `<!-- ${body.tagName} -->`;
 console.log(body.firstChild.data);
+
+
+// Task 4 - where is the document in the hierarchy
+console.log(document.toString());
+console.log(document.constructor.name);
+
+console.log(document.parentElement);
+
+console.log(document instanceof Node);
+console.log(document instanceof Element);
+console.log(document instanceof HTMLElement);
