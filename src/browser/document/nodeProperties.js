@@ -82,3 +82,9 @@ setTimeout(() => clearInterval(timer), 5000);
 console.log(input.type);
 console.log(input.id);
 console.log(input.value);
+
+
+// Task 1 - Count descendants
+list.querySelectorAll('li').forEach(li => {
+	console.log(`${li.firstChild.data.trim()} ${li.querySelectorAll('li').length}`);
+});
