@@ -72,7 +72,7 @@ insert2.textContent = '<b>Text from a user</b>';
 comment.hidden = true;
 
 let timer = setInterval(() => {
-	blinking.hidden = !blinking.hidden;
+	//blinking.hidden = !blinking.hidden;
 }, 1000);
 
 setTimeout(() => clearInterval(timer), 5000);
@@ -92,3 +92,9 @@ list.querySelectorAll('li').forEach(li => {
 
 // Task 2 - What is in the nodeType
 console.log(document.body.lastChild.nodeType);
+
+
+// Tag in comment
+let body = document.body;
+body.innerHTML = `<!-- ${body.tagName} -->`;
+console.log(body.firstChild.data);
