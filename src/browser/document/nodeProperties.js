@@ -58,3 +58,11 @@ console.log(text.firstChild.data);
 console.log(document.body.lastChild.previousSibling.previousSibling.data);
 
 console.log(comment.firstChild.nextSibling.data);
+
+
+// textContent: pure text
+console.log('------------------------------');
+console.log(document.body.textContent);
+
+insert1.innerHTML = '<b>Text from a user</b>';
+insert2.textContent = '<b>Text from a user</b>';
