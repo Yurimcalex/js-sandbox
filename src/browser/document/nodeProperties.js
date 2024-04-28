@@ -66,3 +66,13 @@ console.log(document.body.textContent);
 
 insert1.innerHTML = '<b>Text from a user</b>';
 insert2.textContent = '<b>Text from a user</b>';
+
+
+// The hidden property
+comment.hidden = true;
+
+let timer = setInterval(() => {
+	blinking.hidden = !blinking.hidden;
+}, 1000);
+
+setTimeout(() => clearInterval(timer), 5000);
