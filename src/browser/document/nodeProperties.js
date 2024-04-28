@@ -51,3 +51,10 @@ console.log(container1.outerHTML);
 let container2 = document.querySelector('.container2');
 container2.outerHTML = '<b>something new ...</b>';
 console.log(container2.outerHTML);
+
+
+// nodeValue/data: text node content
+console.log(text.firstChild.data);
+console.log(document.body.lastChild.previousSibling.previousSibling.data);
+
+console.log(comment.firstChild.nextSibling.data);
