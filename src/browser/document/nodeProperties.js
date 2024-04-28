@@ -88,3 +88,7 @@ console.log(input.value);
 list.querySelectorAll('li').forEach(li => {
 	console.log(`${li.firstChild.data.trim()} ${li.querySelectorAll('li').length}`);
 });
+
+
+// Task 2 - What is in the nodeType
+console.log(document.body.lastChild.nodeType);
