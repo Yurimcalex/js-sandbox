@@ -76,3 +76,9 @@ let timer = setInterval(() => {
 }, 1000);
 
 setTimeout(() => clearInterval(timer), 5000);
+
+
+// More properties
+console.log(input.type);
+console.log(input.id);
+console.log(input.value);
