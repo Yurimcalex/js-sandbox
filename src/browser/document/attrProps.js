@@ -35,3 +35,17 @@ console.log(elem.outerHTML);
 for (let attr of elem.attributes) {
 	console.log(`${attr.name} = ${attr.value}`);
 }
+
+
+// Property-attribute synchronization
+let input = document.querySelector('input');
+input.setAttribute('id', 'id');
+console.log(input.id);
+input.id = 'newId';
+console.log(input.getAttribute('id'));
+
+input.setAttribute('value', 'text');
+console.log(input.value);
+
+input.value = 'new text';
+console.log(input.getAttribute('value'));
