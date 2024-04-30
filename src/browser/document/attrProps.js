@@ -85,3 +85,13 @@ bird.dataset.localBird = 'village';
 // Task 1 - get the attribute
 console.log(document.querySelector('[data-widget-name]').dataset.widgetName);
 console.log(document.querySelector('[data-widget-name]').getAttribute('data-widget-name'));
+
+
+// Task 2 - Make external links orange
+let links = someLinks.querySelectorAll('[href]');
+for (let link of links) {
+	let href = link.getAttribute('href');
+	if (~href.indexOf('://') && !href.startsWith('http://internal.com')) {
+		link.style.color = 'orange';
+	}
+}
