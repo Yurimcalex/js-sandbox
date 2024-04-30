@@ -80,3 +80,8 @@ console.log(animal.dataset.animal);
 
 console.log(bird.dataset.localBird);
 bird.dataset.localBird = 'village';
+
+
+// Task 1 - get the attribute
+console.log(document.querySelector('[data-widget-name]').dataset.widgetName);
+console.log(document.querySelector('[data-widget-name]').getAttribute('data-widget-name'));
