@@ -19,3 +19,19 @@ Element.prototype.sayHi = function () {
 
 document.documentElement.sayHi();
 document.body.sayHi();
+
+
+// HTML attributes
+console.log(document.body.firstElementChild.id);
+console.log(document.body.firstElementChild.something);
+
+console.log(document.body.firstElementChild.getAttribute('something'));
+
+console.log(elem.getAttribute('about'));
+elem.setAttribute('test', 123);
+
+console.log(elem.outerHTML);
+
+for (let attr of elem.attributes) {
+	console.log(`${attr.name} = ${attr.value}`);
+}
