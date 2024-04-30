@@ -49,3 +49,15 @@ console.log(input.value);
 
 input.value = 'new text';
 console.log(input.getAttribute('value'));
+
+
+// DOM properties are typed
+console.log(input1.getAttribute('checked'));
+console.log(input1.checked);
+
+console.log(div.getAttribute('style'));
+console.log(div.style);
+console.log(div.style.color);
+
+console.log(a.getAttribute('href'));
+console.log(a.href);
