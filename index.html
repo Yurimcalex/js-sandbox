@@ -4,6 +4,27 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>JS</title>
+	<style>
+		.order[order-state="new"] {
+			color: green;
+		}
+
+		.order[order-state="pending"] {
+			color: blue;
+		}
+
+		.order[order-state="canceled"] {
+			color: red;
+		}
+
+		.bird[data-local-bird="town"] {
+			color: purple;
+		}
+
+		.bird[data-local-bird="village"] {
+			color: green;
+		}
+	</style>
 </head>
 <body>
 	<div id="test" something="non-standard"></div>
@@ -17,6 +38,18 @@
 	<div id="div" style="color:purple;font-size:120%">Opapa!</div>
 
 	<a href="#someLink" id="a"></a>
+
+	<div show-info="name"></div>
+	<div show-info="age"></div>
+
+	<div>
+		<div class="order" order-state="new">Order 1</div>
+		<div class="order" order-state="pending">Order 2</div>
+	</div>
+
+	<div id="animal" data-animal="Elephant"></div>
+
+	<div id="bird" class="bird" data-local-bird="town">Sparrow</div>
 
 	<script src="src/browser/document/attrProps.js"></script>
 </body>

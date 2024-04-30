@@ -61,3 +61,22 @@ console.log(div.style.color);
 
 console.log(a.getAttribute('href'));
 console.log(a.href);
+
+
+// Non-standard attributes, dataset
+let user = {
+	name: 'Goodguy',
+	age: 27
+};
+
+for (let div of document.querySelectorAll('[show-info]')) {
+	let field = div.getAttribute('show-info');
+	div.innerHTML = user[field];
+}
+
+document.querySelector('[order-state]').setAttribute('order-state', 'canceled');
+
+console.log(animal.dataset.animal);
+
+console.log(bird.dataset.localBird);
+bird.dataset.localBird = 'village';
