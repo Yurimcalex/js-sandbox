@@ -31,3 +31,13 @@ container.insertAdjacentHTML('beforebegin', '<p>Beforebegin</p>');
 container.insertAdjacentHTML('afterend', '<p>Afterend</p>');
 container.insertAdjacentHTML('afterbegin', '<p>Afterbegin</p>');
 container.insertAdjacentHTML('beforeend', '<p>Beforeend</p>');
+
+
+// Node removal
+setTimeout(() => {
+	div1.remove();
+}, 3000);
+
+setInterval(() => {
+	ol.append(liFirst);
+}, 3000);
