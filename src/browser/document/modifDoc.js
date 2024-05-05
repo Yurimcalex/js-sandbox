@@ -24,3 +24,10 @@ div1.after(
 	'<p>It will be text only</p>',
 	document.createElement('hr')
 );
+
+
+// insertAdjacentHTML/Text/Element
+container.insertAdjacentHTML('beforebegin', '<p>Beforebegin</p>');
+container.insertAdjacentHTML('afterend', '<p>Afterend</p>');
+container.insertAdjacentHTML('afterbegin', '<p>Afterbegin</p>');
+container.insertAdjacentHTML('beforeend', '<p>Beforeend</p>');
