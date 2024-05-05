@@ -41,3 +41,10 @@ setTimeout(() => {
 setInterval(() => {
 	ol.append(liFirst);
 }, 3000);
+
+
+// Cloning nodes: cloneNode
+let ol1 = ol.cloneNode(true);
+let ol2 = ol.cloneNode(false);
+
+document.body.append(ol1, ol2);
