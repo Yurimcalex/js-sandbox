@@ -79,3 +79,9 @@ li6.innerHTML = '6';
 ul.replaceChild(li6, li5);
 
 ul.removeChild(ul.firstElementChild);
+
+
+// A word about document.write
+setTimeout(() => {
+	//document.write('<h1>Erase previous content and add this one</h1>');
+}, 5000);
