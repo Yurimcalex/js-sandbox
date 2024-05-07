@@ -104,3 +104,7 @@ function clear(elem) {
 	elem.innerHTML = '';
 	//elem.replaceWith(elem.cloneNode(false));
 }
+
+
+// Task 3 - Why does the text remain
+table.remove();
