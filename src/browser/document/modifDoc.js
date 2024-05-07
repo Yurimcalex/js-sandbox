@@ -48,3 +48,17 @@ let ol1 = ol.cloneNode(true);
 let ol2 = ol.cloneNode(false);
 
 document.body.append(ol1, ol2);
+
+
+// DocumentFragment
+function getListContent() {
+	let fragment = new DocumentFragment();
+	for (let i = 0; i < 4; i += 1) {
+		let li = document.createElement('li');
+		li.append(i);
+		fragment.append(li);
+	}
+	return fragment;
+}
+
+ul.append(getListContent());
