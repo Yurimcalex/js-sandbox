@@ -97,3 +97,10 @@ setTimeout(() => {
 
 	document.body.append(div);
 }
+
+
+// Task 2 - Create a function that removes everything from the element
+function clear(elem) {
+	elem.innerHTML = '';
+	//elem.replaceWith(elem.cloneNode(false));
+}
