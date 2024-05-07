@@ -62,3 +62,20 @@ function getListContent() {
 }
 
 ul.append(getListContent());
+
+
+// Old-school insert/remove methods
+let li4 = document.createElement('li');
+li4.appendChild(document.createTextNode('4'))
+ul.appendChild(li4);
+
+let li5 = document.createElement('li');
+li5.innerHTML = '5';
+ul.insertBefore(li5, ul.children[1]);
+ul.insertBefore(li5, ul.firstChild);
+
+let li6 = document.createElement('li');
+li6.innerHTML = '6';
+ul.replaceChild(li6, li5);
+
+ul.removeChild(ul.firstElementChild);
