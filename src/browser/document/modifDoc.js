@@ -174,8 +174,24 @@ function createTreeHTML(container, data) {
 	}
 
 	create(data);
-	
+
 	container.innerHTML = html;
 }
 
-createTreeHTML(document.getElementById('tree'), data);
+//createTreeHTML(document.getElementById('tree'), data);
+
+
+// Task 6 - Show descendants in a tree
+function showDescedants(list) {
+	let lis = list.querySelectorAll('li');
+	for (let li of lis) {
+		let childLis = li.querySelectorAll('li');
+		if (childLis.length) {
+			//let text = li.firstChild.textContent.trim();
+			//li.firstChild.replaceWith(`${text} [${childLis.length}]`);
+			li.firstChild.data += ` [${childLis.length}]`;
+		}
+	}
+}
+
+showDescedants(ul_list);
