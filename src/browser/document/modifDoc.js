@@ -85,3 +85,15 @@ ul.removeChild(ul.firstElementChild);
 setTimeout(() => {
 	//document.write('<h1>Erase previous content and add this one</h1>');
 }, 5000);
+
+
+// Task 1 - createTextNode vs innerHTML vs textContent
+{
+	let div = document.createElement('div');
+	let text = '<span>Hello!!!</span>';
+	//div.append(document.createTextNode(text));
+	//div.innerHTML = text;
+	div.textContent = text;
+
+	document.body.append(div);
+}
