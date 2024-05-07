@@ -122,4 +122,60 @@ function createListFromUser() {
 	return ul;
 }
 
-console.log(createListFromUser());
+//console.log(createListFromUser());
+
+
+// Task 5 - Create a tree from the object
+let data = {
+  "Fish": {
+    "trout": {},
+    "salmon": {}
+  },
+
+  "Tree": {
+    "Huge": {
+      "sequoia": {},
+      "oak": {}
+    },
+    "Flowering": {
+      "apple tree": {},
+      "magnolia": {}
+    }
+  }
+};
+
+function createTree(container, data) {
+	let ul = document.createElement('ul');
+	let items = Object.keys(data);
+	if (!items.length) return;
+	for (let item of items) {
+		let li = document.createElement('li');
+		li.textContent = item;
+		ul.append(li);
+		createTree(li, data[item]);
+	}
+	container.append(ul);
+}
+
+//createTree(document.body, data);
+
+function createTreeHTML(container, data) {
+	let html = '';
+
+	function create(data) {
+		let items = Object.keys(data);
+		if (!items.length) return;
+		html += '<ul>';
+		for (let item of items) {
+			html += `<li>${item}</li>`;
+			create(data[item]);
+		}
+		html += '</ul>';
+	}
+
+	create(data);
+	
+	container.innerHTML = html;
+}
+
+createTreeHTML(document.getElementById('tree'), data);
