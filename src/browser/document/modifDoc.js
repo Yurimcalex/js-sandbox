@@ -108,3 +108,18 @@ function clear(elem) {
 
 // Task 3 - Why does the text remain
 table.remove();
+
+
+// Task 4 - Create a list
+function createListFromUser() {
+	let ul = document.createElement('ul');
+	let input;
+	while (input = prompt('What it should be?', '')) {
+		let li = document.createElement('li');
+		li.textContent = input;
+		ul.append(li);
+	}
+	return ul;
+}
+
+console.log(createListFromUser());
