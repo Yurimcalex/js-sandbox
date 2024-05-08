@@ -195,3 +195,39 @@ function showDescedants(list) {
 }
 
 showDescedants(ul_list);
+
+
+// Task 7 - Create a calendar
+function createCalendar(elem, year, month) {
+	let firstDay = new Date(year, month - 1).getDay() || 7;
+	let lastDate = new Date(year, month, 0).getDate();
+	let dates = new Array(firstDay - 1).fill(0);
+
+	for (let i = 1; i <= lastDate; i += 1) {
+		dates.push(i);
+	}
+
+	if (dates.length % 7) {
+		dates.push(...new Array(7 - dates.length % 7).fill(0));
+	}
+
+	let table = '<table><tr>';
+	['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU'].forEach(title => {
+		table += '<th>' + title + '</th>';
+	});
+	table += '</tr>';
+
+	for (let i = 0, c = 1; i < dates.length; i += 1) {
+		if (c === 1) table += '<tr>';
+		table += '<td>' + (dates[i] || '') + '</td>';
+		if (c === 7) {
+			table += '</tr>';
+			c = 0;
+		}
+		c += 1;
+	}
+
+	calendar.innerHTML = table;
+}
+
+createCalendar(null, 2012, 10);
