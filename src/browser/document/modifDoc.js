@@ -230,4 +230,54 @@ function createCalendar(elem, year, month) {
 	calendar.innerHTML = table;
 }
 
-createCalendar(null, 2012, 10);
+//createCalendar(null, 2012, 10);
+
+
+// Task 8 - Colored clock with setInterval
+function createClock(elem) {
+	let clock = document.createElement('div');
+	let display = document.createElement('div');
+	let start = document.createElement('button');
+	let stop = document.createElement('button');
+	let timer;
+
+	start.textContent = 'Start';
+	stop.textContent = 'Stop';
+
+	start.onclick = startClock;
+	stop.onclick = stopClock;
+
+	clock.append(display, start, stop);
+	elem.append(clock);
+
+	function update() {
+		let d = new Date();
+		let h = d.getHours();
+		let m = d.getMinutes();
+		let s = d.getSeconds();
+		let html = '';
+		html += `<span style="color:red;">${h < 10 ? `0${h}`: h}</span>:`;
+		html += `<span style="color:green;">${m < 10 ? `0${m}`: m}</span>:`;
+		html += `<span style="color:blue;">${s < 10 ? `0${s}`: s}</span>`;
+		display.innerHTML = html;
+	}
+
+	update();
+
+	function startClock() {
+		if (!timer) {
+			timer = setInterval(() => {
+				update();
+			}, 1000);
+		}
+	}
+
+	function stopClock() {
+		if (timer) {
+			clearInterval(timer);
+			timer = null;
+		}
+	}	
+}
+
+//createClock(clock);
