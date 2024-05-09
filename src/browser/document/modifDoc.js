@@ -287,3 +287,18 @@ function createClock(elem) {
 numbs_ul
 	.children[0]
 	.insertAdjacentHTML('afterend', '<li>2</li><li>3</li>');
+
+
+// Task 10 - Sort the table
+{
+	let rows = citizens.querySelectorAll('tbody > tr');
+	rows = [...rows].sort((a, b) => {
+		let aName = a.firstElementChild.textContent;
+		let bName = b.firstElementChild.textContent;
+		
+		if (aName > bName) return 1;
+		if (bName > aName) return -1;
+	});
+
+	citizens.tBodies[0].append(...rows);
+}
