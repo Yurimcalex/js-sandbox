@@ -281,3 +281,9 @@ function createClock(elem) {
 }
 
 //createClock(clock);
+
+
+// Task 9 - Insert the HTML in the list
+numbs_ul
+	.children[0]
+	.insertAdjacentHTML('afterend', '<li>2</li><li>3</li>');
