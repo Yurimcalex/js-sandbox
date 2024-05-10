@@ -24,3 +24,18 @@ div1.style.backgroundColor = 'lightgray';
 div1.style.color = 'white';
 
 console.log(div1.style);
+
+
+// Resetting the style property
+div1.style.display = 'none';
+setTimeout(() => {
+	div1.style.display = '';
+	div1.style.removeProperty('color');
+}, 3000);
+
+div1.style.cssText = `
+	color: white;
+	padding: 5px;
+`;
+
+div1.setAttribute('style', 'font-size: 20px;');
