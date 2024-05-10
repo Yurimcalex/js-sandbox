@@ -39,3 +39,9 @@ div1.style.cssText = `
 `;
 
 div1.setAttribute('style', 'font-size: 20px;');
+
+
+// Mind the units
+div1.style.margin = '10px';
+console.log(div1.style.marginTop);
+console.log(div1.style.marginRight);
