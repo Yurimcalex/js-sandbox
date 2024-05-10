@@ -45,3 +45,8 @@ div1.setAttribute('style', 'font-size: 20px;');
 div1.style.margin = '10px';
 console.log(div1.style.marginTop);
 console.log(div1.style.marginRight);
+
+
+// Computed styles: getComputedStyle
+let computedStyle = getComputedStyle(div1);
+console.log(computedStyle.borderTopColor);
