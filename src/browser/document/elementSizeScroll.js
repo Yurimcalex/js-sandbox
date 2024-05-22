@@ -50,3 +50,11 @@ console.log(`metric width: ${example.clientWidth}`);
 console.log(`computed style width: ${getComputedStyle(example).width}`);
 
 console.log(getComputedStyle(elem).width);
+
+
+// Task 1 - What's the scroll from the bottom?
+function getScrollBottom(elem) {
+	return elem.scrollHeight - elem.clientHeight - elem.scrollTop;
+}
+
+console.log(getScrollBottom(example));
