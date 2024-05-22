@@ -58,3 +58,20 @@ function getScrollBottom(elem) {
 }
 
 console.log(getScrollBottom(example));
+
+
+// Task 2 - What is the scrollbar width?
+function getScrollbarWidth() {
+	let parent = document.createElement('div');
+	let child = document.createElement('div');
+	parent.append(child);
+	parent.style.height = '100px';
+	parent.style.overflow = 'auto';
+	child.style.height = '200px';
+	document.body.append(parent);
+	let width = parent.offsetWidth - parent.clientWidth;
+	parent.remove();
+	return width;
+}
+
+console.log(`Scrollbar width: ${getScrollbarWidth()}`);
