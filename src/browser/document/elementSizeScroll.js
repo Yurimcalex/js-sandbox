@@ -77,10 +77,15 @@ function getScrollbarWidth() {
 console.log(`Scrollbar width: ${getScrollbarWidth()}`);
 
 
-// Task 3 Pace the ball in the field center
+// Task 3 Place the ball in the field center
 function center(parent, child) {
 	child.style.top = (parent.clientHeight / 2) - (child.offsetHeight / 2) + 'px';
 	child.style.left = (parent.clientWidth / 2) - (child.offsetWidth / 2) + 'px';
 }
 
 center(field, ball);
+
+
+// Task 4 - The difference: CSS width versus clientWidth
+console.log(`clientWidth type: ${typeof example.clientWidth}`);
+console.log(`getComputedStyle(elem).width type: ${typeof getComputedStyle(example).width}`);
