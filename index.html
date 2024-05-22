@@ -13,6 +13,22 @@
 			margin: 30px;
 			overflow: auto;
 		}
+
+		#field {
+		  width: 200px;
+		  height: 200px;
+		  border: 10px groove black;
+		  background-color: #00FF00;
+		  position: relative;
+		}
+
+		#ball {
+		  position: absolute;
+		  width: 30px;
+		  height: 30px;
+		  border-radius: 50%;
+		  background: gray;
+		}
 	</style>
 </head>
 <body>
@@ -31,6 +47,9 @@
 	</div>
 	<br/>
 	<span id="elem">Some text...</span>
+	<div id="field">
+		<div id="ball"></div>
+	</div>
 	<script src="src/browser/document/elementSizeScroll.js"></script>
 </body>
 </html>

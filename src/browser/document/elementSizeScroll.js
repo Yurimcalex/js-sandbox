@@ -75,3 +75,12 @@ function getScrollbarWidth() {
 }
 
 console.log(`Scrollbar width: ${getScrollbarWidth()}`);
+
+
+// Task 3 Pace the ball in the field center
+function center(parent, child) {
+	child.style.top = (parent.clientHeight / 2) - (child.offsetHeight / 2) + 'px';
+	child.style.left = (parent.clientWidth / 2) - (child.offsetWidth / 2) + 'px';
+}
+
+center(field, ball);
