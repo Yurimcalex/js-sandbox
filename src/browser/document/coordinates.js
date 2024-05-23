@@ -100,9 +100,10 @@ console.log(fieldCoords);
 
 
 // Task 2 - show a note near the element
+// Task 3 - show a note near the element(absolute)
 function positionAt(anchor, position, elem) {
-	let coords = anchor.getBoundingClientRect();
-	elem.style.position = 'fixed';
+	let coords = getCoords(anchor);
+	elem.style.position = 'absolute';
 	if (position === 'top') {
 		elem.style.top = coords.top - elem.offsetHeight + 'px';
 		elem.style.left = coords.left + 'px';
