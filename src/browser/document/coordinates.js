@@ -61,3 +61,39 @@ function createMessageUnder_1(elem, html) {
 
 let message = createMessageUnder_1(example, '<b>Message</b>');
 document.body.append(message);
+
+
+// Task 1 - find window coordinates of the field
+function getFieldCoords(field) {
+	let box = field.getBoundingClientRect();
+	return {
+		coord1: [box.left, box.top],
+		coord2: [box.right, box.bottom],
+		coord3: [box.left + field.clientLeft, box.top + field.clientTop],
+		coord4: [
+			box.left + field.clientLeft + field.clientWidth,
+			box.top + field.clientTop + field.clientHeight
+		]
+	}
+}
+
+function createMark(x, y) {
+	let div = document.createElement('div');
+	div.style.cssText = `
+		position: fixed;
+		background-color: red;
+		width: 5px;
+		height: 5px;
+		border-radius: 50%;
+		left: ${x}px;
+		top: ${y}px;
+	`;
+	return div;
+}
+
+let fieldCoords = getFieldCoords(field);
+console.log(fieldCoords);
+
+Object.values(fieldCoords).map(([x, y]) => {
+	document.body.append(createMark(x, y));
+});
