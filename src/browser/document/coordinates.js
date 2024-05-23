@@ -60,7 +60,7 @@ function createMessageUnder_1(elem, html) {
 }
 
 let message = createMessageUnder_1(example, '<b>Message</b>');
-document.body.append(message);
+//document.body.append(message);
 
 
 // Task 1 - find window coordinates of the field
@@ -94,6 +94,38 @@ function createMark(x, y) {
 let fieldCoords = getFieldCoords(field);
 console.log(fieldCoords);
 
-Object.values(fieldCoords).map(([x, y]) => {
-	document.body.append(createMark(x, y));
+// Object.values(fieldCoords).map(([x, y]) => {
+// 	document.body.append(createMark(x, y));
+// });
+
+
+// Task 2 - show a note near the element
+function positionAt(anchor, position, elem) {
+	let coords = anchor.getBoundingClientRect();
+	elem.style.position = 'fixed';
+	if (position === 'top') {
+		elem.style.top = coords.top - elem.offsetHeight + 'px';
+		elem.style.left = coords.left + 'px';
+	} else if (position === 'right') {
+		elem.style.top = coords.top + 'px';
+		elem.style.left = coords.right + 'px';
+	} else {
+		elem.style.top = coords.bottom + 'px';
+		elem.style.left = coords.left + 'px';
+	}
+}
+
+function showNote(anchor, position, html) {
+	let note = document.createElement('div');
+	note.style.cssText = `
+		padding: 5px;
+		border: 1px solid gray;
+	`;
+	note.innerHTML = html;
+	document.body.append(note);
+	positionAt(anchor, position, note);
+}
+
+['top', 'right', 'bottom'].forEach(p => {
+	showNote(example, p, p);
 });
