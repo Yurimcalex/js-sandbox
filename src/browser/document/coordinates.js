@@ -101,17 +101,27 @@ console.log(fieldCoords);
 
 // Task 2 - show a note near the element
 // Task 3 - show a note near the element(absolute)
+// Task 3 - position the note inside(absolute)
 function positionAt(anchor, position, elem) {
 	let coords = getCoords(anchor);
 	elem.style.position = 'absolute';
-	if (position === 'top') {
+	if (position === 'top-out') {
 		elem.style.top = coords.top - elem.offsetHeight + 'px';
 		elem.style.left = coords.left + 'px';
-	} else if (position === 'right') {
+	} else if (position === 'right-out') {
 		elem.style.top = coords.top + 'px';
 		elem.style.left = coords.right + 'px';
-	} else {
+	} else if (position === 'bottom-out') {
 		elem.style.top = coords.bottom + 'px';
+		elem.style.left = coords.left + 'px';
+	} else if (position === 'top-in') {
+		elem.style.top = coords.top + 'px';
+		elem.style.left = coords.left + 'px';
+	} else if (position === 'right-in') {
+		elem.style.top = coords.top + 'px';
+		elem.style.left = coords.right - elem.offsetWidth + 'px';
+	} else {
+		elem.style.top = coords.bottom - elem.offsetHeight + 'px';
 		elem.style.left = coords.left + 'px';
 	}
 }
@@ -127,6 +137,7 @@ function showNote(anchor, position, html) {
 	positionAt(anchor, position, note);
 }
 
-['top', 'right', 'bottom'].forEach(p => {
+['top-out', 'right-out', 'bottom-out',
+ 'top-in', 'right-in', 'bottom-in'].forEach(p => {
 	showNote(example, p, p);
 });
