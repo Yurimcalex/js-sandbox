@@ -25,3 +25,10 @@ btn1.addEventListener('click', handler2);
 document.addEventListener('DOMContentLoaded', function () {
 	console.log('DOM built!');
 });
+
+
+// Event object
+btn2.onclick = function (e) {
+	console.log(e.type + ' at ' + e.currentTarget);
+	console.log('Coords: ' + e.clientX + ',' + e.clientY);
+};
