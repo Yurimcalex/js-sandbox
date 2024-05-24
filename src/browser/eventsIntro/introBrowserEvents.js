@@ -119,3 +119,26 @@ function moveBall(field, ball) {
 }
 
 moveBall(field, ball);
+
+
+// Task 5 - Create a sliding menu
+function createSlidingMenu() {
+	let title = slidingMenu.firstElementChild;
+	let mark = title.firstElementChild;
+	let body = slidingMenu.lastElementChild;
+
+	let isVisible = true;
+	title.onclick = function (e) {
+		if (isVisible) {
+			body.hidden = true;
+			mark.textContent = '▶';
+			isVisible = false;
+		} else {
+			body.hidden = false;
+			mark.textContent = '▼';
+			isVisible = true;
+		}
+	}
+}
+
+createSlidingMenu();
