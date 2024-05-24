@@ -142,3 +142,24 @@ function createSlidingMenu() {
 }
 
 createSlidingMenu();
+
+
+// Task 6 - Add a closing button
+function addClosingButton() {
+	let panes = document.querySelectorAll('.pane');
+	panes.forEach(pane => {
+		pane.style.position = 'relative';
+		let closeBtn = document.createElement('button');
+		closeBtn.className = 'remove-button';
+		closeBtn.textContent = '[x]';
+		closeBtn.style.position = 'absolute';
+		closeBtn.style.top = '5px';
+		closeBtn.style.right = '5px';
+		pane.append(closeBtn);
+		closeBtn.onclick = function () {
+			pane.hidden = true;
+		};
+	});
+}
+
+addClosingButton();
