@@ -5,7 +5,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>JS</title>
 	<style>
-		
+		 #field {
+      width: 200px;
+      height: 150px;
+      border: 10px solid black;
+      background-color: #00FF00;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+
+    #ball {
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	width: 40px;
+    	height: 40px;
+    	transition: left 0.5s, top 0.5s;
+    }
 	</style>
 </head>
 <body>
@@ -35,6 +52,10 @@
 	<button id="btn5">Click to hide</button>
 	<button id="btn6">Btn 6</button>
 
+	<div id="field">
+	   <img src="https://en.js.cx/clipart/ball.svg" id="ball"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+	   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+	 </div>
 	<script src="src/browser/eventsIntro/introBrowserEvents.js"></script>
 </body>
 </html>

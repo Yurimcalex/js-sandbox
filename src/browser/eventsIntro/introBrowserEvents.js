@@ -92,3 +92,30 @@ btn5.onclick = function (e) {
 btn6.addEventListener('click', () => console.log('1'));
 btn6.removeEventListener('click', () => console.log('1'));
 btn6.onclick = () => console.log('2');
+
+
+// Task 4 - Move the ball across the field
+function moveBall(field, ball) {
+	field.addEventListener('click', function (e) {
+		let { clientX: mx, clientY: my } = e;
+		let { left: fx, top: fy } = field.getBoundingClientRect();
+
+		let bx = mx - fx - field.clientLeft - ball.offsetWidth / 2;
+		let by = my - fy - field.clientTop - ball.offsetHeight / 2;
+
+		if (bx < 0) bx = 0;
+		else if (bx > field.clientWidth - ball.offsetWidth) {
+			bx = field.clientWidth - ball.offsetWidth;
+		}
+
+		if (by < 0) by = 0;
+		else if (by > field.clientHeight - ball.offsetHeight) {
+			by = field.clientHeight - ball.offsetHeight;
+		}
+
+		ball.style.left = bx + 'px';
+		ball.style.top = by + 'px';
+	});
+}
+
+moveBall(field, ball);
