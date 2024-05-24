@@ -81,7 +81,14 @@ hide_text.onclick = function () {
 	p_text.hidden = true;
 };
 
+
 // Task 2 - Hide self
 btn5.onclick = function (e) {
 	this.hidden = true;
 }
+
+
+// Task 3 - Which handlers run
+btn6.addEventListener('click', () => console.log('1'));
+btn6.removeEventListener('click', () => console.log('1'));
+btn6.onclick = () => console.log('2');
