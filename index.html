@@ -5,47 +5,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>JS</title>
 	<style>
-		#example {
-			width: 300px;
-			height: 300px;
-			border: 25px solid #E8C48F;
-			padding: 20px;
-			margin: 30px;
-			overflow: auto;
-		}
-
-		#field {
-		  overflow: hidden;
-		  width: 200px;
-		  height: 150px;
-		  border-top: 10px solid black;
-		  border-right: 10px solid gray;
-		  border-bottom: 10px solid gray;
-		  border-left: 10px solid black;
-		  background-color: #00FF00;
-		  font: 10px/1.2 monospace;
-		}
+		
 	</style>
 </head>
 <body>
-	<div id="example">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</div>
+	<input value="Click me" type="button" onclick="console.log('click!')" />
 
-	<div id="field">
-	   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-	   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-	 </div>
-	<script src="src/browser/document/coordinates.js"></script>
+	<script>
+		function countApples() {
+			for (let i = 1; i <= 3; i += 1) {
+				console.log(i);
+			}
+		}
+	</script>
+
+	<input type="button" value="count apples" onclick="countApples()" />
+
+	<input id="btn1" type="button" value="Click me!" />
+
+	<script src="src/browser/eventsIntro/introBrowserEvents.js"></script>
 </body>
 </html>
