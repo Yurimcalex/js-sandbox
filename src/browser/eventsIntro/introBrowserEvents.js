@@ -73,3 +73,10 @@ class Menu_1 {
 }
 
 btn4.addEventListener('click', new Menu_1());
+
+
+// Task 1 - Hide on click
+hide_text.onclick = function () {
+	//p_text.style.display = 'none';
+	p_text.hidden = true;
+};
