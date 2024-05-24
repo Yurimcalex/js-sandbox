@@ -80,3 +80,8 @@ hide_text.onclick = function () {
 	//p_text.style.display = 'none';
 	p_text.hidden = true;
 };
+
+// Task 2 - Hide self
+btn5.onclick = function (e) {
+	this.hidden = true;
+}
