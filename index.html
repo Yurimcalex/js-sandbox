@@ -5,24 +5,34 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>JS</title>
 	<style>
-		#level1,
-		#level2,
-		#level3 {
+		table {
 			border: 1px solid gray;
+		}
+
+		table td {
 			padding: 10px;
+			background: lightgray;
+		}
+
+		table span {
+			display: block;
+			padding: 10px;
+			background: green;
+			color: white;
+		}
+
+		.highlight {
+			background: purple;
 		}
 	</style>
 </head>
 <body>
-	<div id="div">
-	  <em>If you click on <code>EM</code>, the handler on <code>DIV</code> runs.</em>
-	</div>
+	<table id="table">
+		<tr><th>Name</th><th>id</th></tr>
+		<tr><td><span>Apple</span></td><td><span>1</span></td></tr>
+		<tr><td><span>Pear</span></td><td><span>2</span></td></tr>
+	</table>
 
-	<section id="level3">Section
-		<div id="level2">Div
-			<p id="level1">P</p>
-		</div>
-	</section>
-	<script src="src/browser/eventsIntro/bubblCapt.js"></script>
+	<script src="src/browser/eventsIntro/eventDelegation.js"></script>
 </body>
 </html>
