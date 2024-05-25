@@ -24,3 +24,11 @@ level1.addEventListener('click', function (e) {
 	console.log('fires on', e.target);
 	e.stopPropagation();
 });
+
+
+// Capturing
+conts.forEach(elem => {
+	elem.addEventListener('click', function (e) {
+		console.log(this.tagName);
+	}, true);
+});
