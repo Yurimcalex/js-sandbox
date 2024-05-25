@@ -163,3 +163,28 @@ function addClosingButton() {
 }
 
 addClosingButton();
+
+
+// Task 7 - carousel
+function createCarousel() {
+	let [back, forward] = document.querySelectorAll('.arrow');
+	let container = document.querySelector('.carousel ul');
+	let w = container.children[0].offsetWidth;
+	let amount = container.children.length;
+	let n = 3;
+	let shift = 0;
+	
+	forward.onclick = function () {
+		shift += n;
+		if (shift > amount - n) shift = amount - n;
+		container.style.marginLeft = -shift * w + 'px';
+	};
+
+	back.onclick = function () {
+		shift -= n;
+		if (shift < 0) shift = 0;
+		container.style.marginLeft = -shift * w + 'px';
+	};
+}
+
+createCarousel();

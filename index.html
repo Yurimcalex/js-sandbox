@@ -51,6 +51,66 @@
       background: transparent;
       cursor: pointer;
     }
+
+    .arrow {
+      padding: 0;
+      background: #ddd;
+      border-radius: 15px;
+      border: 1px solid gray;
+      font-size: 24px;
+      line-height: 24px;
+      color: #444;
+      display: block;
+    }
+
+    .arrow:focus {
+      outline: none;
+    }
+
+    .arrow:hover {
+      background: #ccc;
+      cursor: pointer;
+    }
+
+    ul {
+      height: 130px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0;
+      transition: margin 0.5s;
+    }
+
+    ul img {
+      width: 130px;
+      height: 130px;
+      display: block;
+    }
+
+    ul li {
+      display: inline-block;
+    }
+
+    .carousel {
+    	position: relative;
+    	width: 390px;
+    	overflow: hidden;
+    	border: 1px solid gray;
+    	border-radius: 10px;
+    	background: lightgray;
+    }
+
+    .carousel > .arrow {
+    	position: absolute;
+    	left: 5px;
+    	top: 50%;
+    	transform: translateY(-50%);
+    }
+
+    .carousel > .arrow + .arrow {
+    	left: unset;
+    	right: 5px;
+    }
 	</style>
 </head>
 <body>
@@ -108,6 +168,24 @@
 	  	<h3>Cat</h3>
 	    <p>The domestic cat (Latin: Felis catus) is a small, typically furry, carnivorous mammal. They are often called house cats when kept as indoor pets or simply cats when there is no need to distinguish them from other felids and felines. Cats are often valued by humans for companionship and for their ability to hunt vermin.</p>
 	  </div>
+	</div>
+
+
+	<div class="carousel">
+		<button class="arrow">⇦</button>
+		<button class="arrow">⇨</button>
+		<ul>
+		  <li><img src="https://en.js.cx/carousel/1.png"></li>
+		  <li><img src="https://en.js.cx/carousel/2.png"></li>
+		  <li><img src="https://en.js.cx/carousel/3.png"></li>
+		  <li><img src="https://en.js.cx/carousel/4.png"></li>
+		  <li><img src="https://en.js.cx/carousel/5.png"></li>
+		  <li><img src="https://en.js.cx/carousel/6.png"></li>
+		  <li><img src="https://en.js.cx/carousel/7.png"></li>
+		  <li><img src="https://en.js.cx/carousel/8.png"></li>
+		  <li><img src="https://en.js.cx/carousel/9.png"></li>
+		  <li><img src="https://en.js.cx/carousel/10.png"></li>
+		</ul>
 	</div>
 	<script src="src/browser/eventsIntro/introBrowserEvents.js"></script>
 </body>
