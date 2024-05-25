@@ -5,188 +5,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>JS</title>
 	<style>
-		 #field {
-      width: 200px;
-      height: 150px;
-      border: 10px solid black;
-      background-color: #00FF00;
-      overflow: hidden;
-      cursor: pointer;
-      position: relative;
-    }
-
-    #ball {
-    	position: absolute;
-    	top: 0;
-    	left: 0;
-    	width: 40px;
-    	height: 40px;
-    	transition: left 0.5s, top 0.5s;
-    }
-
-    h3 {
-      margin: 0;
-      padding-bottom: .3em;
-      font-size: 1.1em;
-    }
-
-    p {
-      margin: 0;
-      padding: 0 0 .5em;
-    }
-
-    .pane {
-      background: #edf5e1;
-      padding: 10px 20px 10px;
-      border-top: solid 2px #c4df9b;
-    }
-
-    .remove-button {
-      font-size: 110%;
-      color: darkred;
-      right: 10px;
-      width: 24px;
-      height: 24px;
-      border: none;
-      background: transparent;
-      cursor: pointer;
-    }
-
-    .arrow {
-      padding: 0;
-      background: #ddd;
-      border-radius: 15px;
-      border: 1px solid gray;
-      font-size: 24px;
-      line-height: 24px;
-      color: #444;
-      display: block;
-    }
-
-    .arrow:focus {
-      outline: none;
-    }
-
-    .arrow:hover {
-      background: #ccc;
-      cursor: pointer;
-    }
-
-    ul {
-      height: 130px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      font-size: 0;
-      transition: margin 0.5s;
-    }
-
-    ul img {
-      width: 130px;
-      height: 130px;
-      display: block;
-    }
-
-    ul li {
-      display: inline-block;
-    }
-
-    .carousel {
-    	position: relative;
-    	width: 390px;
-    	overflow: hidden;
-    	border: 1px solid gray;
-    	border-radius: 10px;
-    	background: lightgray;
-    }
-
-    .carousel > .arrow {
-    	position: absolute;
-    	left: 5px;
-    	top: 50%;
-    	transform: translateY(-50%);
-    }
-
-    .carousel > .arrow + .arrow {
-    	left: unset;
-    	right: 5px;
-    }
+		#level1,
+		#level2,
+		#level3 {
+			border: 1px solid gray;
+			padding: 10px;
+		}
 	</style>
 </head>
 <body>
-	<input value="Click me" type="button" onclick="console.log('click!')" />
-
-	<script>
-		function countApples() {
-			for (let i = 1; i <= 3; i += 1) {
-				console.log(i);
-			}
-		}
-	</script>
-
-	<input type="button" value="count apples" onclick="countApples()" />
-
-	<input id="btn1" type="button" value="Click me!" />
-	<input id="btn2" type="button" value="Click me!" />
-
-	<button id="btn3">Button</button>
-	<button id="btn4">Button</button>
-
-	<div>
-		<p id="p_text">Some text ...</p>
-		<button id="hide_text">Hide text</button>
+	<div id="div">
+	  <em>If you click on <code>EM</code>, the handler on <code>DIV</code> runs.</em>
 	</div>
 
-	<button id="btn5">Click to hide</button>
-	<button id="btn6">Btn 6</button>
-
-	<div id="field">
-	   <img src="https://en.js.cx/clipart/ball.svg" id="ball"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-	   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-	 </div>
-
-	 <div id="slidingMenu">
-	 	<div><span>▼</span>Sweeties (click me)!</div>
-	 	 <ul>
-	 	   <li>Cake</li>
-	 	   <li>Donut</li>
-	 	   <li>Honey</li>
-	 	 </ul>
-	 </div>
-
-	<button class="remove-button">[x]</button>
-	<div>
-	  <div class="pane">
-	    <h3>Horse</h3>
-	    <p>The horse is one of two extant subspecies of Equus ferus. It is an odd-toed ungulate mammal belonging to the taxonomic family Equidae. The horse has evolved over the past 45 to 55 million years from a small multi-toed creature, Eohippus, into the large, single-toed animal of today.</p>
-	  </div>
-	  <div class="pane">
-	    <h3>Donkey</h3>
-	    <p>The donkey or ass (Equus africanus asinus) is a domesticated member of the horse family, Equidae. The wild ancestor of the donkey is the African wild ass, E. africanus. The donkey has been used as a working animal for at least 5000 years.</p>
-	  </div>
-	  <div class="pane">
-	  	<h3>Cat</h3>
-	    <p>The domestic cat (Latin: Felis catus) is a small, typically furry, carnivorous mammal. They are often called house cats when kept as indoor pets or simply cats when there is no need to distinguish them from other felids and felines. Cats are often valued by humans for companionship and for their ability to hunt vermin.</p>
-	  </div>
-	</div>
-
-
-	<div class="carousel">
-		<button class="arrow">⇦</button>
-		<button class="arrow">⇨</button>
-		<ul>
-		  <li><img src="https://en.js.cx/carousel/1.png"></li>
-		  <li><img src="https://en.js.cx/carousel/2.png"></li>
-		  <li><img src="https://en.js.cx/carousel/3.png"></li>
-		  <li><img src="https://en.js.cx/carousel/4.png"></li>
-		  <li><img src="https://en.js.cx/carousel/5.png"></li>
-		  <li><img src="https://en.js.cx/carousel/6.png"></li>
-		  <li><img src="https://en.js.cx/carousel/7.png"></li>
-		  <li><img src="https://en.js.cx/carousel/8.png"></li>
-		  <li><img src="https://en.js.cx/carousel/9.png"></li>
-		  <li><img src="https://en.js.cx/carousel/10.png"></li>
-		</ul>
-	</div>
-	<script src="src/browser/eventsIntro/introBrowserEvents.js"></script>
+	<section id="level3">Section
+		<div id="level2">Div
+			<p id="level1">P</p>
+		</div>
+	</section>
+	<script src="src/browser/eventsIntro/bubblCapt.js"></script>
 </body>
 </html>
