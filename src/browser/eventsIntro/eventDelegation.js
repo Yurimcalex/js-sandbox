@@ -92,3 +92,27 @@ tree.addEventListener('click', function (e) {
 		}
 	}
 });
+
+
+// Task 3 - Sortable table
+grid.addEventListener('click', function (e) {
+	let target = e.target;
+	let type = target.dataset.type;
+	if (type) {
+		let ind = target.cellIndex;
+		let rows = [...this.tBodies[0].rows];
+		if (type === 'number') {
+			rows.sort((a, b) => 
+				+a.cells[ind].textContent - +b.cells[ind].textContent);
+		} else {
+			rows.sort((a, b) => {
+				let at = a.cells[ind].textContent;
+				let bt = b.cells[ind].textContent;
+				if (at > bt) return 1;
+				if (at < bt) return -1;
+				return 0;
+			});
+		}
+		this.tBodies[0].append(...rows);
+	}
+});
