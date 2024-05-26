@@ -14,3 +14,33 @@ function highlight(td) {
 	selectedTD = td;
 	selectedTD.classList.add('highlight');
 }
+
+
+// Delegation example: actions in markup
+class Menu {
+	constructor(elem) {
+		this._elem = elem;
+		elem.onclick = this.onClick.bind(this);
+	}
+
+	onClick(e) {
+		let action = e.target.dataset.action;
+		if (action) {
+			this[action]();
+		}
+	}
+
+	save() {
+		console.log('Saving!');
+	}
+
+	load() {
+		console.log('Loading!');
+	}
+
+	search() {
+		console.log('Searching!');
+	}
+}
+
+new Menu(menu);
