@@ -44,3 +44,18 @@ class Menu {
 }
 
 new Menu(menu);
+
+
+// The behavior pattern
+document.addEventListener('click', function (e) {
+	if (e.target.dataset.counter != undefined) {
+		e.target.value++;
+	}
+});
+
+document.addEventListener('click', function (e) {
+	let id = e.target.dataset.toggleId;
+	if (!id) return;
+	let elem = document.getElementById(id);
+	elem.hidden = !elem.hidden;
+});
