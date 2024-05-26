@@ -116,3 +116,33 @@ grid.addEventListener('click', function (e) {
 		this.tBodies[0].append(...rows);
 	}
 });
+
+
+// Task 4 - tooltip behavior
+document.addEventListener('mouseover', function (e) {
+	let target = e.target;
+	if (target.dataset.tooltip) {
+		let html = target.dataset.tooltip;
+		let tooltip = document.createElement('div');
+		tooltip.innerHTML = html;
+		tooltip.style.position = 'absolute';
+		tooltip.className = 'tooltip';
+		document.body.append(tooltip);
+
+		let { top, left, bottom, width } = target.getBoundingClientRect();
+		if (top < tooltip.offsetHeight + 5) {
+			tooltip.style.top = bottom + 5 + window.pageYOffset + 'px';
+		} else {
+			tooltip.style.top = top - 5 - tooltip.offsetHeight + window.pageYOffset + 'px';
+		}
+
+		let lc = width / 2 - tooltip.offsetWidth / 2 + left;
+		if (lc < left) lc = left;
+		tooltip.style.left = lc + 'px';
+	}
+});
+
+document.addEventListener('mouseout', function (e) {
+	let tooltip = document.querySelector('.tooltip');
+	if (tooltip) tooltip.remove();
+});
