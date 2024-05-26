@@ -71,3 +71,24 @@ container.addEventListener('click', function (e) {
 		}
 	}
 });
+
+
+// Task 2 - Tree menu
+tree.querySelectorAll('li').forEach(li => {
+	if (li.children.length) {
+		let span = document.createElement('span');
+		span.className = 'menu';
+		span.textContent = li.firstChild.data.trim();
+		li.firstChild.replaceWith(span);
+	}
+});
+
+tree.addEventListener('click', function (e) {
+	let target = e.target;
+	if (target.classList.contains('menu')) {
+		let ul = target.closest('li').querySelector('ul');
+		if (ul) {
+			ul.hidden = !ul.hidden;
+		}
+	}
+});
