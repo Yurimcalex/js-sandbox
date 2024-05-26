@@ -59,3 +59,15 @@ document.addEventListener('click', function (e) {
 	let elem = document.getElementById(id);
 	elem.hidden = !elem.hidden;
 });
+
+
+// Task 1 - Hide messages with delegation
+container.addEventListener('click', function (e) {
+	let target = e.target;
+	if (target.classList.contains('remove-button')) {
+		let pane = target.closest('.pane');
+		if (pane) {
+			pane.hidden = true;
+		}
+	}
+});
