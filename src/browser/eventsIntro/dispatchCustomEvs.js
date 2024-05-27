@@ -61,3 +61,18 @@ function hideRabbit() {
 		rabbit.hidden = true;
 	}
 }
+
+
+// Events-in-events are synchronous
+menu.onclick = function () {
+	console.log('start!!!');
+
+	//menu.dispatchEvent(new CustomEvent('menu-open', { bubbles: true }));
+	setTimeout(() => {
+		menu.dispatchEvent(new CustomEvent('menu-open', { bubbles: true }));
+	});
+
+	console.log('end!!!');	
+};
+
+document.addEventListener('menu-open', () => console.log('nested!!!'));
