@@ -32,3 +32,26 @@ noCopy.oncopy = function (e) {
 	console.log('Copying forbidden!');
 	return false;
 };
+
+
+// Task 1 - Selectable list
+let selectedItems = [];
+ul.onmousedown = () => false;
+ul.onclick = function (e) {
+	let li = e.target;
+	if (e.metaKey || e.ctrlKey) {
+		if (selectedItems.includes(li)) {
+			li.classList.toggle('selected');
+		} else {
+			li.classList.add('selected');
+			selectedItems.push(li);
+		}
+		
+	} else {
+		selectedItems.forEach(li => li.classList.toggle('selected'));
+		if (!li.classList.contains('selected')) {
+			li.classList.add('selected');
+		}
+		selectedItems = [li];
+	}
+};
