@@ -14,3 +14,12 @@ let event1 = new Event('click', { bubbles: true });
 setTimeout(() => {
 	btn1.dispatchEvent(event1);
 }, 5000);
+
+
+// Bubbling example
+document.addEventListener('textclick', function (e) {
+	console.log(e.target.tagName + '#' + e.target.id + ' clicked!');
+});
+
+let event2 = new Event('textclick', { bubbles: true });
+text.dispatchEvent(event2);
