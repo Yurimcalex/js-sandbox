@@ -37,3 +37,12 @@ function handler() {
 	console.log('handler...');
 	return false;
 }
+
+
+// Task 2 - Catch links in the document
+contents.onclick = function (e) {
+	let a = e.target.closest('a');
+	if (this.contains(a)) {
+		return confirm(`Do you really want to go to ${a.getAttribute('href')}`);
+	}
+}
