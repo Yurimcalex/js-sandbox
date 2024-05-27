@@ -46,3 +46,15 @@ contents.onclick = function (e) {
 		return confirm(`Do you really want to go to ${a.getAttribute('href')}`);
 	}
 }
+
+
+// Task 3 - Image gallery
+gallery.onclick = function (e) {
+	let link = e.target.closest('a');
+	if (link && this.contains(link)) {
+		let href = link.getAttribute('href');
+		largeImg.src = href;
+		return false;
+	}
+	
+}
