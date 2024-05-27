@@ -23,3 +23,20 @@ document.addEventListener('textclick', function (e) {
 
 let event2 = new Event('textclick', { bubbles: true });
 text.dispatchEvent(event2);
+
+
+// MouseEvent, KeyboardEvent and others
+// Custom events
+clickMe.addEventListener('clickbtn', function (e) {
+	console.log(e.detail.btnId);
+});
+
+clickMe.dispatchEvent(
+	new CustomEvent(
+		'clickbtn',
+		{
+			bubbles: true,
+			detail: { btnId: clickMe.id }
+		}
+	)
+);
