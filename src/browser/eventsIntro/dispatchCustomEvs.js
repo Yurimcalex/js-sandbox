@@ -40,3 +40,24 @@ clickMe.dispatchEvent(
 		}
 	)
 );
+
+
+// event.preventDefault()
+rabbit.addEventListener('hide', function (e) {
+	if (confirm('Call prevent default')) {
+		e.preventDefault();
+	}
+});
+
+hideBtn.onclick = function () {
+	hideRabbit();
+};
+
+function hideRabbit() {
+	let event = new CustomEvent('hide', { cancelable: true });
+	if (!rabbit.dispatchEvent(event)) {
+		console.log('The action was prevented by a handler!');
+	} else {
+		rabbit.hidden = true;
+	}
+}
