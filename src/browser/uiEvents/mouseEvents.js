@@ -15,3 +15,20 @@ document.onmousemove = function (e) {
 
 	coords.innerHTML = html;
 };
+
+
+// Preventing selection on mousedown
+text.ondblclick = function (e) {
+	console.log('dbclicked!');
+};
+
+noSelection.ondblclick = function (e) {
+	console.log('dbclicked without a selection!');
+};
+noSelection.onmousedown = () => false;
+
+
+noCopy.oncopy = function (e) {
+	console.log('Copying forbidden!');
+	return false;
+};
