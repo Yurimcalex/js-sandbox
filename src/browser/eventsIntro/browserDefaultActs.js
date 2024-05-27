@@ -16,3 +16,17 @@ menu.onclick = function (e) {
 	console.log(href);
 	return false;
 };
+
+
+// event.defaultPrevented
+ccm.oncontextmenu = function (e) {
+	console.log('Log to console about context menu!');
+	//return false;
+	e.preventDefault();
+}
+
+document.oncontextmenu = function (e) {
+	if (e.defaultPrevented) return;
+	console.log('Log to console about document context menu!');
+	e.preventDefault();
+};
