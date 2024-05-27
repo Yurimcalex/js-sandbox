@@ -30,3 +30,10 @@ document.oncontextmenu = function (e) {
 	console.log('Log to console about document context menu!');
 	e.preventDefault();
 };
+
+
+// Task 1 - Why return false doesn't work
+function handler() {
+	console.log('handler...');
+	return false;
+}
