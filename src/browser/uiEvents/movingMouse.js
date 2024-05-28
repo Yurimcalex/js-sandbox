@@ -26,9 +26,19 @@ clearLane.onclick = function (e) {
 
 
 // Mouseout when leaving for a child
-parent.onmouseout = function (e) {
+parentCont.onmouseout = function (e) {
 	estatus.innerHTML = `
 		target(leave from): ${e.target.id};<br/>
 		relatedTarget(came to): ${e.relatedTarget.id};<br/>
 	`;
+};
+
+
+// Events mouseenter and mouseleave
+boxes.onmouseenter = function (e) {
+	console.log('enter to:', e.target);
+};
+
+boxes.onmouseleave = function (e) {
+	console.log('leave from:', e.target);
 };

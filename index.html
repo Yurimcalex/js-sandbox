@@ -36,7 +36,7 @@
 			color: green;
 		}
 
-		#parent {
+		#parentCont {
 			width: 200px;
 			height: 200px;
 			display: flex;
@@ -47,7 +47,7 @@
 			background: lightgray;
 		}
 
-		#parent > div {
+		#parentCont > div {
 			width: 100px;
 			height: 100px;
 			background: gray;
@@ -55,6 +55,17 @@
 
 		#estatus {
 			margin-top: 20px;
+		}
+
+		#boxes {
+			width: 300px;
+			padding: 10px;
+			border: 1px solid gray;
+		}
+
+		#boxes div {
+			border: 1px solid lightgray;
+			padding: 10px;
 		}
 	</style>
 </head>
@@ -73,10 +84,20 @@
 	</div>
 
 	<div style="overflow: hidden;">
-		<div id="parent">
+		<div id="parentCont">
 			<div id="child"></div>
 		</div>
 		<div id="estatus">Status</div>
+	</div>
+
+	<div id="boxes">
+		<div>
+			<div>
+				<div>
+					<div></div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<script src="src/browser/uiEvents/movingMouse.js"></script>
 </body>
