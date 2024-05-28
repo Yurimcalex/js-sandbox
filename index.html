@@ -35,6 +35,27 @@
 		#lane div span {
 			color: green;
 		}
+
+		#parent {
+			width: 200px;
+			height: 200px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 20px;
+			float: left;
+			background: lightgray;
+		}
+
+		#parent > div {
+			width: 100px;
+			height: 100px;
+			background: gray;
+		}
+
+		#estatus {
+			margin-top: 20px;
+		}
 	</style>
 </head>
 <body>
@@ -49,6 +70,13 @@
 			<div></div>
 		</div>
 		<button id="clearLane">Clear</button>
+	</div>
+
+	<div style="overflow: hidden;">
+		<div id="parent">
+			<div id="child"></div>
+		</div>
+		<div id="estatus">Status</div>
 	</div>
 	<script src="src/browser/uiEvents/movingMouse.js"></script>
 </body>
