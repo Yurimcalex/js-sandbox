@@ -5,19 +5,51 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>JS</title>
 	<style>
+		* {
+			cursor: pointer;
+		}
+
 		#box {
 			width: 200px;
 			height: 100px;
 			margin: 10px auto;
 			background: lightgray;
-			cursor: pointer;
 			text-align: center;
 			padding-top: 20px;
+		}
+
+		#lane {
+			border: 1px solid gray;
+			padding: 20px;
+			text-align: center;
+		}
+
+		#lane div {
+			display: inline-block;
+			width: 100px;
+			height: 100px;
+			padding-top: 20px;
+			background: lightgray;
+		}
+
+		#lane div span {
+			color: green;
 		}
 	</style>
 </head>
 <body>
 	<div id="box"></div>
+
+	<div>
+		<div id="lane">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<button id="clearLane">Clear</button>
+	</div>
 	<script src="src/browser/uiEvents/movingMouse.js"></script>
 </body>
 </html>

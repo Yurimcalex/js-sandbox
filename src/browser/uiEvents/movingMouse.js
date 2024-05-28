@@ -11,3 +11,15 @@ box.onmouseout = function (e) {
 	this.innerHTML += `leave from: ${e.target.tagName}<br/>`;
 	this.innerHTML += `come to: ${e.relatedTarget.tagName}`;
 }
+
+
+// Skipping elements
+lane.onmouseover = function (e) {
+	if (!e.target.hasAttribute('id')) {
+		e.target.innerHTML = '<span>Fired!</span>'
+	}
+};
+
+clearLane.onclick = function (e) {
+	[...lane.children].forEach(elm => elm.innerHTML = '');
+};
