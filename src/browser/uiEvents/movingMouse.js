@@ -67,3 +67,39 @@ table.onmouseout = function (e) {
 	currentElem.style.background = '';
 	currentElem = null;
 };
+
+
+// Task 1 - Improved tooltip behavior
+let currentTooltip = null;
+let elm = null;
+document.addEventListener('mouseover', function (e) {
+	let target = e.target;
+	let tooltipContent = target.dataset.tooltip;
+	if (tooltipContent) {
+		if (currentTooltip) {
+			currentTooltip.remove();
+			currentTooltip = null;
+		}
+		let coords = target.getBoundingClientRect();
+		let tooltip = document.createElement('div');
+		tooltip.className = 'tooltip';
+		tooltip.innerHTML = tooltipContent;
+		document.body.append(tooltip);
+		tooltip.style.left = coords.left + 'px';
+		tooltip.style.top = coords.bottom + 'px';
+		currentTooltip = tooltip;
+		elm = target;
+	}
+});
+
+document.addEventListener('mouseout', function (e) {
+	if (!currentTooltip) return;
+	let relatedTarget = e.relatedTarget;
+	while (relatedTarget) {
+		if (relatedTarget == elm) return;
+		relatedTarget = relatedTarget.parentNode;
+	}
+	currentTooltip.remove();
+	elm = null;
+	currentTooltip = null;
+});
