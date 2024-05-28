@@ -103,3 +103,54 @@ document.addEventListener('mouseout', function (e) {
 	elm = null;
 	currentTooltip = null;
 });
+
+
+// Task 2 - Smart tooltip
+let tooltip = document.createElement('div');
+tooltip.className = "tooltip";
+tooltip.innerHTML = "Tooltip";
+
+class HoverIntent {
+	constructor({ elem, over, out }) {
+		let timer;
+		let tip = null;
+
+		elem.onmouseenter = function (e) {
+			let x = 0, nextX = 100;
+			elem.onmousemove = function (e) {
+				nextX = e.clientX;
+			}
+
+			timer = setInterval(() => {
+				if (tip) clearInterval(timer);
+				let diff = x - nextX;
+				if (Math.abs(diff) < 30) {
+					over();
+					tip = true;
+				}
+				x = nextX;
+			}, 100);
+		};
+
+		elem.onmouseleave = function (e) {
+			elem.onmousemove = null;
+			if (timer) clearInterval(timer);
+			if (tip) {
+				out();
+				tip = false;
+			}
+		}
+	}
+}
+
+new HoverIntent({
+  elem: cont,
+  over() {
+    tooltip.style.left = cont.getBoundingClientRect().left + 'px';
+    tooltip.style.top = cont.getBoundingClientRect().bottom + 5 + 'px';
+    document.body.append(tooltip);
+  },
+  out() {
+    tooltip.remove();
+  }
+});
