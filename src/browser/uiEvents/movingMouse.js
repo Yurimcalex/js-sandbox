@@ -42,3 +42,28 @@ boxes.onmouseenter = function (e) {
 boxes.onmouseleave = function (e) {
 	console.log('leave from:', e.target);
 };
+
+
+// Event delegation
+let currentElem = null;
+
+table.onmouseover = function (e) {
+	if (currentElem) return;
+	let target = e.target.closest('td');
+	if (!target) return;
+	if (!table.contains(target)) return;
+	currentElem = target;
+	target.style.background = 'lightgray';
+};
+
+table.onmouseout = function (e) {
+	if (!currentElem) return;
+	let relatedTarget = event.relatedTarget;
+	console.log(relatedTarget, currentElem, '----');
+	while (relatedTarget) {
+		if (relatedTarget == currentElem) return;
+		relatedTarget = relatedTarget.parentNode;
+	}
+	currentElem.style.background = '';
+	currentElem = null;
+};

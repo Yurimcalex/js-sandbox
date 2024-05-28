@@ -67,6 +67,20 @@
 			border: 1px solid lightgray;
 			padding: 10px;
 		}
+
+		#table {
+			margin: 20px;
+			border: 1px solid gray;
+		}
+
+		#table * {
+			padding: 15px;
+			border: 1px solid lightgray;
+		}
+
+		#table td, #table span {
+			display: inline-block;
+		}
 	</style>
 </head>
 <body>
@@ -99,6 +113,29 @@
 			</div>
 		</div>
 	</div>
+
+	<table id="table">
+		<tr>
+			<td><span>data</span></td>
+			<td><span>data</span></td>
+			<td><span>data</span></td>
+		</tr>
+		<tr>
+			<td><span>data</span></td>
+			<td><span>data</span></td>
+			<td><span>data</span></td>
+		</tr>
+		<tr>
+			<td><span>data</span></td>
+			<td><span>data</span></td>
+			<td><span>data</span></td>
+		</tr>
+		<tr>
+			<td><span>data</span></td>
+			<td><span>data</span></td>
+			<td><span>data</span></td>
+		</tr>
+	</table>
 	<script src="src/browser/uiEvents/movingMouse.js"></script>
 </body>
 </html>
