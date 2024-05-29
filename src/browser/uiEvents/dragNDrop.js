@@ -16,8 +16,26 @@ ball.onmousedown = function (e) {
 
 	moveAt(e.pageX, e.pageY);
 
+	let currentDroppable = null;
 	function onMouseMove(e) {
 		moveAt(e.pageX, e.pageY);
+		ball.hidden = true;
+		let elemBelow = document.elementFromPoint(e.clientX, e.clientY);
+		ball.hidden = false;
+
+		if (!elemBelow) return;
+
+		let droppableBelow = elemBelow.closest('.droppable');
+		
+		if (currentDroppable != droppableBelow) {
+			if (currentDroppable) {
+				leaveDroppable(currentDroppable);
+			}
+			currentDroppable = droppableBelow;
+			if (currentDroppable) {
+				enterDroppable(currentDroppable);
+			}
+		}
 	}
 
 	document.addEventListener('mousemove', onMouseMove);
@@ -34,3 +52,13 @@ ball.onmousedown = function (e) {
 
 
 // Correcting positioning
+
+
+// Potential drop targets (droppables)
+function enterDroppable(elm) {
+	elm.style.background = 'white';
+}
+
+function leaveDroppable(elm) {
+	elm.style.background = '';
+}
