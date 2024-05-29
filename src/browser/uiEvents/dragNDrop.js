@@ -26,7 +26,7 @@ ball.onmousedown = function (e) {
 		if (!elemBelow) return;
 
 		let droppableBelow = elemBelow.closest('.droppable');
-		
+
 		if (currentDroppable != droppableBelow) {
 			if (currentDroppable) {
 				leaveDroppable(currentDroppable);
@@ -62,3 +62,35 @@ function enterDroppable(elm) {
 function leaveDroppable(elm) {
 	elm.style.background = '';
 }
+
+
+// Task 1 - Slider
+thumb.onmousedown = function (e) {
+	e.preventDefault();
+	let shiftX = e.clientX - thumb.getBoundingClientRect().left;
+
+	function moveAt(pageX) {
+		let left = pageX - shiftX - slider.getBoundingClientRect().left
+		if (left > slider.offsetWidth - thumb.offsetWidth) return;
+		if (left < 0) return;
+		thumb.style.left = left  + 'px';
+	}
+
+	moveAt(e.pageX);
+
+	function onMouseMove(e) {
+		moveAt(e.pageX);
+	}
+
+	document.addEventListener('mousemove', onMouseMove);
+	document.addEventListener('mouseup', onMouseUp);
+
+	function onMouseUp() {
+	  document.removeEventListener('mouseup', onMouseUp);
+	  document.removeEventListener('mousemove', onMouseMove);
+	}
+
+	thumb.ondragstart = function () {
+		return false;
+	};
+};
