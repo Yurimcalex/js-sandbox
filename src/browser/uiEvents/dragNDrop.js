@@ -94,3 +94,62 @@ thumb.onmousedown = function (e) {
 		return false;
 	};
 };
+
+
+// Task 2 -  Drag superheroes around the field
+document.addEventListener('mousedown', function (e) {
+	let target = e.target;
+	if (!target.classList.contains('draggable')) return;
+	e.preventDefault();
+
+	let shiftX = e.clientX - target.getBoundingClientRect().left;
+	let shiftY = e.clientY - target.getBoundingClientRect().top;
+
+	let scrollHeight = Math.max(
+	  document.body.scrollHeight, document.documentElement.scrollHeight,
+	  document.body.offsetHeight, document.documentElement.offsetHeight,
+	  document.body.clientHeight, document.documentElement.clientHeight
+	);
+
+	target.style.position = 'absolute';
+	target.style.zIndex = 1000;
+
+	moveAt(e.pageX, e.pageY);
+
+	document.addEventListener('mousemove', onMouseMove);
+	document.addEventListener('mouseup', onMouseUp);
+
+	function moveAt(pageX, pageY) {
+		let left = pageX - shiftX;
+		let top = pageY - shiftY;
+
+		if (left < 0 || left > document.documentElement.clientWidth - target.offsetWidth) return;
+		if (top < 0) return;
+		if (top > scrollHeight - target.offsetHeight) return;
+
+		if (top > window.innerHeight - shiftY - 5) {
+			window.scrollBy(0, target.offsetHeight);
+		}
+
+		if (top < window.pageYOffset) {
+			window.scrollBy(0, -target.offsetHeight);
+		}
+
+		target.style.left = left + 'px';
+		target.style.top = top + 'px';
+	}
+
+	function onMouseMove(e) {
+		let { pageX, pageY } = e;
+		moveAt(pageX, pageY);
+	}
+
+	function onMouseUp() {
+		document.removeEventListener('mousemove', onMouseMove);
+		document.removeEventListener('mouseup', onMouseUp);
+	}
+
+	document.ondragstart = function () {
+		return false;
+	};
+});
