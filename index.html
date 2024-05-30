@@ -5,13 +5,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>JS</title>
 	<style>
-		
+		body {
+			background: lightgray;
+			height: 1000px;
+		}
+
+		#scrollInfo {
+			position: fixed;
+			top: 0;
+			left: 0;
+			padding: 10px;
+			background: gray;
+			color: white;
+		}
 	</style>
 </head>
 <body>
-	<div>
-		<input id="phone" type="tel" placeholder="Phone, please">
-	</div>
-	<script src="src/browser/uiEvents/keyboard.js"></script>
+	<div id="scrollInfo">Current scroll:</div>
+	<script src="src/browser/uiEvents/scrolling.js"></script>
 </body>
 </html>
