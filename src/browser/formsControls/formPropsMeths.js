@@ -18,3 +18,8 @@ console.log(fieldset1);
 console.log(fieldset1.elements.login === form1.elements.login);
 
 console.log(form1.login === form1.elements.login);
+
+
+// Backreference: element.form
+let login = form1.login;
+console.log(form1 === login.form);
