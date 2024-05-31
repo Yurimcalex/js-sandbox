@@ -29,3 +29,38 @@ toTop.onclick = function (e) {
 	section.scrollTop = 0;
 	toTop.hidden = true;
 };
+
+
+// Task 3 - Load visible images
+let imgs = [...document.querySelectorAll('img[data-src]')];
+
+function isVisible(imgTop) {
+	if (imgTop < document.documentElement.clientHeight) return true;
+	return false;
+}
+
+function isBelow(imgTop) {
+	if (imgTop < document.documentElement.clientHeight * 2) return true;
+	return false;
+}
+
+function showVisible(img) {
+	img.src = img.dataset.src;
+}
+
+function showImgs() {
+	for (let img of imgs) {
+		let coords = img.getBoundingClientRect();
+		if (isVisible(coords.top) || isBelow(coords.top)) {
+			showVisible(img);
+			imgs = imgs.filter(i => i !== img);
+			console.log(img.src);
+		}
+	}
+}
+
+showImgs();
+
+document.addEventListener('scroll', function (e) {
+	showImgs();
+});
