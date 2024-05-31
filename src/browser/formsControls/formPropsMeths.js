@@ -32,3 +32,28 @@ setTimeout(() => {
 	form2.txt.value = '...new text ...';
 	form2.checkbox.checked = false;
 }, 5000);
+
+
+// select and option
+console.log(select1.options);
+setTimeout(() => {
+	select1.options[2].selected = true;
+	setTimeout(() => {
+		select1.selectedIndex = 0;
+		setTimeout(() => {
+			select1.value = 'pear';
+		}, 1000);
+	}, 1000);
+}, 3000);
+
+
+let selected2 = Array.from(select2.options)
+	.filter(option => option.selected)
+	.map(option => option.value);
+
+console.log(selected2);
+
+let option = new Option('Ananas', 'ananas');
+select1.append(option);
+
+console.log(select1.options[0].text, select1.options[1].index);
