@@ -23,3 +23,12 @@ console.log(form1.login === form1.elements.login);
 // Backreference: element.form
 let login = form1.login;
 console.log(form1 === login.form);
+
+
+// Form elements
+// input and textarea
+setTimeout(() => {
+	form2.line.value = 'new value';
+	form2.txt.value = '...new text ...';
+	form2.checkbox.checked = false;
+}, 5000);
