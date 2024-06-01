@@ -41,3 +41,38 @@ userData.addEventListener('focusin', () => {
 userData.addEventListener('focusout', () => {
 	userData.classList.remove('focused');
 });
+
+
+// Task 1 - Editable div
+function ced() {
+	let div = document.createElement('div');
+	div.textContent = 'Click me and edit!'
+	document.body.append(div);
+
+	let isEdit = false;
+
+	div.onclick = function () {
+		if (isEdit) return;
+		isEdit = true;
+		let textarea = document.createElement('textarea');
+		textarea.value = div.innerHTML;
+		div.innerHTML = '';
+		div.append(textarea);
+
+		textarea.onblur = clear;
+
+		textarea.onkeydown = function (e) {
+			if (e.code === 'Enter') {
+				clear();
+			}
+		};
+
+		function clear() {
+			div.innerHTML = textarea.value;
+			textarea = null;
+			isEdit = false;
+		}
+	};
+}
+
+ced();
