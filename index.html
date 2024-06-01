@@ -5,174 +5,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>JS</title>
 	<style>
-		.invalid { border-color: red; }
-		#error { color: red;  }
-		.error { background: red; }
-		.tabInds li { cursor: pointer; }
-		.tabInds li:focus { outline: 1px dashed green; }
-		.focused { background: green; color: white }
-
-		th {
-		  text-align: center;
-		  font-weight: bold;
-		}
-
-		td {
-		  width: 150px;
-		  white-space: nowrap;
-		  text-align: center;
-		  vertical-align: middle;
-		  padding: 10px;
-		}
-
-		.nw {
-		  background-color: #999;
-		}
-
-		.n {
-		  background-color: #03f;
-		  color: #fff;
-		}
-
-		.ne {
-		  background-color: #ff6;
-		}
-
-		.w {
-		  background-color: #ff0;
-		}
-
-		.c {
-		  background-color: #60c;
-		  color: #fff;
-		}
-
-		.e {
-		  background-color: #09f;
-		  color: #fff;
-		}
-
-		.sw {
-		  background-color: #963;
-		  color: #fff;
-		}
-
-		.s {
-		  background-color: #f60;
-		  color: #fff;
-		}
-
-		.se {
-		  background-color: #0c3;
-		  color: #fff;
-		}
-
-		#mouse {
-		  display: inline-block;
-		  cursor: pointer;
-		  margin: 0;
-		}
-
-		#mouse:focus {
-		  outline: 1px dashed black;
-		}
+		
 	</style>
 </head>
 <body>
 	<div>
-		Your email please: <input type="email" id="inputEmail">
-		<div id="error"></div>
+		<input id="inp1" type="text">
+		<input type="button" value="Button">
+		<select id="sel1">
+			<option value="">Select something</option>
+			<option value="1">Option 1</option>
+			<option value="2">Option 2</option>
+			<option value="3">Option 3</option>
+		</select>
 	</div>
 
-	<div>
-		Your email please: <input type="email" id="uEmail">
-		<input type="text" style="width:220px" placeholder="make email invalid and try to focus here">
-	</div>
-
-	<ul id="tabList" class="tabInds">
-		<li tabindex="1">One</li>
-		<li tabindex="0">Zero</li>
-		<li tabindex="2">Two</li>
-		<li tabindex="-1">Minus one</li>
-	</ul>
-
-	<div>
-		<form id="userData">
-		  <input type="text" name="name" value="Name">
-		  <input type="text" name="surname" value="Surname">
-		</form>
-	</div>
-
-	<hr/>
-
-	<table id="bagua-table">
-	  <tr>
-	    <th colspan="3"><em>Bagua</em> Chart: Direction, Element, Color, Meaning</th>
-	  </tr>
-	  <tr>
-	    <td class="nw"><strong>Northwest</strong>
-	      <br>Metal
-	      <br>Silver
-	      <br>Elders
-	    </td>
-	    <td class="n"><strong>North</strong>
-	      <br>Water
-	      <br>Blue
-	      <br>Change
-	    </td>
-	    <td class="ne"><strong>Northeast</strong>
-	      <br>Earth
-	      <br>Yellow
-	      <br>Direction
-	    </td>
-	  </tr>
-	  <tr>
-	    <td class="w"><strong>West</strong>
-	      <br>Metal
-	      <br>Gold
-	      <br>Youth
-	    </td>
-	    <td class="c"><strong>Center</strong>
-	      <br>All
-	      <br>Purple
-	      <br>Harmony
-	    </td>
-	    <td class="e"><strong>East</strong>
-	      <br>Wood
-	      <br>Blue
-	      <br>Future
-	    </td>
-	  </tr>
-	  <tr>
-	    <td class="sw"><strong>Southwest</strong>
-	      <br>Earth
-	      <br>Brown
-	      <br>Tranquility
-	    </td>
-	    <td class="s"><strong>South</strong>
-	      <br>Fire
-	      <br>Orange
-	      <br>Fame
-	    </td>
-	    <td class="se"><strong>Southeast</strong>
-	      <br>Wood
-	      <br>Green
-	      <br>Romance
-	    </td>
-	  </tr>
-	</table>
-
-	<pre id="mouse">
-	 _   _
-	(q\_/p)
-	 /. .\
-	=\_t_/=   __
-	 /   \   (
-	((   ))   )
-	/\) (/\  /
-	\  Y  /-'
-	 nn^nn
-	</pre>
-	<script src="src/browser/formsControls/focusing.js"></script>
+	<script src="src/browser/formsControls/events.js"></script>
 </body>
 </html>
