@@ -15,7 +15,7 @@ inputEmail.onfocus = function () {
 };
 
 
-// Methofd focus/blur
+// Methods focus/blur
 uEmail.onblur = function () {
 	if (!this.value.includes('@')) {
 		this.classList.add('error');
@@ -24,3 +24,10 @@ uEmail.onblur = function () {
 		this.classList.remove('error');
 	}
 };
+
+
+// Allow focusing on any element: tabindex
+let li = document.createElement('li');
+li.textContent = 'Three';
+li.tabIndex = 3;
+tabList.append(li);
