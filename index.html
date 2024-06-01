@@ -7,12 +7,18 @@
 	<style>
 		.invalid { border-color: red; }
 		#error { color: red;  }
+		.error { background: red; }
 	</style>
 </head>
 <body>
 	<div>
 		Your email please: <input type="email" id="inputEmail">
 		<div id="error"></div>
+	</div>
+
+	<div>
+		Your email please: <input type="email" id="uEmail">
+		<input type="text" style="width:220px" placeholder="make email invalid and try to focus here">
 	</div>
 	<script src="src/browser/formsControls/focusing.js"></script>
 </body>

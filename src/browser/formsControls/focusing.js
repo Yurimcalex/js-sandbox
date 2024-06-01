@@ -13,3 +13,14 @@ inputEmail.onfocus = function () {
 		error.innerHTML = '';
 	}
 };
+
+
+// Methofd focus/blur
+uEmail.onblur = function () {
+	if (!this.value.includes('@')) {
+		this.classList.add('error');
+		uEmail.focus();
+	} else {
+		this.classList.remove('error');
+	}
+};
