@@ -31,3 +31,13 @@ let li = document.createElement('li');
 li.textContent = 'Three';
 li.tabIndex = 3;
 tabList.append(li);
+
+
+// Delegation: focusin/focusout
+userData.addEventListener('focusin', () => {
+	userData.classList.add('focused');
+});
+
+userData.addEventListener('focusout', () => {
+	userData.classList.remove('focused');
+});
