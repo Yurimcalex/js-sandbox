@@ -132,4 +132,43 @@ function createEditingArea(width, height, content) {
 	area.append(text, ok, cancel);
 
 	return [area, text, ok, cancel];
-} 
+}
+
+
+// Task 3 - Keyboard-driven mouse
+let topShift = 0;
+let leftShift = 0;
+let shift = 10;
+
+mouse.onclick = function () {
+	mouse.tabIndex = -1;
+	let coords = this.getBoundingClientRect();
+	mouse.style.position = 'relative';
+
+	mouse.onkeydown = function (e) {
+		e.preventDefault();
+		let code = e.code;
+		switch (code) {
+			case 'ArrowLeft':
+				leftShift -= shift;
+				break;
+			case 'ArrowRight':
+				leftShift += shift;
+				break;
+			case 'ArrowUp':
+				topShift -= shift;
+				break;
+			case 'ArrowDown':
+				topShift += shift;
+				break;
+		}
+		mouse.style.top = topShift + 'px';
+		mouse.style.left = leftShift + 'px';
+	};
+
+	mouse.onblur = function () {
+		mouse.onkeydown = null;
+		mouse.onblur = null;
+		mouse.removeAttribute('tabindex');
+	};
+};
