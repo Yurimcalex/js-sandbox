@@ -57,3 +57,12 @@ let option = new Option('Ananas', 'ananas');
 select1.append(option);
 
 console.log(select1.options[0].text, select1.options[1].index);
+
+
+// Task 1 - Add an option to select
+console.log('------------------task------------------------');
+let selectedOption = Array.from(genres.options).find(option => option.selected);
+console.log(selectedOption.value);
+let classicOption = new Option('Classic', 'classic');
+genres.append(classicOption);
+classicOption.selected = true;
