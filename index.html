@@ -5,7 +5,28 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>JS</title>
 	<style>
+		.modal-container {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: gray;
+			opacity: 0.7;
+		}
 
+		.modal-form {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 100;
+			background: white;
+		}
+
+		.hideOverflow {
+			overflow: hidden;
+		}
 	</style>
 </head>
 <body>
