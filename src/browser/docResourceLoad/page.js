@@ -28,10 +28,18 @@ window.addEventListener('unload', function () {
 
 
 // window.onbeforeunload
-window.onbeforeunload = function () {
-	return false;
-};
+// window.onbeforeunload = function () {
+// 	return false;
+// };
 
 window.addEventListener("beforeunload", (event) => {
   event.returnValue = "There are unsaved changes. Leave now?";
+});
+
+
+// readyState
+console.log(document.readyState);
+
+document.addEventListener('readystatechange', () => {
+	console.log(document.readyState.toUpperCase());
 });
