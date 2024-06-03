@@ -10,3 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
 let script = document.createElement('script');
 script.innerHTML = 'console.log("generated!")';
 document.body.append(script);
+
+
+// window.onload
+window.onload = function () {
+	console.log('page loaded!');
+	console.log(`Image size: ${img.offsetWidth}x${img.offsetHeight}`);
+};
