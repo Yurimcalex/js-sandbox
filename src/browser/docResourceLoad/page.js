@@ -17,3 +17,11 @@ window.onload = function () {
 	console.log('page loaded!');
 	console.log(`Image size: ${img.offsetWidth}x${img.offsetHeight}`);
 };
+
+
+// window.onunload
+let analyticsData = {};
+window.addEventListener('unload', function () {
+	console.log('leaving');
+	navigator.sendBeacon('/analytics', JSON.stringify(analyticsData));
+});
