@@ -25,3 +25,13 @@ window.addEventListener('unload', function () {
 	console.log('leaving');
 	navigator.sendBeacon('/analytics', JSON.stringify(analyticsData));
 });
+
+
+// window.onbeforeunload
+window.onbeforeunload = function () {
+	return false;
+};
+
+window.addEventListener("beforeunload", (event) => {
+  event.returnValue = "There are unsaved changes. Leave now?";
+});
