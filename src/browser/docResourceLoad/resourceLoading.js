@@ -25,3 +25,9 @@ img.onload = function () {
 img.onerror = function () {
 	console.log('Error occured while loading image');
 };
+
+
+// Crossorigin policy
+window.onerror = function (message, url, line, col, errorObj) {
+	console.log(`${message}\n${url}, ${line}:${col}`);
+};
