@@ -14,3 +14,14 @@ script1.src = "https://somesite.com/404.js";
 script1.onerror = function () {
 	console.log('Error loading' + this.src);
 };
+
+
+// Other resources
+let img = document.createElement('img');
+img.src = "https://js.cx/clipart/train.gif";
+img.onload = function () {
+	console.log(`Image loaded, size ${img.width}x${img.height}`);
+};
+img.onerror = function () {
+	console.log('Error occured while loading image');
+};
