@@ -47,3 +47,19 @@ setTimeout(() => {
 	pRange2.collapse(true);
 }, 3000);
 window.getSelection().addRange(pRange2);
+
+
+// Range editing methods
+let pRange3 = new Range();
+pRange3.selectNode(p3.children[0]);
+window.getSelection().addRange(pRange3);
+setTimeout(() => {
+	//pRange3.deleteContents();
+	//let elm = pRange3.extractContents();
+	//let elm = pRange3.cloneContents();
+	let elm = document.createElement('h3');
+	elm.textContent = 'text';
+	//pRange3.insertNode(elm);
+	pRange3.surroundContents(elm);
+	//document.body.append(elm);
+}, 3000);
