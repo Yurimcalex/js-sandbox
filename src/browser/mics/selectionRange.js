@@ -20,3 +20,18 @@ pRange1.setStart(p1.firstChild, 2);
 pRange1.setEnd(p1.querySelector('b').firstChild, 3);
 console.log(pRange1.toString());
 window.getSelection().addRange(pRange1);
+
+
+// Range properties
+let { 
+	startContainer,
+	startOffset,
+	endContainer,
+	endOffset,
+	collapsed,
+	commonAncestorContainer
+} = pRange1;
+
+console.log(startContainer, startOffset);
+console.log(endContainer, endOffset);
+console.log(collapsed, commonAncestorContainer);
