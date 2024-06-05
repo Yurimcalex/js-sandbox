@@ -35,3 +35,15 @@ let {
 console.log(startContainer, startOffset);
 console.log(endContainer, endOffset);
 console.log(collapsed, commonAncestorContainer);
+
+
+// Range selection methods
+let pRange2 = new Range();
+//pRange2.setStartAfter(p2.children[0]);
+//pRange2.setEndBefore(p2.children[1]);
+//pRange2.selectNode(p2);
+pRange2.selectNodeContents(p2);
+setTimeout(() => {
+	pRange2.collapse(true);
+}, 3000);
+window.getSelection().addRange(pRange2);
