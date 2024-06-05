@@ -12,3 +12,11 @@ pRange.setStart(p, 0);
 pRange.setEnd(p, 2);
 console.log(pRange.toString());
 document.getSelection().addRange(pRange);
+
+
+// Selecting a bigger fragment
+let pRange1 = new Range();
+pRange1.setStart(p1.firstChild, 2);
+pRange1.setEnd(p1.querySelector('b').firstChild, 3);
+console.log(pRange1.toString());
+window.getSelection().addRange(pRange1);
