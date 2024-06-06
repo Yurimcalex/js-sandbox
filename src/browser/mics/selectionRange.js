@@ -63,3 +63,17 @@ setTimeout(() => {
 	pRange3.surroundContents(elm);
 	//document.body.append(elm);
 }, 3000);
+
+
+// Selection
+document.onselectionchange = function () {
+	let selection = document.getSelection();
+	console.log(selection);
+	let {anchorNode, anchorOffset, focusNode, focusOffset} = selection;
+	console.log(`
+		anchorNode: ${anchorNode},
+		anchorOffset: ${anchorOffset},
+		focusNode: ${focusNode},
+		focusOffset: ${focusOffset}
+	`);	
+};
