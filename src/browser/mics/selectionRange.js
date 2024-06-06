@@ -135,3 +135,7 @@ button2.onclick = () => {
 	input2.setRangeText('-=^=-', input2.selectionStart, input2.selectionEnd, 'end');
 	input2.focus();
 };
+
+
+// Making unselectable
+p6.onselectstart = () => false;
