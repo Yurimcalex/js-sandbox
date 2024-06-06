@@ -77,3 +77,14 @@ document.onselectionchange = function () {
 		focusOffset: ${focusOffset}
 	`);	
 };
+
+
+// Selection copying demo
+document.addEventListener('selectionchange', function () {
+	let selection = document.getSelection();
+	cloned.innerHTML = astext.innerHTML = '';
+	for (let i = 0; i < selection.rangeCount; i += 1) {
+		cloned.append(selection.getRangeAt(i).cloneContents());
+	}
+	astext.innerHTML += selection;
+});
