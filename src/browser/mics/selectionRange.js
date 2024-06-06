@@ -88,3 +88,8 @@ document.addEventListener('selectionchange', function () {
 	}
 	astext.innerHTML += selection;
 });
+
+
+// selection methods
+document.getSelection().removeAllRanges();
+document.getSelection().setBaseAndExtent(p4, 0, p4, p4.childNodes.length);
