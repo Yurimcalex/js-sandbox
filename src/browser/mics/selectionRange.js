@@ -110,3 +110,21 @@ area1.onfocus = () => {
 		area1.selectionStart = area1.selectionEnd = 10;
 	});
 };
+
+
+// Example: modifying selection
+button.onclick = () => {
+	if (input.selectionStart == input.selectionEnd) {
+		return;
+	}
+	let selected = input.value.slice(input.selectionStart, input.selectionEnd);
+	input.setRangeText(` __${selected}__ `);
+};
+
+button1.onclick = () => {
+	let pos = input1.value.indexOf('THIS');
+	if (pos >= 0) {
+		input1.setRangeText('-this-', pos, pos + 4, 'select');
+		input1.focus();
+	}
+};
