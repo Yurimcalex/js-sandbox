@@ -128,3 +128,10 @@ button1.onclick = () => {
 		input1.focus();
 	}
 };
+
+
+// Example: insert at cursor
+button2.onclick = () => {
+	input2.setRangeText('-=^=-', input2.selectionStart, input2.selectionEnd, 'end');
+	input2.focus();
+};
