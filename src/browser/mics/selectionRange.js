@@ -102,3 +102,11 @@ area.onselect = function () {
 		selectionEnd: ${area.selectionEnd}
 	`);
 };
+
+
+// Example: moving cursor
+area1.onfocus = () => {
+	setTimeout(() => {
+		area1.selectionStart = area1.selectionEnd = 10;
+	});
+};
