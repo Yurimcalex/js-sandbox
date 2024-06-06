@@ -68,14 +68,14 @@ setTimeout(() => {
 // Selection
 document.onselectionchange = function () {
 	let selection = document.getSelection();
-	console.log(selection);
+	//console.log(selection);
 	let {anchorNode, anchorOffset, focusNode, focusOffset} = selection;
-	console.log(`
-		anchorNode: ${anchorNode},
-		anchorOffset: ${anchorOffset},
-		focusNode: ${focusNode},
-		focusOffset: ${focusOffset}
-	`);	
+	// console.log(`
+	// 	anchorNode: ${anchorNode},
+	// 	anchorOffset: ${anchorOffset},
+	// 	focusNode: ${focusNode},
+	// 	focusOffset: ${focusOffset}
+	// `);	
 };
 
 
@@ -93,3 +93,12 @@ document.addEventListener('selectionchange', function () {
 // selection methods
 document.getSelection().removeAllRanges();
 document.getSelection().setBaseAndExtent(p4, 0, p4, p4.childNodes.length);
+
+
+// Selection in form controls
+area.onselect = function () {
+	console.log(`
+		selectionStart: ${area.selectionStart},
+		selectionEnd: ${area.selectionEnd}
+	`);
+};
