@@ -77,3 +77,11 @@ menu.onclick = function () {
 
 	setTimeout(() => menu.dispatchEvent(customEvent));
 };
+
+
+// Makrotasks and Microtasks
+setTimeout(() => console.log('timeout'));
+Promise.resolve().then(() => console.log('promise'));
+console.log('code');
+
+console.log(queueMicrotask);
