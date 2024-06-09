@@ -67,3 +67,13 @@ function splittedCount1() {
 }
 
 //splittedCount1();
+
+
+// Use case 3: doing something after the event
+menu.onclick = function () {
+	let customEvent = new CustomEvent('menu-open', {
+		bubbles: true
+	});
+
+	setTimeout(() => menu.dispatchEvent(customEvent));
+};
