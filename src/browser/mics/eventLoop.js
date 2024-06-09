@@ -41,4 +41,29 @@ function improvedCount() {
 	}
 }
 
-improvedCount();
+//improvedCount();
+
+
+// Use case 2: progress indication
+function count1() {
+	for (let i = 0; i < 1e6; i += 1) {
+		i++;
+		progress.innerHTML = i;
+	}
+}
+
+//count1();
+
+let i = 0;
+function splittedCount1() {
+	do {
+		i++;
+		progress.innerHTML = i;
+	} while (i % 1e3 != 0);
+
+	if (i < 1e7) {
+		setTimeout(splittedCount1);
+	}
+}
+
+//splittedCount1();
