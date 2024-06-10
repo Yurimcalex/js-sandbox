@@ -76,3 +76,24 @@ btn2.onclick = () => {
 		}, 3000);
 	};
 };
+
+
+// Moving and resizing
+btn3.onclick = () => {
+	let nw = window.open('/', 'example', 'width=300,height=300');
+	setTimeout(() => {
+		nw.moveBy(20, 20);
+
+		setTimeout(() => {
+			nw.moveTo(100, 100);
+
+			setTimeout(() => {
+				nw.resizeBy(30, 30);
+
+				setTimeout(() => {
+					nw.resizeTo(500, 500);
+				}, 2000);
+			}, 2000);
+		}, 2000);
+	}, 2000);
+};
