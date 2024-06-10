@@ -55,3 +55,12 @@ another.onclick = () => {
 		nw.document.body.insertAdjacentHTML('afterbegin', html);
 	};
 };
+
+
+// Accessing window from popup
+btn1.onclick = () => {
+	let nw = window.open('about:blank', 'Hi', 'width=200,height=200');
+	nw.document.write(
+		'<script>window.opener.document.body.innerHTML="Test"<\/script>'
+	);
+};
