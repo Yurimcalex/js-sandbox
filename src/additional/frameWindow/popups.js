@@ -37,3 +37,21 @@ let params1 = [
 openw.onclick = () => {
 	open('/', 'test', params1);
 };
+
+
+// Accessing popup from window
+access.onclick = () => {
+	let nw = window.open('about:blank', 'hello', 'width=200,height=200');
+	nw.document.write('Hello, world!');
+};
+
+another.onclick = () => {
+	let nw = window.open('/', 'example', 'width=300,height=300');
+	nw.focus();
+	console.log(nw.location.href);
+
+	nw.onload = function() {
+		let html = `<div style="color:green">Welcome!</div>`;
+		nw.document.body.insertAdjacentHTML('afterbegin', html);
+	};
+};
