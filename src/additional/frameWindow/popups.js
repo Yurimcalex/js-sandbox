@@ -64,3 +64,15 @@ btn1.onclick = () => {
 		'<script>window.opener.document.body.innerHTML="Test"<\/script>'
 	);
 };
+
+
+// Closing a popup
+btn2.onclick = () => {
+	let nw = window.open('/', 'example', 'width=300,height=300');
+	nw.onload = function () {
+		setTimeout(() => {
+			nw.close();
+			console.log(nw.closed);
+		}, 3000);
+	};
+};
