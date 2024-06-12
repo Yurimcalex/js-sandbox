@@ -1,28 +1,28 @@
 // Cross-window communication
 // Sane origin
 // In action: iframe
-iframe.onload = function () {
-	let iframeWindow = iframe.contentWindow;
-	try {
-		let doc = iframe.contentDocument;
-		console.log(doc);
-	} catch (err) {
-		console.log(err);
-	}
+// iframe.onload = function () {
+// 	let iframeWindow = iframe.contentWindow;
+// 	try {
+// 		let doc = iframe.contentDocument;
+// 		console.log(doc);
+// 	} catch (err) {
+// 		console.log(err);
+// 	}
 
-	try {
-		let href = iframe.contentWindow.location.href;
-	} catch (err) {
-		console.log(err);
-	}
+// 	try {
+// 		let href = iframe.contentWindow.location.href;
+// 	} catch (err) {
+// 		console.log(err);
+// 	}
 
-	//iframe.contentWindow.location = '/';
-	//iframe.onload = null;
-};
+// 	//iframe.contentWindow.location = '/';
+// 	//iframe.onload = null;
+// };
 
-iframeSame.onload = function () {
-	iframeSame.contentDocument.body.prepend('Hello, world!');
-};
+// iframeSame.onload = function () {
+// 	iframeSame.contentDocument.body.prepend('Hello, world!');
+// };
 
 
 // Iframe: wrong document pitfall
@@ -38,3 +38,9 @@ let timer = setInterval(() => {
 	console.log('New document is loaded!');
 	clearInterval(timer);
 }, 100);
+
+
+// Collection: window.frames
+console.log(window.frames);
+console.log(iframeEarly.contentWindow == frames[2]);
+console.log(iframeEarly.contentWindow == frames.early);
