@@ -23,3 +23,18 @@ iframe.onload = function () {
 iframeSame.onload = function () {
 	iframeSame.contentDocument.body.prepend('Hello, world!');
 };
+
+
+// Iframe: wrong document pitfall
+let oldDoc = iframeEarly.contentDocument;
+iframeEarly.onload = function () {
+	let newDoc = iframeEarly.contentDocument;
+	console.log(oldDoc === newDoc);
+};
+
+let timer = setInterval(() => {
+	let newDoc = iframeEarly.contentDocument;
+	if (newDoc === oldDoc) return;
+	console.log('New document is loaded!');
+	clearInterval(timer);
+}, 100);
