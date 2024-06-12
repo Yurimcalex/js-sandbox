@@ -44,3 +44,14 @@ let timer = setInterval(() => {
 console.log(window.frames);
 console.log(iframeEarly.contentWindow == frames[2]);
 console.log(iframeEarly.contentWindow == frames.early);
+
+
+// Cross-window messaging
+let win = window.frames.early;
+
+iframeEarly.contentWindow.postMessage('message', '*');
+
+window.addEventListener('message', function (event) {
+	console.log('origin => ', event.origin);
+	console.log('received: ', event.data);
+});
