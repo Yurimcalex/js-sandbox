@@ -67,3 +67,24 @@ console.log(dataView.getUint32(0));
 dataView.setUint32(0, 0);
 
 console.log(dataView.getUint8(0));
+
+
+// Task 1 - Concatenate typed arrays
+function concat(arrays) {
+	let len = 0;
+	arrays.forEach(arr => len += arr.byteLength);
+	let rArr = new Uint8Array(len);
+	let offset = 0;
+	arrays.forEach(arr => {
+		rArr.set(arr, offset);
+		offset += arr.length;
+	});
+	return rArr;
+}
+
+let test = concat([
+	new Uint8Array([255, 255, 255, 255]),
+	new Uint8Array([0, 0, 0, 0])
+]);
+
+console.log(test);
