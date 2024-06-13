@@ -26,3 +26,15 @@ let arr8_1 = new Uint8Array([1, 2, 3, 4]);
 let arr16_1 = new Uint16Array(arr8_1.buffer);
 
 console.log(arr16_1, arr16_1.length);
+
+
+// Out-of-bounds behavior
+let uint8array = new Uint8Array(16);
+let num = 256;
+
+console.log(num.toString(2));
+
+uint8array[0] = 256;
+uint8array[1] = 257;
+
+console.log(uint8array[0], uint8array[1]);
