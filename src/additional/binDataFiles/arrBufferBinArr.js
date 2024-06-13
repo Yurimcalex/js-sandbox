@@ -38,3 +38,17 @@ uint8array[0] = 256;
 uint8array[1] = 257;
 
 console.log(uint8array[0], uint8array[1]);
+
+
+// TypedArray methods
+let ta = new Uint8Array(32);
+console.log(ta.byteLength);
+ta.forEach(b => console.log(b));
+let mta = ta.map((b, i) => i);
+console.log(mta);
+
+let nw = mta.subarray(0, 9);
+console.log(nw);
+
+nw.set([10, 9]);
+console.log(nw);
