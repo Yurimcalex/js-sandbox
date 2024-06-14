@@ -21,3 +21,17 @@ link.href = URL.createObjectURL(blob1);
 	//link.click();
 	URL.revokeObjectURL(link.href);
 }
+
+
+// Blob to base64
+{
+	let link = document.createElement('a');
+	link.download = 'hello.txt';
+	let blob = new Blob(['Hello, guys!'], {type: 'text/plain'});
+	let reader = new FileReader();
+	reader.readAsDataURL(blob);
+	reader.onload = function () {
+		link.href = reader.result;
+		//link.click();
+	}
+}
