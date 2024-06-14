@@ -65,3 +65,22 @@ async function f() {
 }
 
 f();
+
+
+// From Blob to stream
+async function g() {
+	let blob3 = new Blob(['oo-^--oo'], {type: 'text/plain'});
+	let readableStream = blob3.stream();
+	let stream = readableStream.getReader();
+	while (true) {
+		let { done, value } = await stream.read();
+		if (done) {
+			console.log('all blob processed!');
+			break;
+		}
+
+		console.log(value);
+	}
+}
+
+g();
