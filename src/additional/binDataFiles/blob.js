@@ -55,3 +55,13 @@ canvas.toBlob(function (blob) {
 	//link.click();
 	URL.revokeObjectURL(link.href);
 }, 'image/png');
+
+
+// From Blob to ArrayBuffer
+async function f() {
+	let blob2 = new Blob(['What', 'is', 'this', '?'], {type: 'text/plain'});
+	let buffer = await blob2.arrayBuffer();
+	console.log(buffer);
+}
+
+f();
