@@ -35,3 +35,23 @@ link.href = URL.createObjectURL(blob1);
 		//link.click();
 	}
 }
+
+
+// Image to blob
+let img = document.getElementById('img');
+let canvas = document.createElement('canvas');
+
+canvas.width = img.clientWidth;
+canvas.height = img.clientHeight;
+
+let context = canvas.getContext('2d');
+
+context.drawImage(img, 0, 0);
+
+canvas.toBlob(function (blob) {
+	let link = document.createElement('a');
+	link.download = 'example.png';
+	link.href = URL.createObjectURL(blob);
+	//link.click();
+	URL.revokeObjectURL(link.href);
+}, 'image/png');
