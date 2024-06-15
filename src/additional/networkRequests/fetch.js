@@ -100,3 +100,30 @@ async function submit() {
 	let result = await response.json();
 	console.log(blob, result);
 }
+
+
+// Task 1 - Fetch users from GitHub
+let users = ['iliakan', 'remy', 'no.such.users'];
+
+async function getUsers(names) {
+	let url = 'https://api.github.com/users/';
+	let promises = [];
+
+	for (let name of names) {
+		let promise = fetch(`${url}/name`).then(
+			successResponse => {
+				if (successResponse.status != 200) return null;
+				return successResponse.json();
+			},
+			failResponse => null
+		);
+
+		promises.push(promise);
+	}
+
+	let users = await Promise.all(promises);
+
+	console.log(users);
+}
+
+getUsers(users);
