@@ -44,3 +44,18 @@ async function getLogo() {
 }
 
 //getLogo();
+
+
+// Response headers
+async function getHeaders() {
+	let url = 'https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits';
+	let response = await fetch(url);
+
+	console.log(response.headers.get('Content-Type'));
+
+	for (let [key, value] of response.headers) {
+		console.log(`${key} = ${value}`);
+	}
+}
+
+getHeaders();
