@@ -58,4 +58,26 @@ async function getHeaders() {
 	}
 }
 
-getHeaders();
+//getHeaders();
+
+
+// POST requests
+async function sendPost(post) {
+	let url = 'https://jsonplaceholder.typicode.com/posts';
+	let response = await fetch(url, {
+		method: 'POST',
+		body: JSON.stringify(post),
+		headers: {
+			'Content-Type': 'application/json; charset=UTF-8'
+		}
+	});
+
+	let json = await response.json();
+	console.log(json);
+}
+
+sendPost({
+	title: 'Hi!',
+	body: 'There',
+	userId: 1
+});
