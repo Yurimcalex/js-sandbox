@@ -23,3 +23,23 @@ formData.append('name', 'Cristopher');
 for (let [name, value] of formData) {
 	console.log(`${name} = ${value}`);
 }
+
+
+// Sending a form with a file
+fileForm.onsubmit = async (e) => {
+	e.preventDefault();
+
+	let formData = new FormData(fileForm);
+	// for (let [name, value] of formData) {
+	// 	console.log(`${name} = ${value}`);
+	// }
+
+	let response = await fetch('https://jsonplaceholder.typicode.com/albums/1/photos', {
+		method: 'POST',
+		body: formData
+	});
+	
+	let result = await response.json();
+
+	console.log(result);
+};
