@@ -38,8 +38,34 @@ fileForm.onsubmit = async (e) => {
 		method: 'POST',
 		body: formData
 	});
-	
+
 	let result = await response.json();
 
 	console.log(result);
+};
+
+
+// Sending a form with Blob data
+canvasElem.onmousemove = function(e) {
+  let ctx = canvasElem.getContext('2d');
+  ctx.lineTo(e.clientX, e.clientY);
+  ctx.stroke();
+};
+
+sendImg.onclick = async () => {
+	let imageBlob = await new Promise(resolve => canvasElem.toBlob(resolve, 'image/png'));
+	let formData = new FormData();
+	formData.append('name', 'Ithan');
+	formData.append('image', imageBlob, 'image.png');
+
+	for (let [name, value] of formData) {
+		console.log(`${name} = ${value}`);
+	}
+
+	let response = await fetch('some url', {
+		method: 'POST',
+		body: formData
+	});
+
+	let result = await response.json();
 };
