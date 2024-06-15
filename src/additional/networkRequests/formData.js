@@ -12,3 +12,14 @@ postForm.onsubmit = async (e) => {
 
 	console.log(result);
 };
+
+
+// FormData Methods
+let formData = new FormData();
+formData.append('name', 'Bob');
+formData.append('name', 'Cristopher');
+//formData.append('file', new Uint8Array([1, 2, 3]), 'info.txt');
+
+for (let [name, value] of formData) {
+	console.log(`${name} = ${value}`);
+}
