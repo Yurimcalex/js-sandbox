@@ -81,3 +81,22 @@ sendPost({
 	body: 'There',
 	userId: 1
 });
+
+
+// Sending an image
+canvasElem.onmousemove = function (e) {
+	let ctx = canvasElem.getContext('2d');
+	ctx.lineTo(e.clientX, e.clientY);
+	ctx.stroke();
+};
+
+async function submit() {
+	let blob = await new Promise(resolve => canvasElem.toBlob(resolve, 'image/png'));
+	let response = await fetch('https://jsonplaceholder.typicode.com/albums/1/photos', {
+		method: 'POST',
+		body: blob
+	});
+
+	let result = await response.json();
+	console.log(blob, result);
+}
