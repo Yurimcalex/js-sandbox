@@ -29,3 +29,23 @@ async function f() {
 }
 
 f();
+
+
+// AbortController is scalable
+async function g() {
+	let url = 'https://jsonplaceholder.typicode.com/todos/';
+	let todos = [1, 2, 3, 4, 5];
+
+	let controller = new AbortController();
+
+	let jobs = todos.map(n => fetch(`${url}${n}`, {
+		signal: controller.signal
+	}));
+
+	let results = await Promise.all(jobs);
+
+	controller.abort();
+	console.log('g => ', controller.signal.aborted);
+}
+
+g();
