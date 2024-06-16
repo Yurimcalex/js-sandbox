@@ -42,9 +42,21 @@ async function g() {
 		signal: controller.signal
 	}));
 
+	let ownJob = new Promise((resolve, reject) => {
+		setTimeout(() => {
+			console.log('Own task!');
+			resolve(0);
+		}, 1500);
+
+		controller.signal.addEventListener('abort', reject);
+	});
+
+	jobs.push(ownJob);
+
 	let results = await Promise.all(jobs);
 
 	controller.abort();
+	console.log(results);
 	console.log('g => ', controller.signal.aborted);
 }
 
