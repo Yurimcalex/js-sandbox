@@ -91,14 +91,30 @@ xhr3.onprogress = function (e) {
 let xhrPost = new XMLHttpRequest();
 xhrPost.open('POST', 'https://jsonplaceholder.typicode.com/posts');
 xhrPost.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
-xhrPost.send(JSON.stringify({
-  title: 'foo',
-  body: 'bar',
-  userId: 1,
-}));
+// xhrPost.send(JSON.stringify({
+//   title: 'foo',
+//   body: 'bar',
+//   userId: 1,
+// }));
 
 xhrPost.onload = function () {
 	xhrPost.getAllResponseHeaders()
 		.split('\r\n')
 		.forEach(h => console.log(h));
 };
+
+
+// POST, FormData
+let formData = new FormData(document.forms.post);
+formData.append('userId', '1');
+
+let xhrP = new XMLHttpRequest();
+xhrP.open('POST', 'https://jsonplaceholder.typicode.com/posts');
+xhrP.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
+
+let data = {};
+for (let key of formData.keys()) {
+	data[key] = formData.get(key);
+}
+
+xhrP.send(JSON.stringify(data));
