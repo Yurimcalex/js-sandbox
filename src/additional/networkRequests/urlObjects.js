@@ -15,3 +15,20 @@ console.log(
 	newUrl.host,
 	newUrl.pathname
 );
+
+
+// SearchParams
+let url3 = new URL('https://google.com/search?query=JavaScript');
+console.log(url3);
+
+url3.searchParams.set('q', 'test me closely');
+
+console.log(url3.toString());
+
+url3.searchParams.set('tbs', 'popapo:ogog');
+
+console.log(url3.toString());
+
+for (let [name, value] of url3.searchParams) {
+	console.log(`${name}=>${value}`);
+}
