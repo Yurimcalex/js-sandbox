@@ -22,3 +22,15 @@ xhr.onprogress = function (e) {
 xhr.onerror = function () {
 	console.log('Request failed');
 };
+
+
+// Response Type
+let xhr1 = new XMLHttpRequest();
+xhr1.open('GET', 'https://jsonplaceholder.typicode.com/todos/1');
+xhr1.responseType = 'json';
+xhr1.send();
+
+xhr1.onload = function () {
+	let responseObj = xhr1.response;
+	console.log(responseObj);
+};
