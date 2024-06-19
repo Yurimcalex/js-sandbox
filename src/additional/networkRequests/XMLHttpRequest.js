@@ -1,7 +1,7 @@
 // XMLHttpRequest
 let xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos');
-xhr.send();
+//xhr.send();
 
 xhr.onload = function () {
 	if (xhr.status != 200) {
@@ -28,7 +28,7 @@ xhr.onerror = function () {
 let xhr1 = new XMLHttpRequest();
 xhr1.open('GET', 'https://jsonplaceholder.typicode.com/todos/1');
 xhr1.responseType = 'json';
-xhr1.send();
+//xhr1.send();
 
 xhr1.onload = function () {
 	let responseObj = xhr1.response;
@@ -39,7 +39,7 @@ xhr1.onload = function () {
 // Ready states
 let xhr2 = new XMLHttpRequest();
 xhr2.open('GET', 'https://jsonplaceholder.typicode.com/users');
-xhr2.send();
+//xhr2.send();
 
 xhr2.onreadystatechange = function () {
 	let readyState = xhr2.readyState;
@@ -52,3 +52,19 @@ xhr2.onreadystatechange = function () {
 		console.log('users loaded');
 	}
 };
+
+
+// Aborting request
+let xhr3 = new XMLHttpRequest();
+xhr3.open('GET', 'https://jsonplaceholder.typicode.com/photos');
+xhr3.send();
+
+xhr3.onprogress = function (e) {
+	if (e.lengthComputable) {
+		console.log(`Received ${e.loaded} of ${e.total} bytes`);
+	} else {
+		console.log(`Received ${e.loaded} bytes`);
+	}
+};
+
+setTimeout(() => xhr3.abort());
