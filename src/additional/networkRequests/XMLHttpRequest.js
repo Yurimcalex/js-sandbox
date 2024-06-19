@@ -34,3 +34,21 @@ xhr1.onload = function () {
 	let responseObj = xhr1.response;
 	console.log(responseObj);
 };
+
+
+// Ready states
+let xhr2 = new XMLHttpRequest();
+xhr2.open('GET', 'https://jsonplaceholder.typicode.com/users');
+xhr2.send();
+
+xhr2.onreadystatechange = function () {
+	let readyState = xhr2.readyState;
+	
+	if (readyState == 3) {
+		console.log('users loading...');
+	}
+
+	if (readyState == 4) {
+		console.log('users loaded');
+	}
+};
