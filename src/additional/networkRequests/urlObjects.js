@@ -38,3 +38,13 @@ for (let [name, value] of url3.searchParams) {
 let url4 = new URL('https://ru.wikipedia.org/wiki/ТестПро_тест');
 url4.searchParams.set('key', 'ЪХ');
 console.log(url4.toString());
+
+
+// Encoding strings
+let url5 = encodeURI('http://site.com/приветМедвед');
+console.log(url5.toString());
+
+let cars = 'subaru&lanos&chevrolet';
+
+console.log(encodeURIComponent(cars));
+console.log(encodeURI(cars));
