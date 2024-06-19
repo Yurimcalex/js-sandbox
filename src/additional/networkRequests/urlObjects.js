@@ -32,3 +32,9 @@ console.log(url3.toString());
 for (let [name, value] of url3.searchParams) {
 	console.log(`${name}=>${value}`);
 }
+
+
+// Encoding
+let url4 = new URL('https://ru.wikipedia.org/wiki/ТестПро_тест');
+url4.searchParams.set('key', 'ЪХ');
+console.log(url4.toString());
