@@ -118,3 +118,24 @@ for (let key of formData.keys()) {
 }
 
 xhrP.send(JSON.stringify(data));
+
+
+// Upload progress
+file.onchange = function () {
+	let xhr = new XMLHttpRequest();
+	
+	xhr.upload.onprogress = function (e) {
+		console.log(`Uploaded ${e.loaded} of ${e.total}`);
+	};
+
+	xhr.onloadend = function () {
+		if (xhr.status == 200) {
+			console.log('success');
+		} else {
+			console.log('error ' + this.status);
+		}
+	};
+
+	xhr.open('POST', '/some/Path/To/Resource');
+	xhr.send(this.files[0]);
+};
