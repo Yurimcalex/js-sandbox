@@ -36,3 +36,16 @@ console.log(user);
 // sessionStorage
 sessionStorage.setItem('firtsStoredValue', 1);
 console.log(sessionStorage.getItem('firtsStoredValue'));
+
+
+// Storage event
+window.onstorage = event => {
+	if (event.key !== 'now') return;
+	console.log(
+		event.key,
+		event.newValue,
+		event.url
+	);
+};
+
+localStorage.setItem('now', Date.now());
