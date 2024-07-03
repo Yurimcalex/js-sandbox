@@ -49,3 +49,19 @@ window.onstorage = event => {
 };
 
 localStorage.setItem('now', Date.now());
+
+
+// Task 1 - Autosave a form field
+let txt = localStorage.getItem('text');
+if (txt) {
+	text.value = txt;
+}
+
+text.onchange = function (e) {
+	let inp = e.target.value;
+	localStorage.setItem('text', inp);
+};
+
+clearText.onclick = function (e) {
+	text.value = '';
+};
