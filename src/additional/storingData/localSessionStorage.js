@@ -13,12 +13,12 @@ delete localStorage.sport;
 // Looping over keys
 for (let i = 0; i < localStorage.length; i += 1) {
 	let key = localStorage.key(i);
-	console.log(`${key}: ${localStorage.getItem(key)}`);
+	//console.log(`${key}: ${localStorage.getItem(key)}`);
 }
 
 let keys = Object.keys(localStorage);
 for (let key of keys) {
-	console.log(key, localStorage.getItem(key));
+	//console.log(key, localStorage.getItem(key));
 }
 
 
@@ -30,4 +30,9 @@ localStorage.user = JSON.stringify({ name: 'Bob' });
 let user = JSON.parse(localStorage.user);
 console.log(user);
 
-console.log(JSON.stringify(localStorage, null, 2));
+//console.log(JSON.stringify(localStorage, null, 2));
+
+
+// sessionStorage
+sessionStorage.setItem('firtsStoredValue', 1);
+console.log(sessionStorage.getItem('firtsStoredValue'));
