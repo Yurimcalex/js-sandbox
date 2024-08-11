@@ -88,9 +88,10 @@ or.onerror = function () {
 	console.log('Error', or.error);	
 };
 
-
+let storeDB;
 or.onsuccess = function () {
 	let db = or.result;
+	storeDB = db;
 	console.log('success!');
 
 	let transaction = db.transaction('skills', 'readwrite');
@@ -116,3 +117,28 @@ or.onsuccess = function () {
 
 // Transactions
 // Transactions' autocommit
+// Error handling
+setTimeout(() => {
+	let transaction = storeDB.transaction('skills', 'readwrite');
+	let skill = {
+		id: 'fly',
+		level: 50
+	};
+	let request = transaction.objectStore('skills').add(skill);
+	request.onerror = function (e) {
+		if (request.error.name === 'ConstraintError') {
+			console.log('Such skill is already exists');
+			e.preventDefault();
+		} else {
+			console.log('Unhandled transaction!');
+		}
+	};
+
+	transaction.onabort = function () {
+		console.log('Transaction is aborted!', transaction.error);
+	};
+
+	transaction.oncomplete = function () {
+		console.log('Transaction is complete!');
+	};
+}, 1000);
