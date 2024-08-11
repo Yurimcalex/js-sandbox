@@ -154,3 +154,24 @@ let timer = setInterval(() => {
 		};
 	}
 }, 100);
+
+
+// Searching by key
+setTimeout(() => {
+	let transaction = storeDB.transaction('skills', 'readwrite');
+	let skills = transaction.objectStore('skills');
+	skills.add({ id: 'run', level: 3 });
+	skills.add({ id: 'swim', level: 10 });
+	
+	transaction.oncomplete = function () {
+		console.log('Third transaction is complete!');
+	};
+}, 1500);
+
+setTimeout(() => {
+	let transaction = storeDB.transaction('skills', 'readwrite');
+	let skills = transaction.objectStore('skills');
+
+	console.log('all skills', skills.getAll());
+	console.log('swim skill', skills.get('swim'));
+}, 2000);
