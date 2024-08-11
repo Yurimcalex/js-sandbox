@@ -108,6 +108,11 @@ or.onsuccess = function () {
 	req.onerror = function () {
 		console.log('Error - add skill', req.error);
 	};
+
+	transaction.oncomplete = function () {
+		console.log('Transaction is complete!');
+	};
 };
 
 // Transactions
+// Transactions' autocommit
