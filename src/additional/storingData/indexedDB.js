@@ -92,4 +92,22 @@ or.onerror = function () {
 or.onsuccess = function () {
 	let db = or.result;
 	console.log('success!');
+
+	let transaction = db.transaction('skills', 'readwrite');
+	let skills = transaction.objectStore('skills');
+	
+	let skill = {
+		id: 'fly',
+		level: 50
+	};
+
+	let req = skills.add(skill);
+	req.onsuccess = function () {
+		console.log('New skill added!', req.result);
+	};
+	req.onerror = function () {
+		console.log('Error - add skill', req.error);
+	};
 };
+
+// Transactions
