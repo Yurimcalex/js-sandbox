@@ -77,7 +77,8 @@ or.onupgradeneeded = function (e) {
 
 	let db = or.result;
 	if (!db.objectStoreNames.contains('skills')) {
-		db.createObjectStore('skills', {keyPath: 'id'});
+		let skillsStore = db.createObjectStore('skills', {keyPath: 'id'});
+		skillsStore.createIndex('level_idx', 'level');
 	}
 
 	console.log(db.objectStoreNames);
@@ -175,3 +176,20 @@ setTimeout(() => {
 	console.log('all skills', skills.getAll());
 	console.log('swim skill', skills.get('swim'));
 }, 2000);
+
+
+// Search by a field using an index
+setTimeout(() => {
+	let transaction = storeDB.transaction('skills');
+	let skills = transaction.objectStore('skills');
+	let levelIndex = skills.index('level_idx');
+
+	let request = levelIndex.getAll(IDBKeyRange.upperBound(30));
+	request.onsuccess = function () {
+		if (request.result !== undefined) {
+			console.log('Skills', request.result);
+		} else {
+			console.log('No such skills!');
+		}
+	};
+}, 2100);
