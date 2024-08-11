@@ -129,6 +129,7 @@ setTimeout(() => {
 		if (request.error.name === 'ConstraintError') {
 			console.log('Such skill is already exists');
 			e.preventDefault();
+			e.stopPropagation();
 		} else {
 			console.log('Unhandled transaction!');
 		}
@@ -142,3 +143,14 @@ setTimeout(() => {
 		console.log('Transaction is complete!');
 	};
 }, 1000);
+
+
+// Event delegation
+let timer = setInterval(() => {
+	if (storeDB) {
+		clearInterval(timer);
+		storeDB.onerror = function (e) {
+			console.log('DB error - ', e.target.error);
+		};
+	}
+}, 100);
