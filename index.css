@@ -25,24 +25,23 @@ h2 {
 	gap: 10px;
 }
 
-.lang-section > li {
+.topic-card {
 	width: 20%;
 	padding: 10px;
 	border: 1px solid gray;
-	list-style: none;
 }
 
-.lang-section > li h3 {
+.topic-card h3 {
 	text-align: center;
 	font-size: 18px;
 }
 
-.lang-section > li ul {
+.topic-card ul {
 	padding-left: 15px;
 	list-style: initial;
 } 
 
-.lang-section > li h4 {
+.topic-card h4 {
 	margin: 20px 0 0 0;
 	font-size: 16px;
 	font-weight: normal;
