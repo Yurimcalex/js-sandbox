@@ -1,6 +1,8 @@
 body {
 	margin: 0;
 	padding: 10px;
+	background: #11151F;
+	color: #1D83B5;
 }
 
 ul {
@@ -18,6 +20,10 @@ h2 {
 	font-size: 22px;
 }
 
+a {
+	color: #B8BFCF;
+}
+
 .lang-section {
 	display: flex;
 	flex-wrap: wrap;
@@ -29,6 +35,7 @@ h2 {
 	width: 20%;
 	padding: 10px;
 	border: 1px solid gray;
+	background: #242A37;
 }
 
 .topic-card h3 {
