@@ -41,6 +41,7 @@ a {
 	width: 24%;
 	padding: 10px;
 	background: #242A37;
+	overflow: hidden;
 }
 
 .topic-card h3 {
@@ -51,7 +52,15 @@ a {
 .topic-card ul {
 	padding-left: 15px;
 	list-style: initial;
-} 
+}
+
+.topic-card li:hover {
+	margin-left: -25px;
+	padding-left: 25px;
+	width: 200%;
+	list-style-type: none;
+	background: #11151F;
+}
 
 .topic-card h4 {
 	margin: 20px 0 0 0;
