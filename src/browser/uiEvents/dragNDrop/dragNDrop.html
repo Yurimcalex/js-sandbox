@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS</title>
+	<style>
+		body {
+			background: lightgray;
+		}	
+
+		#ball {
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			background: gray;
+			cursor: pointer;
+		}
+
+		#cart {
+			width: 150px;
+			height: 150px;
+			border: 2px solid gray;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		}
+
+		.slider {
+		  border-radius: 5px;
+		  background: gray;
+		  width: 310px;
+		  height: 15px;
+		  margin: 5px;
+		}
+
+		.thumb {
+		  width: 10px;
+		  height: 25px;
+		  border-radius: 3px;
+		  position: relative;
+		  left: 10px;
+		  top: -5px;
+		  background: blue;
+		  cursor: pointer;
+		}
+
+		#field {
+		  background: green;
+		  width: 800px;
+		  height: 500px;
+		  float: left;
+		}
+
+		/* heroes and the ball (dragables) */
+
+		.hero {
+		  background: url(https://js.cx/drag-heroes/heroes.png);
+		  width: 130px;
+		  height: 128px;
+		  float: left;
+		}
+
+		#hero1 {
+		  background-position: 0 0;
+		}
+
+		#hero2 {
+		  background-position: 0 -128px;
+		}
+
+		#hero3 {
+		  background-position: -120px 0;
+		}
+
+		#hero4 {
+		  background-position: -125px -128px;
+		}
+
+		#hero5 {
+		  background-position: -248px -128px;
+		}
+
+		#hero6 {
+		  background-position: -244px 0;
+		}
+
+		.draggable {
+		  cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="ball"></div>
+	<div id="cart" class="droppable"></div>
+
+	<div id="slider" class="slider">
+	  <div id="thumb" class="thumb"></div>
+	</div>
+
+	<div id="field">
+
+	</div>
+
+	<div class="hero draggable" id="hero1"></div>
+	<div class="hero draggable" id="hero2"></div>
+	<div class="hero draggable" id="hero3"></div>
+	<div class="hero draggable" id="hero4"></div>
+	<div class="hero draggable" id="hero5"></div>
+	<div class="hero draggable" id="hero6"></div>
+
+	<img src="https://en.js.cx/clipart/ball.svg" class="draggable">
+
+	<div style="clear:both"></div>
+	<script src="./dragNDrop.js"></script>
+</body>
+</html>
