@@ -1,5 +1,5 @@
 const pageSrcs = [
-  "/",
+  "",
   "src/lang/fundamentals/dataTypes/dataTypes.html",
   "src/lang/fundamentals/Interaction/interaction.html",
   "src/lang/fundamentals/typeConversions/typeConversions.html",
@@ -114,8 +114,24 @@ const pageSrcs = [
 
 
 document.addEventListener("DOMContentLoaded", () => {
-	createUI();
+	const [prev, next] = createUI();
+	const src = location.pathname.slice(1);
+	const srcInd = pageSrcs.indexOf(src);
+	prev.addEventListener('click', () => changePage(srcInd, '-'));
+	next.addEventListener('click', () => changePage(srcInd, '+'));
 });
+
+
+function changePage(currInd, direction) {
+	let ind;
+	if (currInd === 0 || currInd === pageSrcs.length - 1) return;
+	if (direction === '-') {
+		ind = currInd - 1;
+	} else {
+		ind = currInd + 1;
+	}
+	window.location.assign(`/${pageSrcs[ind]}`);
+}
 
 
 function createUI() {
