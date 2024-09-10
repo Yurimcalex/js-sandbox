@@ -113,6 +113,24 @@ const pageSrcs = [
 ];
 
 
+document.addEventListener("DOMContentLoaded", () => {
+	createUI();
+});
+
+
+function createUI() {
+	const backBtn = document.createElement('button');
+	const forwardBtn = document.createElement('button');
+	backBtn.textContent = 'prev page';
+	backBtn.className = 'chp-back-btn';
+	forwardBtn.textContent = 'next page';
+	forwardBtn.className = 'chp-forward-btn';
+	document.body.append(backBtn);
+	document.body.append(forwardBtn);
+	return [backBtn, forwardBtn];
+}
+
+
 function _getPagesSrc() {
 	const links = document.querySelectorAll('h4>a');
 	const srcs = ['/'];
@@ -122,4 +140,4 @@ function _getPagesSrc() {
 	console.log(JSON.stringify(srcs, null, 2));
 }
 
-_getPagesSrc();
+//_getPagesSrc();
