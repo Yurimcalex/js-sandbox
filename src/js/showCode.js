@@ -11,3 +11,10 @@ async function createCodeBlock() {
 	code.innerHTML = await getScriptContent();
 	document.body.append(pre);
 }
+
+document.addEventListener('DOMContentLoaded', async (event) => {
+	await createCodeBlock();
+  document.querySelectorAll('pre code').forEach((block) => {
+    hljs.highlightElement(block);
+  });
+});
