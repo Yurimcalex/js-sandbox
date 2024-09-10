@@ -84,3 +84,18 @@ a {
 	font-size: 16px;
 	font-weight: normal;
 }
+
+.chp-back-btn,
+.chp-forward-btn {
+	position: absolute;
+	top: 50%;
+}
+
+.chp-back-btn {
+	left: 15px;
+}
+
+.chp-forward-btn {
+	right: 15px;
+}
+
