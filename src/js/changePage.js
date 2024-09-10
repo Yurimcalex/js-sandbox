@@ -137,9 +137,9 @@ function changePage(currInd, direction) {
 function createUI() {
 	const backBtn = document.createElement('button');
 	const forwardBtn = document.createElement('button');
-	backBtn.textContent = 'prev page';
+	backBtn.textContent = '<';
 	backBtn.className = 'chp-back-btn';
-	forwardBtn.textContent = 'next page';
+	forwardBtn.textContent = '>';
 	forwardBtn.className = 'chp-forward-btn';
 	document.body.append(backBtn);
 	document.body.append(forwardBtn);
