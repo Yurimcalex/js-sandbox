@@ -89,13 +89,19 @@ a {
 .chp-forward-btn {
 	position: absolute;
 	top: 50%;
+	padding: 20px 10px;
+	background: rgba(0, 0, 0, 0.5);
+	border: none;
+	border-radius: 3px;
+	font-size: 24px;
+	cursor: pointer;
 }
 
 .chp-back-btn {
-	left: 15px;
+	left: 10px;
 }
 
 .chp-forward-btn {
-	right: 15px;
+	right: 10px;
 }
 
