@@ -96,7 +96,7 @@ console.log(document.body.lastChild.nodeType);
 
 // Tag in comment
 let body = document.body;
-body.innerHTML = `<!-- ${body.tagName} -->`;
+//body.innerHTML = `<!-- ${body.tagName} -->`;
 console.log(body.firstChild.data);
 
 
