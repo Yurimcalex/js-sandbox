@@ -124,7 +124,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function changePage(currInd, direction) {
 	let ind;
-	if (currInd === 0 || currInd === pageSrcs.length - 1) return;
+  if (currInd === 0 && direction === '-') return;
+  if (currInd === pageSrcs.length -1  && direction === '+') return;
 	if (direction === '-') {
 		ind = currInd - 1;
 	} else {
