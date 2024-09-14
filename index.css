@@ -118,4 +118,15 @@ pre {
 	padding: 5px 20px;
 	margin-bottom: 55px;
 	font-size: 14px;
+	color: #B8BFCF;
+}
+
+.log div {
+	padding: 2px;
+}
+
+.log span {
+	padding-right: 5px;
+	font-size: 12px;
+	color: #525261;
 }
