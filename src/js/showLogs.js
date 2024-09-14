@@ -21,3 +21,12 @@ function markLogs(text) {
 	const newText = text.replace(/console.log(.*)/g, str => `[${logsCounter++}] ${str}`);
 	return [newText, logsCounter];
 }
+
+
+function createLog(count) {
+	const data = logs.splice(0, count - 1);
+	const container = document.createElement('div');
+	container.className = 'log';
+	data.forEach(([content], ind) => container.innerHTML += `[${ind + 1}] -> ${content} <br/>`);
+	document.body.append(container);
+}
