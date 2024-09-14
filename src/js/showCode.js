@@ -40,8 +40,11 @@ document.addEventListener('DOMContentLoaded', async (event) => {
 	(await getScriptContent())
 		.split('// --------- block ---------')
 		.map(text => text.trim())
+		.map(markLogs)
 		.forEach(createCodeBlock);
 	
 	document.querySelectorAll('pre code')
 		.forEach((block) => hljs.highlightElement(block));
+
+	document.body.innerHTML += JSON.stringify(logs, null, 2);
 });

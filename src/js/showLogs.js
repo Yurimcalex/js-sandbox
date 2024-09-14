@@ -1,6 +1,7 @@
 const logs = [];
 const oldConsole = console;
 
+
 console = new Proxy(oldConsole, {
 	get: (target, prop) => {
 		if (prop !== 'log') return target[prop];
@@ -13,3 +14,9 @@ console = new Proxy(oldConsole, {
 		});
 	}
 });
+
+
+function markLogs(text) {
+	let logsCounter = 1;
+	return text.replace(/console.log(.*)/g, str => `[${logsCounter++}] ${str}`);
+}
