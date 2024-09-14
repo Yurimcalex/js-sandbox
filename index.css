@@ -113,6 +113,6 @@ pre {
 
 .log {
 	padding: 5px 20px;
-	margin-bottom: 45px;
-	border-bottom: 1px dashed gray;
+	margin-bottom: 55px;
+	font-size: 14px;
 }
