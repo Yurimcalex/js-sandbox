@@ -19,9 +19,13 @@ document.addEventListener('DOMContentLoaded', async (event) => {
 		.split('// --------- block ---------')
 		.map(text => text.trim())
 		.forEach(text => {
-			const [markedText, count] = markLogs(text);
-			createCodeBlock(markedText);
-			createLog(count);
+			if (window.markLogs) {
+				const [markedText, count] = markLogs(text);
+				createCodeBlock(markedText);
+				createLog(count);
+			} else {
+				createCodeBlock(text);
+			}
 		});
 	
 	document.querySelectorAll('pre code')
