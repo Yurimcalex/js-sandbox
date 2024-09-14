@@ -12,7 +12,6 @@ body {
 ul {
 	margin: 0;
 	padding: 0;
-	list-style: none;
 }
 
 h1 {
@@ -31,6 +30,10 @@ h2 {
 a {
 	color: #B8BFCF;
 	text-decoration: none;
+}
+
+.topics, .topics ul {
+	list-style: none;
 }
 
 .lang-section {
