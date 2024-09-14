@@ -41,7 +41,12 @@ function createLog(logsArr) {
 	container.className = 'log';
 
 	logsArr.forEach((arr, ind) => 
-		container.innerHTML += `<div><span>log [${arr[0]}]:</span> ${arr[1] ? arr[1].join(', ') : '-'}</div>`)
+		container.innerHTML += `<div><span>log [${arr[0]}]:</span> ${arr[1] ? prepareArgs(arr[1]).join(', ') : '-'}</div>`)
 
 	document.body.append(container);
+}
+
+
+function prepareArgs(args) {
+	return args.map(arg => JSON.stringify(arg, null, 2));
 }
