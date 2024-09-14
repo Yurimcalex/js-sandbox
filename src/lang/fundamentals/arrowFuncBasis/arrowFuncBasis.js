@@ -12,6 +12,7 @@ let sum = (a, b) => {
 }
 
 console.log(sum(3, 4));
+// --------- block ---------
 
 
 // task
