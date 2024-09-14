@@ -1,25 +1,25 @@
 let animal = 'cat';
 let critter = animal;
-//console.log(critter);
+console.log(critter);
 
 let user = {
 	name: 'Piter'
 };
 
 let person = user;
-//console.log(person.name);
+console.log(person.name);
 
 person.age = 20;
-//console.log(user.age);
+console.log(user.age);
 
 let employee = {
 	name: 'Piter'
 };
-//console.log(person === user, employee === user);
+console.log(person === user, employee === user);
 
 let clone = {};
 for (let prop in user) clone[prop] = user[prop];
-//console.log(clone);
+console.log(clone);
 
 
 let player = {
@@ -31,7 +31,7 @@ let feature1 = { canSwim: true };
 let feature2 = { canPlayTennis: true };
 
 Object.assign(player, feature1, feature2);
-//console.log(player);
+console.log(player);
 
 let playerClone = Object.assign({}, player);
 console.log(playerClone);
@@ -46,4 +46,3 @@ let door = {
 };
 
 //let doorDeepClone = structuredClone(door);
-//console.log(doorDeepClone);
