@@ -6,6 +6,7 @@ function checkAge(age) {
 function checkAge2(age) {
 	return age > 18 || confirm('Did parents allow you?');
 }
+// --------- block ---------
 
 
 // task 2
@@ -13,6 +14,7 @@ function min(a, b) {
 	if (a > b) return b;
 	return a;
 }
+// --------- block ---------
 
 
 // task 4
