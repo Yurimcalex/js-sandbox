@@ -16,6 +16,8 @@ if (age < 14 || age > 90) {
 } else {
 	console.log('Wellcome!');
 }
+// --------- block ---------
+
 
 // check the login
 let login = prompt('Enter login', '');
