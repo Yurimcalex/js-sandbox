@@ -111,3 +111,9 @@ pre {
 	border-radius: 7px;
 	overflow: hidden;
 }
+
+.log {
+	padding: 5px 20px;
+	margin-bottom: 45px;
+	border-bottom: 1px dashed gray;
+}
