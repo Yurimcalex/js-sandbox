@@ -1,12 +1,16 @@
 // string conversion
 let toysCount = 134;
 console.log(`toys count: ${ String(toysCount) }`);
+// --------- block ---------
+
 
 // numeric conversion
 console.log('16' / '2');
 let str = '12345';
 console.log( typeof Number(str) );
 console.log( Number('e34 edfa') );
+// --------- block ---------
+
 
 // numeric conversion rules
 console.log(`undefined -> NaN ${Number(undefined)}`);
@@ -15,6 +19,8 @@ console.log(`true -> 1 ${Number(true)}`);
 console.log(`false -> 0 ${Number(false)}`);
 console.log(`" 123 " -> 123 ${Number(" 123 ")}`);
 console.log(`"hjkhk" -> NaN ${Number("hjkhk")}`);
+// --------- block ---------
+
 
 // boolean conversion
 // 0, "", null, undefined, NaN -> false
