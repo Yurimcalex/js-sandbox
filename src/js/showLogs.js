@@ -27,6 +27,9 @@ function createLog(count) {
 	const data = logs.splice(0, count - 1);
 	const container = document.createElement('div');
 	container.className = 'log';
-	data.forEach((arr, ind) => container.innerHTML += `log [${ind + 1}]: ${arr.join(', ')} <br/>`);
+
+	data.forEach((arr, ind) => 
+		container.innerHTML += `<div><span>log [${ind + 1}]:</span> ${arr.join(', ')}</div>`)
+
 	document.body.append(container);
 }
