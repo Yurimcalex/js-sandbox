@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', async (event) => {
 		.map(text => text.trim())
 		.forEach(text => {
 			if (window.markLogs) {
-				const [markedText, count] = markLogs(text);
+				const [markedText, logs] = markLogs(text);
 				createCodeBlock(markedText);
-				createLog(count);
+				createLog(logs);
 			} else {
 				createCodeBlock(text);
 			}
