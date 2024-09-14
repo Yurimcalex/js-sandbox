@@ -18,5 +18,6 @@ console = new Proxy(oldConsole, {
 
 function markLogs(text) {
 	let logsCounter = 1;
-	return text.replace(/console.log(.*)/g, str => `[${logsCounter++}] ${str}`);
+	const newText = text.replace(/console.log(.*)/g, str => `[${logsCounter++}] ${str}`);
+	return [newText, logsCounter];
 }
