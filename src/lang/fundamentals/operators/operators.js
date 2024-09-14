@@ -3,11 +3,15 @@ let a = 1, b = 1;
 let c = ++a;
 let d = b++;
 console.log(a, b, c, d);
+// --------- block ---------
+
 
 // task - assignment result
 let a1 = 2;
 let x = 1 + (a1 *= 2);
 console.log(a1, x);
+// --------- block ---------
+
 
 // task - type conversions
 console.log(`"" + 1 + 0 ->`, '' + 1 + 0, '10');
@@ -24,6 +28,8 @@ console.log(`"  -9  " - 5 ->`, '  -9  ' - 5, -14);
 console.log(`null + 1 ->`, null + 1, 1);
 console.log(`undefined + 1 ->`, undefined + 1, NaN);
 console.log(`" \t\n" -2 ->`, ' \t\n' - 2, -2);
+// --------- block ---------
+
 
 // task - fix the addition
 let n1 = prompt('First number?', 1);
