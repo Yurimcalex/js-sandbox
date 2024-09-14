@@ -48,5 +48,8 @@ function createLog(logsArr) {
 
 
 function prepareArgs(args) {
-	return args.map(arg => JSON.stringify(arg, null, 2));
+	return args.map(arg => {
+		if (typeof arg === 'object') return JSON.stringify(arg, null, 2);
+		return arg;
+	});
 }
