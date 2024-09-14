@@ -1,4 +1,4 @@
-let store = new Object();
+let store1 = new Object();
 let bike = {};
 
 let user = {
@@ -7,17 +7,16 @@ let user = {
 	'can swim': true,
 };
 
-//console.log(user.name, user.age);
+console.log(user.name, user.age);
 
 user.weight = 90;
 user.isMarried = true;
 
-//console.log(delete user.weight);
-
-//console.log(user);
+console.log(delete user.weight);
+console.log(user);
 
 let prop1 = 'name';
-//console.log(user[prop1]);
+console.log(user[prop1]);
 
 let employee = {
 	[prop1]: 'John',
@@ -28,19 +27,21 @@ function makeUser(name, age) {
 	return {name, age};
 }
 
-//console.log(makeUser('Anna', 19));
-
-//console.log(prop1 in employee, 'age' in employee);
+console.log(makeUser('Anna', 19));
+console.log(prop1 in employee, 'age' in employee);
 
 let box = {
 	size: undefined
 };
 
-//console.log('size' in box, box.size === undefined, box.height);
+console.log('size' in box, box.size === undefined, box.height);
 
+let userKeys = '';
 for (let key in user) {
-	//console.log(user[key]);
+	userKeys += user[key] + ' ';
 }
+console.log(userKeys);
+// --------- block ---------
 
 
 // task 1
@@ -50,6 +51,7 @@ visitor.surname = 'Smith';
 visitor.name = 'Pete';
 delete visitor.name;
 console.log(visitor);
+// --------- block ---------
 
 
 // task 2
@@ -64,20 +66,22 @@ let schedule = {};
 console.log(isEmpty(schedule));
 schedule['8:30'] = 'get up';
 console.log(isEmpty(schedule));
+// --------- block ---------
 
 
 // task 3
 let salaries = {
-  John: 100,
-  Ann: 160,
-  Pete: 130
+	John: 100,
+	Ann: 160,
+	Pete: 130
 };
 
 let sum = 0;
 for (let salary in salaries) {
 	sum += salaries[salary];
 }
-//console.log('sum:', sum);
+console.log('sum:', sum);
+// --------- block ---------
 
 
 // task 4
