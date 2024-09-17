@@ -7,7 +7,8 @@ user.sayHi = function () {
 	console.log('Hello!')
 };
 
-//user.sayHi();
+user.sayHi();
+// --------- block ---------
 
 
 let box = {
@@ -19,9 +20,10 @@ let box = {
 		console.log(this.size);
 	}
 };
+box.greeting();
+box.showSize();
+// --------- block ---------
 
-//box.greeting();
-//box.showSize();
 
 let admin = {
 	name: 'Joshua'
@@ -34,8 +36,8 @@ function showName() {
 user.showName = showName;
 admin.showName = showName;
 
-//user.showName();
-//admin.showName();
+user.showName();
+admin.showName();
 
 function sayPhraze(phraze) {
 	let f = () => `${this.name}: ${phraze}`;
@@ -44,6 +46,7 @@ function sayPhraze(phraze) {
 
 user.sayPhraze = sayPhraze;
 user.sayPhraze('Hello');
+// --------- block ---------
 
 
 // task 2
@@ -62,9 +65,10 @@ let calculator = {
 	}
 };
 
-//calculator.read();
-//calculator.sum();
-//calculator.mul();
+calculator.read();
+calculator.sum();
+calculator.mul();
+// --------- block ---------
 
 
 // task 3
