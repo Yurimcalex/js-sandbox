@@ -32,6 +32,19 @@ function findLogs(text) {
 	return logPositions;
 }
 
+
+function markLogs(text) {
+	const logPositions = findLogs(text);
+	oldConsole.log(logPositions);
+	return text.split('\n').map((line, i) => {
+		if (logPositions.includes(i + 1)) {
+			return line.replace(/console.log(.*)/g, str => `[${i + 1}] ${str}`);
+		} else {
+			return line;
+		}
+	});
+}
+
 // function markLogs(text) {
 // 	let logsCounter = 1;
 // 	const logs = [];
