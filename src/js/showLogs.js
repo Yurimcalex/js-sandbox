@@ -1,4 +1,4 @@
-const store = new Map();
+const store = {};
 const oldConsole = console;
 
 
@@ -8,25 +8,29 @@ console = new Proxy(oldConsole, {
 
 		return new Proxy(oldConsole.log, {
 			apply: (target, thisArg, args) => {
-				const key = args.join(', ');
-				store.set(key, args);
+				try {
+					throw new Error();
+				} catch (err) {
+					const match = err.stack.split('\n')[1].match(/:\d*:/)[0];
+					const key = match.slice(1, match.length - 1);
+					store[key] = args;
+				}			
 				target.apply(thisArg, args);
-				
 			}
 		});
 	}
 });
 
 
-function getConsoleLogLine() {
-	try {
-		throw new Error();
-	} catch (err) {
-		const match = err.stack.split('\n')[1].match(/:\d*:/)[0];
-		return match.slice(1, match.length - 1);
-	}
+function findLogs(text) {
+	const logPositions = [];
+	text.split('\n').forEach((line, i) => {
+		if (line.includes('console')) {
+			logPositions.push(i + 1);
+		}
+	});
+	return logPositions;
 }
-
 
 // function markLogs(text) {
 // 	let logsCounter = 1;
