@@ -6,3 +6,4 @@ https://highlightjs.org/
 https://developer.mozilla.org/en-US/docs/Web/API/Location/assign
 https://stackoverflow.com/questions/9216441/intercept-calls-to-console-log-in-chrome
 https://stackoverflow.com/questions/61494556/is-there-a-way-to-use-javascript-es6-proxy-to-spy-on-object-methods
+https://stackoverflow.com/questions/45395369/how-to-get-console-log-line-numbers-shown-in-nodejs
