@@ -15,17 +15,23 @@ function createCodeBlock(blockText) {
 
 
 document.addEventListener('DOMContentLoaded', async (event) => {
-	(await getScriptContent())
-		.split('// --------- block ---------')
-		.map(text => text.trim())
-		.forEach(text => {
-			if (window.markLogs) {
-				const [markedText, logs] = markLogs(text);
-				createCodeBlock(markedText);
-				createLog(logs);
-			} else {
-				createCodeBlock(text);
-			}
+	const scriptText = await getScriptContent();
+	const [text, logsPosition] = markLogs(scriptText);
+	
+	let lineCount = 0;
+	text
+		.split('// --------- block ---------')	
+		//.map(block => block.trim())
+		.forEach(block => {
+			createCodeBlock(block);
+
+			lineCount += block.split('\n').length + 1;
+			const pos = [];
+			logsPosition.forEach(p => {
+				if (p <= lineCount) pos.push(p);
+			})
+			logsPosition.splice(0, pos.length);
+			createLog(pos.map(p => [[p], store[p]]));
 		});
 	
 	document.querySelectorAll('pre code')
