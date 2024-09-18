@@ -10,6 +10,8 @@ let room = {
 };
 
 room.list();
+// --------- block ---------
+
 
 // Arrows have no arguments
 function defer(f, ms) {
