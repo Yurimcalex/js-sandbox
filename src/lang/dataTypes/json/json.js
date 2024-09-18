@@ -25,6 +25,8 @@ let user = {
 
 let userJSON = JSON.stringify(user);
 console.log(userJSON);
+// --------- block ---------
+
 
 // Excluding and transforming: replacer
 let studentJSON1 = JSON.stringify(
@@ -46,9 +48,13 @@ let pointJSON = JSON.stringify(point, function replacer(key, value) {
 });
 
 console.log(pointJSON);
+// --------- block ---------
+
 
 // Formatting: space
 console.log(JSON.stringify(student, null, 4));
+// --------- block ---------
+
 
 // Custom toJSON
 let animal = {
@@ -66,12 +72,15 @@ let pack = {
 	dog: animal
 };
 console.log(JSON.stringify(pack));
+// --------- block ---------
+
 
 // JSON.parse
 let numbers = "[0, 1, 2, 3]";
 console.log(JSON.parse(numbers, function (key, value) {
 	return typeof value === 'number' ? value * 10 : value;
 }));
+// --------- block ---------
 
 
 // task - turn the object into JSON and back
@@ -82,6 +91,7 @@ let employee = {
 
 let employeeJSON = JSON.stringify(employee);
 let employeeFromJSON = JSON.parse(employeeJSON);
+// --------- block ---------
 
 
 // task 2 - exclude backreferences
