@@ -23,6 +23,7 @@ countUser(user2);
 countUser(user1);
 console.log(visitCountMap.get(user1));
 user1 = null;
+// --------- block ---------
 
 
 let cache = new WeakMap();
@@ -41,6 +42,7 @@ let o1 = { x: 1 }, o2 = { x: 2 };
 
 process(fn, o1);
 console.log(cache.get(o1));
+// --------- block ---------
 
 
 let visitedSet = new WeakSet();
@@ -49,6 +51,7 @@ let user4 = { name: 'Victor' };
 visitedSet.add(user3);
 
 console.log(visitedSet.has(user3), visitedSet.has(user4));
+// --------- block ---------
 
 
 // task 1
@@ -62,6 +65,7 @@ let readMessages = new WeakSet();
 readMessages.add(messages[0]);
 messages.shift();
 console.log(readMessages.has(messages[0]));
+// --------- block ---------
 
 
 // task 2
