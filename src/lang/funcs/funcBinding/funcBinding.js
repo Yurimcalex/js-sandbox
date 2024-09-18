@@ -31,6 +31,8 @@ player.sayPhrase = sayPhrase.bind(player);
 let f = player.sayPhrase;
 
 setTimeout(() => f('Hello'), 1000);
+// --------- block ---------
+
 
 // Partial functions
 function mul(a, b) {
@@ -39,6 +41,8 @@ function mul(a, b) {
 
 let double = mul.bind(null, 2);
 console.log(double(8), double(3));
+// --------- block ---------
+
 
 // Going partial without context
 function partial(f, ...argsBound) {
@@ -56,14 +60,16 @@ let man = {
 
 man.sayNow = partial(man.say, new Date().getHours() + ':' + new Date().getMinutes());
 man.sayNow('Greeting!');
+// --------- block ---------
 
 
 // Task 1 - bound function as a method
 {
 	function f() { console.log(this) }
 	let user = { g: f.bind(null) };
-	user.g();
+	//user.g();
 }
+// --------- block ---------
 
 
 // Task 2 - second bind
@@ -74,6 +80,7 @@ man.sayNow('Greeting!');
 	f = f.bind({ name: 'Bob' }).bind({ name: 'Alie' });
 	f();
 }
+// --------- block ---------
 
 
 // Task 3 - function property after bind
@@ -85,6 +92,7 @@ man.sayNow('Greeting!');
 	let bound = sayHi.bind({ name: 'Lola' });
 	console.log(bound.x);
 }
+// --------- block ---------
 
 
 // Task 4 - fix a function that loses this
@@ -113,6 +121,7 @@ man.sayNow('Greeting!');
 		user.loginFail.bind(user)
 	);
 }
+// --------- block ---------
 
 
 // Task 5 - partial application for login
