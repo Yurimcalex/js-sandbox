@@ -3,6 +3,8 @@ items.set('1', 20);
 items.set(true, 'baloon');
 items.set(20, '200');
 console.log(items.size, items.get('1'));
+// --------- block ---------
+
 
 let visitors = new Map();
 visitors
@@ -22,6 +24,7 @@ for (let visitor of visitors) {
 }
 
 visitors.forEach((value, key, map) => console.log(key.id));
+// --------- block ---------
 
 
 let fruitCart = new Map([
@@ -30,6 +33,7 @@ let fruitCart = new Map([
 ]);
 
 console.log(fruitCart.get('banana'));
+// --------- block ---------
 
 
 let room = {
@@ -43,6 +47,7 @@ console.log(roomMap);
 
 let fruit = Object.fromEntries(fruitCart.entries());
 console.log(fruit);
+// --------- block ---------
 
 
 let set = new Set();
@@ -65,6 +70,7 @@ for (let item of set) {
 }
 
 set.forEach((value, valueAgain, s) => console.log(value.name));
+// --------- block ---------
 
 
 // task 1
@@ -77,6 +83,7 @@ function unique(arr) {
 }
 
 console.log(unique(values));
+// --------- block ---------
 
 
 // task 2
@@ -89,6 +96,7 @@ function aclean(arr) {
 }
 
 console.log(aclean(anagrs));
+// --------- block ---------
 
 
 // task 3
