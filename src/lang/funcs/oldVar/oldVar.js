@@ -10,7 +10,8 @@ console.log(i);
 function f() {
 	var y = 2;
 }
-//console.log(y);
+console.log(y);
+// --------- block ---------
 
 
 // var tolerates redeclaretions
@@ -27,6 +28,7 @@ function g() {
 }
 
 g();
+// --------- block ---------
 
 
 // IIFE
