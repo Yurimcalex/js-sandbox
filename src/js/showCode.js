@@ -21,16 +21,15 @@ document.addEventListener('DOMContentLoaded', async (event) => {
 	let lineCount = 0;
 	text
 		.split('// --------- block ---------')	
-		//.map(block => block.trim())
 		.forEach(block => {
-			createCodeBlock(block);
-
 			lineCount += block.split('\n').length + 1;
 			const pos = [];
 			logsPosition.forEach(p => {
 				if (p <= lineCount) pos.push(p);
 			})
 			logsPosition.splice(0, pos.length);
+
+			createCodeBlock(block.trim());
 			createLog(pos.map(p => [[p], store[p]]));
 		});
 	
