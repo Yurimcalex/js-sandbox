@@ -19,6 +19,8 @@ for (let a = 0; a < 2; a += 1) {
 	let b = a + 1;
 	console.log(a + b);
 }
+// --------- block ---------
+
 
 // Nested functions
 function greeting(fname, lname) {
@@ -43,6 +45,7 @@ greeting('John', 'Silva');
 
 	f();
 }
+// --------- block ---------
 
 
 // Task 1 - does a function pickup latest changes
@@ -52,6 +55,7 @@ function sayHi() {
 }
 name = 'Patrik';
 sayHi();
+// --------- block ---------
 
 
 // Task 2 - Which variables are available
@@ -67,6 +71,7 @@ sayHi();
 	let work = makeWorker();
 	work();
 }
+// --------- block ---------
 
 
 // Task 3 - are counters independent
@@ -84,6 +89,7 @@ sayHi();
 	console.log(counter1(), counter1());
 	console.log(counter2(), counter2());
 }
+// --------- block ---------
 
 
 // Task 4 - counter object
@@ -99,6 +105,7 @@ function Counter() {
 
 let counter = new Counter();
 console.log(counter.up(), counter.up(), counter.down());
+// --------- block ---------
 
 
 // Task 5 - function in if
@@ -109,11 +116,11 @@ console.log(counter.up(), counter.up(), counter.down());
 	if (true) {
 	  let user = "John";
 	  function sayHi() {
-	    alert(`${phrase}, ${user}`);
+	    console.log(`${phrase}, ${user}`);
 	  }
 	}
 
-	//sayHi();
+	sayHi();
 }
 
 
@@ -125,6 +132,7 @@ function sum(a) {
 }
 
 console.log(sum(1)(2), sum(5)(-1));
+// --------- block ---------
 
 
 // Task 7 - is variable visible
@@ -136,6 +144,7 @@ function func() {
 }
 
 //func();
+// --------- block ---------
 
 
 // Task 8 - filter through function
@@ -155,6 +164,7 @@ let arr = [1, 2, 3, 4, 5, 6, 7];
 
 console.log(arr.filter(inBetween(3, 6)));
 console.log(arr.filter(inArray([1, 2, 10])));
+// --------- block ---------
 
 
 // Task 9 - sort be field
@@ -170,6 +180,7 @@ function byField(name) {
 
 console.log(users.sort(byField('name')));
 console.log(users.sort(byField('age')));
+// --------- block ---------
 
 
 // Task 10 - army of functions
