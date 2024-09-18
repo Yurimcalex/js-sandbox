@@ -23,6 +23,7 @@ let city = {
 };
 
 console.log(city.getName.name);
+// --------- block ---------
 
 
 // The length property
@@ -44,6 +45,7 @@ procUserInput(
 	(inp) => { console.log(`You pass ${inp} and its type ${typeof inp}`) },
 	() => { console.log('I am finishing the call!') }
 );
+// --------- block ---------
 
 
 // Custom properties
@@ -65,6 +67,7 @@ function makeCounter() {
 
 let counter = makeCounter();
 console.log(counter(), counter());
+// --------- block ---------
 
 
 // Named function expression
@@ -79,6 +82,7 @@ let sayYes = function sy(arg) {
 let gf = sayYes;
 sayYes = null;
 gf();
+// --------- block ---------
 
 
 // Set and decrease for counter
@@ -100,6 +104,7 @@ let counter1 = makeCounter1();
 counter1.set(10);
 counter1.decrease();
 console.log(counter1());
+// --------- block ---------
 
 
 // Sum with an arbitrary amount of brackets
