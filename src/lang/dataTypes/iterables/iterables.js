@@ -17,9 +17,11 @@ let range = {
 };
 
 for (let n of range) console.log(n);
+// --------- block ---------
 
 
 for (let ch of 'Hello') console.log(ch);
+// --------- block ---------
 
 
 let str1 = 'Plame de majorka';
@@ -30,6 +32,7 @@ while (true) {
 	if (res.value === ' ') continue;
 	console.log(res.value);
 }
+// --------- block ---------
 
 
 let arrayLike = {
@@ -41,5 +44,4 @@ let arrayLike = {
 };
 
 console.log(Array.from(arrayLike));
-
 console.log(Array.from(range, n => n * 2));
