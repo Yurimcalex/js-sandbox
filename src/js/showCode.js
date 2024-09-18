@@ -16,29 +16,35 @@ function createCodeBlock(blockText) {
 
 document.addEventListener('DOMContentLoaded', async (event) => {
 	const scriptText = await getScriptContent();
-	const [text, logsPosition] = markLogs(scriptText);
+
+	if (!window.markLogs) {
+		scriptText.split('// --------- block ---------')
+			.forEach(block => createCodeBlock(block.trim()));
 	
-	let lineCount = 0;
-	text
-		.split('// --------- block ---------')	
-		.forEach(block => {
-			lineCount += block.split('\n').length - 1;
+	} else {
+		const [text, logsPosition] = markLogs(scriptText);
+		let lineCount = 0;
+		text
+			.split('// --------- block ---------')	
+			.forEach(block => {
+				lineCount += block.split('\n').length - 1;
 
-			// for the last block
-			if (lineCount === text.split('\n').length - 1) {
-				lineCount += 1;
-			}
+				// for the last block
+				if (lineCount === text.split('\n').length - 1) {
+					lineCount += 1;
+				}
 
-			const pos = [];
-			logsPosition.forEach(p => {
-				if (p <= lineCount) pos.push(p);
-			})
-			logsPosition.splice(0, pos.length);
+				const pos = [];
+				logsPosition.forEach(p => {
+					if (p <= lineCount) pos.push(p);
+				})
+				logsPosition.splice(0, pos.length);
 
-			createCodeBlock(block.trim());
-			createLog(pos.map(p => [[p], store[p]]));
-		});
-	
+				createCodeBlock(block.trim());
+				createLog(pos.map(p => [[p], store[p]]));
+			});
+	}
+
 	document.querySelectorAll('pre code')
 		.forEach((block) => hljs.highlightElement(block));
 });
