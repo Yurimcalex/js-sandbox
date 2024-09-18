@@ -12,6 +12,8 @@ let [one, two, three] = new Set([1, 2, 3]);
 let obj = {};
 [obj.a, obj.b, obj.c] = 'abc';
 console.log(obj);
+// --------- block ---------
+
 
 let user = {
   name: "John",
@@ -25,6 +27,8 @@ let user1 = new Map();
 user1.set("name", "John");
 user1.set("age", "30");
 for (let [key, value] of user1) console.log(key, value);
+// --------- block ---------
+
 
 let v1 = 1;
 let v2 = 10;
@@ -40,6 +44,7 @@ function getLastName() {
 	return 'Stoyankivich';
 }
 console.log(fname, lastName);
+// --------- block ---------
 
 
 let options = {
@@ -63,6 +68,7 @@ console.log(t1, restOpt1);
 let va1, va2;
 ({va1, va2} = {va1: 10, va2: 100});
 console.log(va1, va2);
+// --------- block ---------
 
 
 let options2 = {
@@ -81,15 +87,18 @@ let {
 } = options2;
 
 console.log(w2, h2, item1, item2, extra);
+// --------- block ---------
 
 
 let options3 = {
   title: "My menu",
   items: ["Item1", "Item2"]
 };
+
 function f({title = 'Title', width = 100, height = 100, item2 = []} = {}) {
 	return;
 }
+// --------- block ---------
 
 
 // task 1 - destructuring assignment
@@ -100,6 +109,7 @@ let visitor = {
 
 let {name, years: age, isAdmin = false} = visitor;
 console.log(name, age, isAdmin);
+// --------- block ---------
 
 
 // task 2 - the maximal salary
