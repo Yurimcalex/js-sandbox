@@ -28,6 +28,7 @@ for (let i = 0; i < arr2.length; i += 1) {
 for (let n of arr2) {
 	console.log(n);
 }
+// --------- block ---------
 
 
 // task 2
@@ -38,6 +39,7 @@ console.log(styles.shift());
 styles.unshift('Rap', 'Reggae');
 
 console.log(styles);
+// --------- block ---------
 
 
 // task 4
@@ -58,6 +60,7 @@ function sumInput() {
 }
 
 console.log('sum:', sumInput());
+// --------- block ---------
 
 
 // task 5
