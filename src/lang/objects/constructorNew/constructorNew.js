@@ -4,15 +4,14 @@ function User(name) {
 }
 
 let user = new User('Katherine');
+console.log(user);
 
-//console.log(user);
 
-
-let store = new function () {
+let store1 = new function () {
 	this.name = 'Garage';
 };
+console.log(store1);
 
-//console.log(store);
 
 function constructBox(size) {
 	if (!new.target) {
@@ -22,7 +21,7 @@ function constructBox(size) {
 }
 
 let box = constructBox(16);
-//console.log(box);
+console.log(box);
 
 
 function Car(name) {
@@ -33,7 +32,8 @@ function Car(name) {
 }
 
 let car = new Car('Lamborgini');
-//car.go();
+car.go();
+// --------- block ---------
 
 
 // task 1
@@ -48,7 +48,8 @@ function B() {
 }
 let a = new A();
 let b = new B();
-//console.log(a == b);
+console.log(a == b);
+// --------- block ---------
 
 
 // task 2
@@ -66,8 +67,9 @@ function Calculator() {
 }
 
 let calculator = new Calculator();
-//calculator.read();
-//console.log(calculator.sum(), calculator.mul());
+calculator.read();
+console.log(calculator.sum(), calculator.mul());
+// --------- block ---------
 
 
 // task 3
