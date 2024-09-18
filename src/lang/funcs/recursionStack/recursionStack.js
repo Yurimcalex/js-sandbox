@@ -15,6 +15,7 @@ function pow2(x, n) {
 }
 
 console.log(pow2(2, 3));
+// --------- block ---------
 
 
 // Recursive traversals
@@ -52,6 +53,7 @@ function sumSalaries2(department) {
 }
 
 console.log(sumSalaries2(company));
+// --------- block ---------
 
 
 // Recursive structures
@@ -95,6 +97,7 @@ function removeLink(link, step) {
 removeLink(list, 1);
 
 console.log(list);
+// --------- block ---------
 
 
 // Task 1 - sum all numbers till the given one
@@ -114,6 +117,7 @@ function sumTo3(n) {
 }
 
 console.log(sumTo3(100));
+// --------- block ---------
 
 
 // Task 2 - calculate factorial
@@ -123,6 +127,7 @@ function factorial(n) {
 }
 
 console.log(factorial(5));
+// --------- block ---------
 
 
 // Task 3 - fibonacci numbers
@@ -146,7 +151,8 @@ function fib2(n) {
 	return fib2(n - 1) + fib2(n - 2);
 }
 
-//console.log(fib2(5));
+console.log(fib2(5));
+// --------- block ---------
 
 
 // Task 4 - output a single-linked list
@@ -180,6 +186,7 @@ function printList2(list) {
 }
 
 printList2(list1);
+// --------- block ---------
 
 
 // Task 5 - output a single-linked list in the reverse order
