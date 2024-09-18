@@ -20,6 +20,7 @@ console.log(uSymbols);
 
 let uOwnKeys = Reflect.ownKeys(user);
 console.log(uOwnKeys);
+// --------- block ---------
 
 
 let prices = {
@@ -33,6 +34,7 @@ let doubledPrices = Object.fromEntries(
 );
 
 console.log(doubledPrices);
+// --------- block ---------
 
 
 // task 1 - sum the properties
@@ -51,6 +53,7 @@ function sumSalaries(salaries) {
 }
 
 console.log(sumSalaries(salaries));
+// --------- block ---------
 
 
 // task 2 - count properties
