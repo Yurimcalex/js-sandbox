@@ -13,6 +13,7 @@ function showName(fname, lname, ...titles) {
 }
 
 showName('Bob', 'Kilisha', 'Cool guy', 'Dancer');
+// --------- block ---------
 
 
 // The arguments variable
@@ -22,6 +23,7 @@ function f() {
 }
 
 f(1, 2);
+// --------- block ---------
 
 
 // Spread syntax
@@ -37,6 +39,7 @@ let chars1 = [...str];
 let chars2 = Array.from(str);
 
 console.log(chars1, chars2);
+// --------- block ---------
 
 
 // Copy an array/object
