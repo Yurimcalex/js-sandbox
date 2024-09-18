@@ -11,6 +11,7 @@ console.log(`
 	${someBin.toString(2)} to 10: ${someBin.toString(10)},
 	${someOct.toString(8)} to 10: ${someOct.toString((10))}
 `);
+// --------- block ---------
 
 
 // rounding
@@ -24,10 +25,12 @@ console.log(`
 	round*100/100: ${Math.round(rn * 100) / 100},
 	toFixed: ${rn.toFixed(1)}
 `);
+// --------- block ---------
 
 
 // imprecise calculations
 console.log(0.1 + 0.2);
+// --------- block ---------
 
 
 // tests
@@ -42,6 +45,7 @@ console.log(
 	Object.is(0, -0),
 	Object.is(1, 1)
 );
+// --------- block ---------
 
 
 // parseInt parseFloat
@@ -52,6 +56,7 @@ console.log(
 	parseInt('0xff', 16),
 	parseFloat('12.3.4')
 );
+// --------- block ---------
 
 
 // other math funcs
@@ -60,27 +65,30 @@ console.log(
 	Math.min(3, 4, 1),
 	Math.pow(2, 3)
 );
+// --------- block ---------
 
 
 // task 1
 let un1;
 let un2;
 
-// do {
-// 	un1 = prompt('a?', '');
-// } while (!un1 && !isFinite(un1));
+do {
+	un1 = prompt('a?', '');
+} while (!un1 && !isFinite(un1));
 
-// do {
-// 	un2 = prompt('b?', '');
-// } while (!un2 && !isFinite(un2));
+do {
+	un2 = prompt('b?', '');
+} while (!un2 && !isFinite(un2));
 
-// console.log(+un1 + +un2);
+console.log(+un1 + +un2);
+// --------- block ---------
 
 
 // task 2
 let n = 6.35;
 console.log(n.toFixed(1));
 console.log(Math.round(n * 10) / 10);
+// --------- block ---------
 
 
 // task 3
@@ -92,7 +100,8 @@ function readNumber() {
 	return +inp;
 }
 
-//console.log(readNumber());
+console.log(readNumber());
+// --------- block ---------
 
 
 // task 4
@@ -100,7 +109,7 @@ function random(min, max) {
 	return Math.random() * (max - min) + min;  	
 }
 
-//console.log(random(1, 5));
+console.log(random(1, 5));
 
 
 // task 5
