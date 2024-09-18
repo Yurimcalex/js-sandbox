@@ -6,8 +6,8 @@ let user = {
 	}
 };
 
-//console.log(user);
-//console.log(user - 1);
+console.log(user);
+console.log(user - 1);
 
 
 let box = {
