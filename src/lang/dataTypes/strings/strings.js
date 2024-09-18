@@ -4,7 +4,7 @@ let items = `items:
 	- item 3
 `;
 
-//alert(items);
+alert(items);
 
 let str1 = 'Some\ntext';
 console.log(str1);
@@ -17,6 +17,7 @@ for (let ch of str1) console.log(ch);
 
 console.log(str1.toUpperCase());
 console.log(str1.toLowerCase());
+// --------- block ---------
 
 
 let str2 = 'Some text is written by the man';
@@ -37,20 +38,19 @@ console.log(str2.endsWith('n'));
 let str2Copy = str2.slice();
 
 console.log(str2.slice(-3));
-
 console.log(str2.substring(0, 4));
-
 console.log(str2.substr(0, 4));
-
 console.log(str2.codePointAt(0));
+// --------- block ---------
+
 
 let str3 = '';
 for (let i = 0; i < 100; i += 1) {
 	str3 += ' ' + String.fromCodePoint(i);
 }
 console.log(str3);
-
 console.log(str1.localeCompare(str2));
+// --------- block ---------
 
 
 // task 1
@@ -59,6 +59,7 @@ function ucFirst(str) {
 	return str[0].toUpperCase() + str.slice(1);
 }
 console.log(ucFirst('john'));
+// --------- block ---------
 
 
 // task 2
@@ -70,6 +71,7 @@ function checkSpam(str) {
 console.log(checkSpam('buy ViAgRA now') == true);
 console.log(checkSpam('free xxxxx') == true);
 console.log(checkSpam("innocent rabbit") == false);
+// --------- block ---------
 
 
 // task 3
@@ -80,6 +82,7 @@ function truncate(str, maxlength) {
 }
 
 console.log(truncate("What I'd like to tell on this topic is:", 20));
+// --------- block ---------
 
 
 // task 4
