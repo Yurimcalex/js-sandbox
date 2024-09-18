@@ -9,6 +9,8 @@ console.log(arr);
 
 arr.splice(-1, 0, 'apple');
 console.log(arr);
+// --------- block ---------
+
 
 let arr1 = arr.slice(0, 3);
 console.log(arr1);
@@ -23,6 +25,7 @@ arr2.forEach((v, i, a) => {
 console.log(arr2.indexOf('five', 2));
 console.log(arr2.includes('six'));
 console.log(arr2.lastIndexOf('two'));
+// --------- block ---------
 
 
 let users = [
@@ -40,6 +43,8 @@ console.log(someUsers);
 
 let names = users.map(u => u.name);
 console.log(names);
+// --------- block ---------
+
 
 let numbs = [1, 10, 24, 6, 0, 2];
 numbs.sort((a, b) => a - b);
@@ -61,6 +66,7 @@ let obj = {
 };
 
 console.log(numbs.filter(obj.f, obj));
+// --------- block ---------
 
 
 // task 1
@@ -72,6 +78,7 @@ function camelize(str) {
 }
 
 console.log(camelize("-webkit-transition"));
+// --------- block ---------
 
 
 // task 2
@@ -80,6 +87,7 @@ function filterRange(arr, a, b) {
 }
 
 console.log(filterRange([5, 3, 8, 1], 1, 4));
+// --------- block ---------
 
 
 // task 3
@@ -90,12 +98,14 @@ function filterRangeInPlace(arr, a, b) {
 }
 
 console.log(filterRangeInPlace([5, 3, 8, 1], 1, 4));
+// --------- block ---------
 
 
 // task 4
 let a1 = [5, 2, 1, -10, 8];
 a1.sort((a, b) => b - a);
 console.log(a1);
+// --------- block ---------
 
 
 // task 5
@@ -104,6 +114,7 @@ function copySorted(arr) {
 	return arr.slice().sort();
 }
 console.log(copySorted(arrStr), '------> task 5');
+// --------- block ---------
 
 
 // task 6
@@ -124,6 +135,7 @@ powerCalc.addMethod("*", (a, b) => a * b);
 powerCalc.addMethod("/", (a, b) => a / b);
 powerCalc.addMethod("**", (a, b) => a ** b);
 console.log(powerCalc.calculate('3 * 7'));
+// --------- block ---------
 
 
 // task 7
@@ -135,18 +147,20 @@ let users1 = [ john, pete, mary ];
 
 let names1 = users1.map(user => user.name);
 console.log(names1);
+// --------- block ---------
 
 
 // task 8
-let users2 = [ { name: "John", surname: "Smith", id: 1 },
-							 { name: "Pete", surname: "Hunt", id: 2 },
-							 { name: "Mary", surname: "Key", id: 3 } ];
+let users2 = [  { name: "John", surname: "Smith", id: 1 },
+								{ name: "Pete", surname: "Hunt", id: 2 },
+								{ name: "Mary", surname: "Key", id: 3 } ];
 
 let usersMapped = users2.map(user => (
 	{ id: user.id, fullName: user.name + ' ' + user.surname }
 ));
 
 console.log(usersMapped);
+// --------- block ---------
 
 
 // task 9
@@ -162,6 +176,7 @@ function sortByAge(users) {
 
 sortByAge(arr3);
 console.log(arr3);
+// --------- block ---------
 
 
 // task 10
@@ -182,6 +197,7 @@ function shuffle(arr) {
 let arr4 = [1, 2, 3];
 shuffle(arr4);
 console.log(arr4);
+// --------- block ---------
 
 
 // task 11
@@ -190,6 +206,7 @@ function getAverageAge(users) {
 }
 
 console.log(getAverageAge(arr3));
+// --------- block ---------
 
 
 // task 12
@@ -205,13 +222,14 @@ function unique(arr) {
 }
 
 console.log(unique(strings));
+// --------- block ---------
 
 
 // task 13
 let users4 = [
-  {id: 'john', name: "John Smith", age: 20},
-  {id: 'ann', name: "Ann Smith", age: 24},
-  {id: 'pete', name: "Pete Peterson", age: 31},
+	{id: 'john', name: "John Smith", age: 20},
+	{id: 'ann', name: "Ann Smith", age: 24},
+	{id: 'pete', name: "Pete Peterson", age: 31},
 ];
 
 function groupById(users) {
