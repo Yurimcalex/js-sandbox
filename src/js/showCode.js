@@ -22,7 +22,13 @@ document.addEventListener('DOMContentLoaded', async (event) => {
 	text
 		.split('// --------- block ---------')	
 		.forEach(block => {
-			lineCount += block.split('\n').length + 1;
+			lineCount += block.split('\n').length - 1;
+
+			// for the last block
+			if (lineCount === text.split('\n').length - 1) {
+				lineCount += 1;
+			}
+
 			const pos = [];
 			logsPosition.forEach(p => {
 				if (p <= lineCount) pos.push(p);
