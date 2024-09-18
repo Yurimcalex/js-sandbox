@@ -13,7 +13,11 @@ console = new Proxy(oldConsole, {
 				} catch (err) {
 					const match = err.stack.split('\n')[1].match(/:\d*:/)[0];
 					const key = match.slice(1, match.length - 1);
-					store[key] = args;
+					if (store[key]) {
+						store[key] = [...store[key], ...args];
+					} else {
+						store[key] = args;
+					}
 				}			
 				target.apply(thisArg, args);
 			}
