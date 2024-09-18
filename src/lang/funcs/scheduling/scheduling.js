@@ -3,7 +3,7 @@ function sayPhrase(phrase, from) {
 	console.log(`${from}: ${phrase}`);
 }
 
-//setTimeout(sayPhrase, 3000, 'Hello', 'Bob');
+setTimeout(sayPhrase, 3000, 'Hello', 'Bob');
 
 
 //let timer1 = setTimeout(() => console.log('ok'), 2000);
@@ -18,6 +18,7 @@ function sayPhrase(phrase, from) {
 //let timer3 = setInterval(() => console.log('tick'), 1000);
 //alert('...but timer is ticking???');
 //setTimeout(() => clearInterval(timer3), 5000);
+// --------- block ---------
 
 
 // Nested setTiemout
@@ -49,6 +50,7 @@ function sayPhrase(phrase, from) {
 //   if (start + 100 < Date.now()) alert(times);
 //   else setTimeout(run);
 // });
+// --------- block ---------
 
 
 // Task 1 - output every second
@@ -61,7 +63,7 @@ function printNumbers1(from, to) {
 	}, 1000);
 }
 
-//printNumbers1(1, 10);
+printNumbers1(1, 10);
 
 
 function printNumbers2(from, to) {
@@ -73,7 +75,8 @@ function printNumbers2(from, to) {
 	}, 1000);
 }
 
-//printNumbers2(1, 10);
+printNumbers2(1, 10);
+// --------- block ---------
 
 
 // Task 2 - what will setTimeout show
