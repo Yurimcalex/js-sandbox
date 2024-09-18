@@ -18,6 +18,7 @@ let slowCalcWithCache = cachingDecorator(slowCalc);
 slowCalcWithCache(10);
 slowCalcWithCache(11);
 slowCalcWithCache(10);
+// --------- block ---------
 
 
 // Using func.call for the context
@@ -59,6 +60,7 @@ calculations.slow = cachingDecorator1(calculations.slow);
 calculations.slow(1);
 calculations.slow(2);
 calculations.slow(2);
+// --------- block ---------
 
 
 // Going multi-argument
@@ -87,6 +89,7 @@ calculations.anotherSlow = cachingDecorator2(calculations.anotherSlow);
 calculations.anotherSlow(1, 2);
 calculations.anotherSlow(1, 2);
 calculations.anotherSlow(3, 4);
+// --------- block ---------
 
 
 // func.apply
@@ -104,6 +107,7 @@ let o = {};
 o.meth = wrapper(someFunc);
 o.meth();
 console.log(o);
+// --------- block ---------
 
 
 // Spy decorator
@@ -127,6 +131,7 @@ spySum(1, 2, 3, 4, 5);
 for (let args of spySum.calls) {
 	console.log('call:' + args.join());
 }
+// --------- block ---------
 
 
 // Delaying decorator
@@ -141,7 +146,8 @@ function delay(f, ms) {
 }
 
 let sayPhrase3000 = delay(sayPhrase, 3000);
-//sayPhrase3000('Hey!');
+sayPhrase3000('Hey!');
+// --------- block ---------
 
 
 // Debounce decorator
@@ -181,6 +187,7 @@ let shd = debounce1(sayHey, 1000);
 // setTimeout(() => shd('Piter'), 500);
 // setTimeout(() => shd('Sam'), 1700);
 // setTimeout(() => shd('Gorge'), 800);
+// --------- block ---------
 
 
 // Throttle decorator
