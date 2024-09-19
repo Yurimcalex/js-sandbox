@@ -8,6 +8,7 @@ let promise2 = new Promise(function (resolve, reject) {
 		reject(new Error('Error'));
 	}, 1000);
 });
+// --------- block ---------
 
 
 // Consumers: then, catch
@@ -19,6 +20,7 @@ promise2.then(
 promise1.then((result) => console.log(result));
 
 promise2.catch((err) => console.log(err.message));
+// --------- block ---------
 
 
 // Cleanup: finally
@@ -35,6 +37,7 @@ promise3
 	.catch(err => console.log(err.message))
 	.finally(() => console.log('settled!'))
 	.then(result => console.log(result + '!'));
+// --------- block ---------
 
 
 // Example: loadScript
@@ -58,6 +61,7 @@ promise4.then(
 );
 
 promise4.then(script => console.log('Another handler...'));
+// --------- block ---------
 
 
 // Task 1 - Re-resolve a promise
@@ -68,6 +72,7 @@ let promise = new Promise(function(resolve, reject) {
 });
 
 promise.then(alert);
+// --------- block ---------
 
 
 // Task 2 - Delay with a promise
@@ -78,6 +83,7 @@ function delay(ms) {
 }
 
 delay(3000).then(() => console.log('after 3 sec'));
+// --------- block ---------
 
 
 // Task 3 - Animated circle with promise
@@ -97,4 +103,4 @@ function showCircle(cx, cy, radius) {
 		  resolve(div);
 		}, 0);
 	});
- }
+}
