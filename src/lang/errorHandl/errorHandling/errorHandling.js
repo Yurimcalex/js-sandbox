@@ -9,6 +9,7 @@ try {
 } catch (err) {
 	console.log('Error has occurred!');
 }
+// --------- block ---------
 
 
 // try ... catch work synchronously
@@ -26,6 +27,7 @@ setTimeout(() => {
 		console.log('error is caught here!');
 	}
 }, 1000);
+// --------- block ---------
 
 
 // Error object
@@ -34,6 +36,7 @@ try {
 } catch (err) {
 	console.dir(err);
 }
+// --------- block ---------
 
 
 // Throwing our own errors
@@ -47,6 +50,7 @@ try {
 } catch (err) {
 	console.log('JSON Error:' + err.message);
 }
+// --------- block ---------
 
 
 // Rethrowing
