@@ -26,6 +26,7 @@ console.log(rabbitClone);
 let obj = Object.create(null);
 obj['__proto__'] = 'some value';
 console.log(obj);
+// --------- block ---------
 
 
 // Task 1 - add toString to the dictionary
@@ -42,6 +43,7 @@ console.log(dict.toString());
 for (let key in dict) {
 	console.log(key);
 }
+// --------- block ---------
 
 
 // Task 2 - the difference between calls
