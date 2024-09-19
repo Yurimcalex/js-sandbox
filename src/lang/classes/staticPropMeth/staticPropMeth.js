@@ -27,6 +27,8 @@ let song1 = new Song('Happy!', 'La-la-la');
 let song2 = Song.createDraft();
 
 console.log(song1, song2);
+// --------- block ---------
+
 
 // Static properties
 class SomeClass {
@@ -34,6 +36,7 @@ class SomeClass {
 }
 
 console.log(SomeClass.prop);
+// --------- block ---------
 
 
 // Inheritance of static properties and methods
@@ -49,6 +52,7 @@ class Child extends Parent {
 }
 
 Child.showType();
+// --------- block ---------
 
 
 // Task 1 - Class extends Object?
