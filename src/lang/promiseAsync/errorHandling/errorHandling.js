@@ -10,6 +10,7 @@ new Promise(function (resolve, reject) {
 	.then(result => result * 2 + someValue1)
 	.then(result => result + someValue2)
 	.catch(err => console.log(err));
+// --------- block ---------
 
 
 // Implicit try...catch
@@ -34,6 +35,7 @@ new Promise((resolve, reject) => {
 })
 	.then(result => itWillbeErr())
 	.catch(err => console.log(err.message));
+// --------- block ---------
 
 
 // Rethrowing
@@ -54,6 +56,7 @@ new Promise((resolve, reject) => {
 	})
 	.then(() => console.log('Hey! I wanna work!'))
 	.catch(err => console.log(err.message));
+// --------- block ---------
 
 
 // Unhandled rejections
@@ -65,6 +68,7 @@ window.addEventListener('unhandledrejection', function(event) {
   console.log(event.promise);
   console.log(event.reason);
 });
+// --------- block ---------
 
 
 // Error in setTimeout
