@@ -24,6 +24,8 @@ let funRabbit = {
 
 console.log(funRabbit.jumps);
 funRabbit.walk();
+// --------- block ---------
+
 
 // Writing doesn't use prototype
 rabbit.walk = function () {
@@ -52,6 +54,8 @@ let admin = {
 admin.fullname = 'Colins Mcneu';
 user.fullname;
 admin.fullname;
+// --------- block ---------
+
 
 // The value of this
 {
@@ -73,6 +77,8 @@ admin.fullname;
 	rabbit.sleep();
 	console.log(rabbit.isSleeping);
 }
+// --------- block ---------
+
 
 // for..in loop
 {
@@ -96,6 +102,7 @@ admin.fullname;
 		}
 	}
 }
+// --------- block ---------
 
 
 // Task 1 - working with prototype
@@ -115,6 +122,7 @@ admin.fullname;
 	delete animal.jumps;
 	console.log(rabbit.jumps);
 }
+// --------- block ---------
 
 
 // Task 2 - searching algorithm
@@ -139,6 +147,7 @@ let pockets = {
 };
 
 console.log(pockets.glasses, head.glasses);
+// --------- block ---------
 
 
 // Task 3 - where does it write
@@ -156,6 +165,7 @@ console.log(pockets.glasses, head.glasses);
 	rabbit.eat();
 	console.log(rabbit.full);
 }
+// --------- block ---------
 
 
 // Task 4 - why are both hamsters full
