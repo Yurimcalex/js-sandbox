@@ -28,6 +28,7 @@ let documentBox = new DocumentBox('orders');
 documentBox.put('order-1');
 documentBox.showItems();
 documentBox.getAmount();
+// --------- block ---------
 
 
 // Overriding a method
@@ -63,6 +64,7 @@ class SizedBox extends Box {
 
 let box5 = new SizedBox('sized-box', 5);
 console.log(box5);
+// --------- block ---------
 
 
 // Overriding class fields: a tricky note
@@ -79,6 +81,7 @@ class ChildClass extends ParentClass {
 
 new ParentClass();
 new ChildClass();
+// --------- block ---------
 
 
 // Task 1 - Error creating an instance
@@ -99,6 +102,7 @@ class Rabbit extends Animal {
 
 let rabbit = new Rabbit("White Rabbit"); // Error: this is not defined
 console.log(rabbit.name);
+// --------- block ---------
 
 
 // Task 2 - Extended clock
