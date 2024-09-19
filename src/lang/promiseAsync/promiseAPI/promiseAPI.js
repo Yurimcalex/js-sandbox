@@ -44,6 +44,7 @@ Promise.all([
 	2,
 	3
 ]).then(results => console.log(results));
+// --------- block ---------
 
 
 // Promise.allSettled
@@ -68,6 +69,7 @@ Promise.allSettled(userUrls.map(url => fetch(url)))
 	})
 	.then(resps => Promise.all(resps.map(r => r.json())))
 	.then(users => console.log(users));
+// --------- block ---------
 
 
 // Polyfill
@@ -79,6 +81,7 @@ if (!Promise.allSettled) {
 		return Promise.all(convertedPromises);
 	};
 }
+// --------- block ---------
 
 
 // Promise.race
@@ -88,6 +91,7 @@ Promise.race([
 	new Promise((resolve, reject) => setTimeout(() => reject(new Error('Err!')), 2000))
 ])
 	.then(winner => console.log(winner));
+// --------- block ---------
 
 
 // Promise.any
@@ -108,6 +112,7 @@ Promise.any([
 		console.log(error.errors[0]);
 		console.log(error.errors[1]);
 	});
+// --------- block ---------
 
 
 // Promise.resolve/reject
