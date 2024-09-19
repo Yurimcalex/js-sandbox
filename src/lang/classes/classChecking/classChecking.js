@@ -35,6 +35,7 @@ let pen = {
 };
 
 console.log({}.toString.call(pen));
+// --------- block ---------
 
 
 // Task 1 - Strange instanceof
