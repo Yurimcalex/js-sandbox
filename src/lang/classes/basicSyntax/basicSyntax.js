@@ -11,15 +11,21 @@ class User {
 
 let user = new User('Tom');
 user.sayHi();
+// --------- block ---------
+
 
 // What is a class
 console.log(typeof User);
 console.log(User === User.prototype.constructor);
 console.log(Object.getOwnPropertyNames(User.prototype));
+// --------- block ---------
+
 
 // Not just a syntatic sugar
 //User();
 console.log(User.toString());
+// --------- block ---------
+
 
 // Class Expression
 let Box = class box {
@@ -40,6 +46,8 @@ function makeClass(phrase) {
 
 let SomeClass = makeClass('opapa');
 new SomeClass().say();
+// --------- block ---------
+
 
 // Getters/setters
 class Store {
@@ -56,8 +64,10 @@ class Store {
 	}
 }
 
-let store = new Store('Wiskey');
-console.log(store.name);
+let store1 = new Store('Wiskey');
+console.log(store1.name);
+// --------- block ---------
+
 
 // Computed names [...]
 class Desc {
@@ -67,6 +77,8 @@ class Desc {
 }
 
 new Desc().sayHi();
+// --------- block ---------
+
 
 // Class fields
 class Pen {
@@ -80,6 +92,8 @@ class Pen {
 let pen = new Pen();
 pen.show();
 console.log(pen.name, Pen.prototype.name);
+// --------- block ---------
+
 
 // Making bound methods with class fields
 class Button {
@@ -94,6 +108,7 @@ class Button {
 
 let button = new Button("hello");
 setTimeout(button.click, 1000);
+// --------- block ---------
 
 
 // Task 1 - rewrite to class
