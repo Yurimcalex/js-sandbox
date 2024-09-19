@@ -11,6 +11,7 @@ new Promise(function (resolve, reject) {
 	console.log(result);
 	return result * 8;
 });
+// --------- block ---------
 
 
 // Returning promises
@@ -29,6 +30,7 @@ new Promise(function (resolve, reject) {
 }).then(result => {
 	console.log(result);
 });
+// --------- block ---------
 
 
 // Example: loadScript
@@ -66,6 +68,7 @@ loadScript('path').then(script => {
 	})
 })
 	.catch(err => console.log(err.message));
+// --------- block ---------
 
 
 // Thenables
@@ -85,6 +88,7 @@ new Promise(function (resolve, reject) {
 		return new Thenable(result);
 	})
 	.then(result => console.log(result));
+// --------- block ---------
 
 
 // Bigger example: fetch
