@@ -13,6 +13,8 @@ let user = {
 
 user.fullname = 'Hiley Smith';
 console.log(user.fullname);
+// --------- block ---------
+
 
 // Accessor descriptors
 user.items = [];
@@ -29,6 +31,8 @@ Object.defineProperty(user, 'pocket', {
 user.pocket = 'banana';
 user.pocket = 'pen';
 console.log(user.pocket);
+// --------- block ---------
+
 
 // Smarter getters/setters
 let player = {
@@ -45,6 +49,8 @@ let player = {
 };
 
 player.name = 'Ou';
+// --------- block ---------
+
 
 // Using for compatibility
 function User(name, birthday) {
