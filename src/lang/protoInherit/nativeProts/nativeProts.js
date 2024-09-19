@@ -4,6 +4,8 @@ console.log(obj.__proto__ === Object.prototype);
 console.log(obj.toString === Object.prototype.toString);
 
 console.log(Object.prototype.__proto__);
+// --------- block ---------
+
 
 // Other built-in prototypes
 let arr = [1, 2, 3];
@@ -12,6 +14,8 @@ console.log(arr.__proto__.__proto__ === Object.prototype);
 
 function f() {}
 console.log(f.__proto__ === Function.prototype);
+// --------- block ---------
+
 
 // Changing native prototypes
 String.prototype.show = function () {
@@ -27,6 +31,8 @@ if (!String.prototype.repeat) {
 }
 
 console.log('ball'.repeat(3));
+// --------- block ---------
+
 
 // Borrowing from prototypes
 let obj1 = {
@@ -37,6 +43,7 @@ let obj1 = {
 
 obj1.join = Array.prototype.join;
 console.log(obj1.join('-'));
+// --------- block ---------
 
 
 // Task 1 - add method f.defer(ms) to functions
@@ -49,6 +56,7 @@ function f() {
 }
 
 f.defer(1000);
+// --------- block ---------
 
 
 // Task 2 - add the decorating defer to functions
