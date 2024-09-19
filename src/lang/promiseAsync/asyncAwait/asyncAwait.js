@@ -62,6 +62,7 @@ class Waiter {
 
 new Waiter()
 	.wait().then(result => console.log(result));
+// --------- block ---------
 
 
 // Error handling
@@ -82,6 +83,7 @@ async function f4() {
 }
 
 f4().catch(err => console.log(err.message));
+// --------- block ---------
 
 
 // Task 1 - Rewrite using async/await
@@ -95,6 +97,7 @@ async function loadJson(url) {
 
 loadJson('https://javascript.info/no-such-user.json')
   .catch(err => console.log(err.toString()));
+// --------- block ---------
 
 
 // Task 2 - Rewrite rethrow with async/await
@@ -135,6 +138,7 @@ async function demoGithubUser() {
 }
 
 demoGithubUser();
+// --------- block ---------
 
 
 // Task 3 - Call async from non-async
