@@ -34,6 +34,7 @@ for (let v of genSeq1()) {
 
 let numbs = [0, ...genSeq1()];
 console.log(numbs);
+// --------- block ---------
 
 
 // Using generators for iterables
@@ -69,6 +70,7 @@ let range1 = {
 };
 
 console.log([...range1]);
+// --------- block ---------
 
 
 // Generator composition
@@ -99,6 +101,7 @@ function* gen3() {
 
 let numbs1 = [...gen3()];
 console.log(numbs1);
+// --------- block ---------
 
 
 // yield is a two-way street
@@ -123,6 +126,7 @@ let gq = questionsGen();
 gq.next();
 gq.next(4);
 gq.next(9);
+// --------- block ---------
 
 
 // generator.throw
@@ -153,6 +157,7 @@ gq.next(9);
 		console.log(err.message);
 	}
 }
+// --------- block ---------
 
 
 // generator.return
@@ -169,6 +174,7 @@ gq.next(9);
 	console.log(g.return('Opapa'));
 	console.log(g.next());
 }
+// --------- block ---------
 
 
 // Task 1 - Pseudo-random generator
