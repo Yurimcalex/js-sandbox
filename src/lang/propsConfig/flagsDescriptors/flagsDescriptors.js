@@ -25,6 +25,8 @@ Object.defineProperty(device, 'weight', {
 });
 
 console.log(Object.getOwnPropertyDescriptor(device, 'weight'));
+// --------- block ---------
+
 
 // Non-enumerable
 device.toString = function () {
@@ -42,6 +44,8 @@ Object.defineProperty(device, 'toString', {
 for (let prop in device) {
 	console.log(prop);
 }
+// --------- block ---------
+
 
 // Non-configurable
 device.color = 'blue';
@@ -54,6 +58,8 @@ console.log(device);
 Object.defineProperty(device, 'color', {
 	writable: false
 });
+// --------- block ---------
+
 
 // Object.defineProperties
 let user = {};
