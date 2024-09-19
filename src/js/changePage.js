@@ -117,9 +117,20 @@ document.addEventListener("DOMContentLoaded", () => {
 	const [prev, next] = createUI();
 	const src = location.pathname.slice(1);
 	const srcInd = pageSrcs.indexOf(src);
+
+  createPageCounter(srcInd, pageSrcs.length - 1);
+
 	prev.addEventListener('click', () => changePage(srcInd, '-'));
 	next.addEventListener('click', () => changePage(srcInd, '+'));
 });
+
+
+function createPageCounter(curr, total) {
+  const container = document.createElement('div');
+  container.className = 'page-counter';
+  container.innerHTML = `page ${curr} of ${total}`;
+  document.body.prepend(container);
+}
 
 
 function changePage(currInd, direction) {
