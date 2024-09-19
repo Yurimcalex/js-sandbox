@@ -10,6 +10,7 @@ loadScript('https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js', s
   console.log(`Cool, the script ${script.src} is loaded`);
   console.log( _ ); // _ is a function declared in the loaded script
 });
+// --------- block ---------
 
 
 // Callback in callback
@@ -27,6 +28,7 @@ coolAsyncAction('Hello', () => {
 		});
 	});
 });
+// --------- block ---------
 
 
 // Handling errors
@@ -46,6 +48,7 @@ anotherAsyncAction(10, function (err, value) {
 		console.log(value * 10);
 	}
 });
+// --------- block ---------
 
 
 // Pyramid of Doom
