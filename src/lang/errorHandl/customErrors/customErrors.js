@@ -43,6 +43,7 @@ try {
 		throw err;
 	}
 }
+// --------- block ---------
 
 
 // Further inheritance
@@ -76,6 +77,7 @@ try {
 		throw err;
 	}
 }
+// --------- block ---------
 
 
 // Wrapping exeptions
@@ -128,6 +130,7 @@ try {
 		throw err;
 	}
 }
+// --------- block ---------
 
 
 // Task 1 - Inherit from SyntaxError
