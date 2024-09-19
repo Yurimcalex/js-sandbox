@@ -19,6 +19,7 @@ let range = {
 };
 
 console.log([...range]);
+// --------- block ---------
 
 
 // Async iterables
@@ -46,6 +47,7 @@ let asyncRange = {
 		console.log(n);
 	}
 })();
+// --------- block ---------
 
 
 // Recall generators
@@ -69,6 +71,7 @@ let rangeWithGen = {
 };
 
 console.log([...rangeWithGen]);
+// --------- block ---------
 
 
 // Async generators
@@ -84,6 +87,7 @@ async function* genSequence(start, end) {
 		console.log(n, ' <--');
 	}
 })();
+// --------- block ---------
 
 
 // Async iterable range
@@ -103,6 +107,7 @@ let rangeN = {
     console.log(value, ' <==');
   }
 })();
+// --------- block ---------
 
 
 // Real-life example: paginated data
