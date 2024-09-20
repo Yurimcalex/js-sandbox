@@ -51,6 +51,7 @@ console.log(date.toLocaleString('ua', {
 	year: 'numeric',
 	month: 'long'
 }));
+// --------- block ---------
 
 
 // Task 1 - Sort the array with the letter ё
