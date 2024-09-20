@@ -35,6 +35,7 @@ console.log(toBin(-9), toBin(-9 >> 2), -9 >> 2);
 
 
 console.log(toBin(-9), toBin(-9 >>> 2), -9 >>> 2);
+// --------- block ---------
 
 
 // Using bitwise operators
@@ -64,27 +65,34 @@ console.log(editor & ACCESS_ARTICLE_EDIT);
 const articleMan = ACCESS_ARTICLE_VIEW | ACCESS_ARTICLE_EDIT;
 console.log(guest & articleMan);
 console.log(editor & articleMan);
+// --------- block ---------
 
 
 // Rounding
 console.log(~~1.3);
 console.log(2.123 ^ 0);
 console.log(1.3 * 5.3 ^ 0);
+// --------- block ---------
+
 
 // Checking for −1
 let str1 = 'checking';
 if (~str1.indexOf('g')) {
 	console.log('found');
 }
+// --------- block ---------
+
 
 // Multiplication and division by powers of 2
 console.log(3 << 3);
 console.log(8 >> 2);
+// --------- block ---------
 
 
 // Task 1 - Bitwise operator and value
 console.log(toBin(123));
 console.log(123 ^ 0, 0 ^ 123, ~~123);
+// --------- block ---------
 
 
 // Task 2 - Checking if a number is an integer
@@ -93,12 +101,14 @@ function isInteger(n) {
 }
 
 console.log(isInteger(1), isInteger(1.5), isInteger(-0.5));
+// --------- block ---------
 
 
 // Task 3 - Are the operations ^, |, & symmetric
 console.log((1 ^ 2) === (2 ^ 1));
 console.log((1 & 2) === (2 & 1));
 console.log((1 | 2) === (2 | 1));
+// --------- block ---------
 
 
 // Task 4 - Why are the results different
