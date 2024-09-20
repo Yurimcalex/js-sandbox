@@ -10,6 +10,7 @@ if (ref) {
 } else {
 	console.log('has been deleted');
 }
+// --------- block ---------
 
 
 // Example 1 - using WeakRef for caching
@@ -31,6 +32,7 @@ function weakRefCache(fetchImg) {
 }
 
 const getCachedImg = weakRefCache(fetchImg);
+// --------- block ---------
 
 
 // FinalizationRegistry
