@@ -24,5 +24,5 @@ for (let key in frames) {
 }
 
 for (let key in history) {
-	//console.log(key, history[key]);
+	console.log(key, history[key]);
 }
