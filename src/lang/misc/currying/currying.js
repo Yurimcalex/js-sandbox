@@ -13,6 +13,7 @@ function sum(a, b) {
 
 let curriedSum = curry(sum);
 console.log(curriedSum(1)(2));
+// --------- block ---------
 
 
 // Currying? What for?
@@ -41,6 +42,7 @@ logNow('TEXT')('UUUUrrraaaaaaa');
 let textNow = logNow('Text');
 textNow('Greeting!');
 textNow('Hi everyone!');
+// --------- block ---------
 
 
 // Advanced curry implementation
