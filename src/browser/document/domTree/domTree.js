@@ -5,4 +5,4 @@ setTimeout(() => {
 }, 3000);
 
 
-document.body.innerHTML = '<table id="table"><tr><td>1</td></tr></table>';
+document.body.innerHTML += `<table id="table"><tr><td>1</td></tr></table>`;
