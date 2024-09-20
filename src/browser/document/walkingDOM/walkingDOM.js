@@ -5,6 +5,7 @@ console.log(document.documentElement);
 console.log(document.body);
 
 console.log(document.head);
+// --------- block ---------
 
 
 // Children: childNodes, firstChild, lastChild
@@ -16,6 +17,8 @@ if (document.body.hasChildNodes()) {
 	console.log(document.body.firstChild, '<-- first elem of body');
 	console.log(document.body.lastChild, '<-- last elem of body');
 }
+// --------- block ---------
+
 
 // DOM collections
 for (let node of document.body.childNodes) {
@@ -24,12 +27,14 @@ for (let node of document.body.childNodes) {
 
 let bodyElms = Array.from(document.body.childNodes);
 console.log(bodyElms.pop());
+// --------- block ---------
 
 
 // Siblings and the parent
 console.log(document.body.parentNode === document.documentElement);
 console.log(document.head.nextSibling);
 console.log(document.body.previousSibling);
+// --------- block ---------
 
 
 // Element-only navigation
@@ -50,23 +55,27 @@ console.log(
 	document.body.firstElementChild,
 	document.body.lastElementChild.previousElementSibling
 );
+// --------- block ---------
 
 
 // More links: tables
 console.log(table.rows);
 console.log(table.tBodies);
 console.log(table.rows[1].cells);
+// --------- block ---------
 
 
 // Task 1 - DOM children
 let div = document.body.firstElementChild;
 let ul = div.nextElementSibling;
 let li = ul.lastElementChild;
+// --------- block ---------
 
 
 // Task 2 - The sibling question
 console.log(document.body.lastChild.nextSibling);
 console.log(document.body.children[0].previousSibling);
+// --------- block ---------
 
 
 // Task 3 - Select all diagonal cells

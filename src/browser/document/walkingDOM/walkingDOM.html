@@ -9,19 +9,36 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
 	<style>
+		.div {
+			margin: 20px 0;
+		}
+
 		table {
 		  border-collapse: collapse;
 		}
 
 		td {
-		  border: 1px solid black;
+		  border: 1px solid gray;
 		  padding: 3px 5px;
+		}
+
+		#table {
+			margin: 20px 0;
+		}
+
+		#table1 {
+			margin-top: 20px;
+			margin-bottom: 50px;
+		}
+
+		#table1 td {
+			color: white;
 		}
 	</style>
 </head>
 <body>
-	<div>First empty div</div>
-	<div>Second div with child nodes and descedants
+	<div class="div">First empty div</div>
+	<div class="div">Second div with child nodes and descedants
 		<ul>
 			<li><span id="innerDiv">Text</span></li>
 		</ul>
@@ -76,6 +93,7 @@
 	  </tr>
 	</table>
 
+	<script src="../../../js/showLogs.js"></script>
 	<script src="./walkingDOM.js" data-code></script>
 	<script src="../../../js/showCode.js"></script>
 	<script src="../../../js/changePage.js"></script>
