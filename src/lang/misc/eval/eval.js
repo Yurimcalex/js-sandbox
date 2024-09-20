@@ -32,6 +32,7 @@ let n = 1000;
 
 let f1 = new Function('a', 'b', 'console.log(a + b)');
 f1(10, 50);
+// --------- block ---------
 
 
 // Task 1 - Eval-calculator
