@@ -255,5 +255,19 @@
 		</ul>
 	</div>
 	<!--script src="src/additional/storingData/indexedDB.js"></script-->
+
+
+	<script>
+		savePageTopicNames();
+
+		function savePageTopicNames() {
+			const links = document.querySelectorAll('h4>a');
+			for (let i = 0; i < links.length; i += 1) {
+				const name = links[i].textContent.trim();
+				const key = links[i].getAttribute('href');
+				localStorage.setItem(key, name);
+			}
+		}
+	</script>
 </body>
 </html>

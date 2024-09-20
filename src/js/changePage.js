@@ -119,10 +119,19 @@ document.addEventListener("DOMContentLoaded", () => {
 	const srcInd = pageSrcs.indexOf(src);
 
   createPageCounter(srcInd, pageSrcs.length - 1);
+  createPageTopic(src)
 
 	prev.addEventListener('click', () => changePage(srcInd, '-'));
 	next.addEventListener('click', () => changePage(srcInd, '+'));
 });
+
+
+function createPageTopic(src) {
+  const container = document.createElement('h1');
+  container.className = 'page-topic';
+  container.textContent = localStorage.getItem(src);
+  document.querySelector('.page-counter').after(container);
+}
 
 
 function createPageCounter(curr, total) {
