@@ -5,6 +5,7 @@ let proxy = new Proxy(target, {});
 proxy.test = 10;
 console.log(target.test, proxy.test);
 for (let key in proxy) console.log(key);
+// --------- block ---------
 
 
 // Default value with 'get' trap
@@ -35,6 +36,7 @@ dictionary = new Proxy(dictionary, {
 });
 
 console.log(dictionary['Hello'], dictionary['Welcome']);
+// --------- block ---------
 
 
 // Validation with 'set' trap
@@ -54,6 +56,7 @@ numbs.push(1);
 numbs.push(2);
 console.log(numbs.length);
 //numbs.push('test');
+// --------- block ---------
 
 
 // Iteration with 'ownKeys' and 'getOwnPropertyDescriptor'
@@ -90,6 +93,7 @@ balls = new Proxy(balls, {
 	}
 });
 console.log(Object.keys(balls));
+// --------- block ---------
 
 
 // Protected properties with 'deleteProperty' and other traps
@@ -146,6 +150,7 @@ try {
 }
 
 for (let key in fruit) console.log(key);
+// --------- block ---------
 
 
 // In range with has trap
@@ -162,6 +167,7 @@ range = new Proxy(range, {
 
 console.log(3 in range);
 console.log(30 in range);
+// --------- block ---------
 
 
 // Wrapping functions: 'apply'
@@ -195,6 +201,7 @@ function sayBye() {
 sayBye = delay_p(sayBye, 1000);
 console.log(sayBye.length);
 sayBye();
+// --------- block ---------
 
 
 // Reflect
@@ -221,6 +228,7 @@ car = new Proxy(car, {
 car.name;
 car.name = 'Lamba Super';
 car.color = 'blue';
+// --------- block ---------
 
 
 // Proxying a getter
@@ -246,6 +254,7 @@ let frenchCarrot = {
 };
 
 console.log(frenchCarrot.weight);
+// --------- block ---------
 
 
 // Proxy limitations
@@ -264,6 +273,7 @@ let map_1Proxy = new Proxy(map_1, {
 
 map_1Proxy.set('test', 1);
 console.log(map_1Proxy.get('test'));
+// --------- block ---------
 
 
 // Private fields
@@ -283,6 +293,7 @@ console.log(map_1Proxy.get('test'));
 // });
 
 // console.log(user.getName());
+// --------- block ---------
 
 
 // Proxy != target
@@ -298,6 +309,7 @@ let visitor = new Visitor('Paul');
 console.log(allUsers.has(visitor));
 visitor = new Proxy(visitor, {});
 console.log(allUsers.has(visitor));
+// --------- block ---------
 
 
 // Revocable proxies
@@ -321,6 +333,7 @@ console.log(allUsers.has(visitor));
 	revoke();
 	//console.log(proxy.data);
 }
+// --------- block ---------
 
 
 // Task 1 - Error on reading non-existent property
@@ -344,6 +357,7 @@ try {
 } catch (err) {
 	console.log(err.message);
 }
+// --------- block ---------
 
 
 // Accessing array[-1]
@@ -357,6 +371,7 @@ array = new Proxy(array, {
 });
 
 console.log(array[-1], array[-2]);
+// --------- block ---------
 
 
 // Observable
