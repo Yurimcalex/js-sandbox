@@ -7,7 +7,8 @@ let user = {
 };
 
 console.log(user.hi());
-//(user.name === 'Mirco' ? user.hi : user.bye)();
+(user.name === 'Mirco' ? user.hi : user.bye)();
+// --------- block ---------
 
 
 // Syntax check
@@ -16,7 +17,8 @@ let user1 = {
   go: function() { alert(this.name) }
 };
 
-//(user1.go)()
+(user1.go)()
+// --------- block ---------
 
 
 // Task 2 - Explain the value of this
