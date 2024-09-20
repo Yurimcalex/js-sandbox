@@ -7,6 +7,7 @@ console.log('\x00', '\xFF');
 console.log('\u0021', '\uFFFF');
 
 console.log('\u{20331}', '\u{1F60D}');
+// --------- block ---------
 
 
 // Surrogate pairs
@@ -21,6 +22,7 @@ console.log('😂'.charCodeAt(0).toString(16));
 console.log('😂'.codePointAt(0).toString(16));
 
 console.log('hi 😂'.slice(0, 4));
+// --------- block ---------
 
 
 // Diacritical marks and normalization
