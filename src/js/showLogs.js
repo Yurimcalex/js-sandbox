@@ -49,14 +49,15 @@ function markLogs(text) {
 }
 
 
-function createLog(logsArr) {
+function createLog(logsArr, target) {
 	const container = document.createElement('div');
 	container.className = 'log';
 
 	logsArr.forEach((arr, ind) => 
 		container.innerHTML += `<div><span>log [${arr[0]}]:</span> ${arr[1] ? prepareArgs(arr[1]).join(', ') : '-'}</div>`)
 
-	document.body.append(container);
+	if (!target) document.body.append(container);
+	return container;
 }
 
 

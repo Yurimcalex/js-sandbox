@@ -4,13 +4,14 @@ async function getScriptContent() {
 }
 
 
-function createCodeBlock(blockText) {
+function createCodeBlock(blockText, target) {
 	const pre = document.createElement('pre');
 	const code = document.createElement('code');
 	code.className = 'language-javascript';
 	pre.append(code);
 	code.innerHTML = blockText;
-	document.body.append(pre);
+	if (!target)  document.body.append(pre);
+	return pre;
 }
 
 
@@ -24,9 +25,13 @@ document.addEventListener('DOMContentLoaded', async (event) => {
 	} else {
 		const [text, logsPosition] = markLogs(scriptText);
 		let lineCount = 0;
+		let lastElement;
+
 		text
 			.split('// --------- block ---------')	
 			.forEach(block => {
+				const lines = block.split('\n');
+
 				lineCount += block.split('\n').length - 1;
 
 				// for the last block
@@ -40,8 +45,28 @@ document.addEventListener('DOMContentLoaded', async (event) => {
 				})
 				logsPosition.splice(0, pos.length);
 
-				createCodeBlock(block.trim());
-				createLog(pos.map(p => [[p], store[p]]));
+
+
+
+				const lastLine = lines[lines.length - 2];
+				const match = lastLine.match(/---\d*---/);
+
+				
+				if (match) {
+					const attribute = match[0].slice(3, -3);
+					const elm = document.querySelector(`[data-target='${attribute}']`);
+					if (elm) lastElement = elm;
+				}
+
+				const codeElement = createCodeBlock(block.trim());
+
+				if (lastElement) {
+					lastElement.after(codeElement);
+				}
+
+				const logElement = createLog(pos.map(p => [[p], store[p]]));
+				codeElement.after(logElement);
+				lastElement = logElement;
 			});
 	}
 
