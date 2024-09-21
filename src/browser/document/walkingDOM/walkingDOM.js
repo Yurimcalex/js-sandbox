@@ -5,6 +5,7 @@ console.log(document.documentElement);
 console.log(document.body);
 
 console.log(document.head);
+// ---1---
 // --------- block ---------
 
 
@@ -62,6 +63,7 @@ console.log(
 console.log(table.rows);
 console.log(table.tBodies);
 console.log(table.rows[1].cells);
+// ---2---
 // --------- block ---------
 
 
@@ -83,3 +85,4 @@ let rows = Array.from(table1.rows);
 rows.forEach((row, ind) => {
 	row.cells[ind].style.backgroundColor = 'red';
 });
+// ---3---
