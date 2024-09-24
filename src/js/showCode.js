@@ -8,6 +8,16 @@ class CodeBlock {
 		const script = document.querySelector(this.scriptAttr);
 		return await fetch(script.src).then((res) => res.text());
 	}
+
+	_createUI(codeText) {
+		const pre = document.createElement('pre');
+		const code = document.createElement('code');
+		code.className = 'language-javascript';
+		pre.append(code);
+		code.innerHTML = codeText;
+		document.body.append(pre);
+		return pre;
+	}
 }
 
 
