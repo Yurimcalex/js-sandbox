@@ -3,6 +3,8 @@
 let box = document.getElementById('box');
 box.style.background = 'lightgray';
 window['box-content'].style.color = 'gray';
+// ---1---
+// --------- block ---------
 
 
 // querySelectorAll
@@ -10,12 +12,15 @@ let lastLis = document.querySelectorAll('ul > li:last-child');
 for (let li of lastLis) {
 	console.log(li.innerHTML);
 }
+// ---2---
+// --------- block ---------
 
 
 // querySelector
 let ulContainer = document.querySelector('.ul-container');
 let firstLi = ulContainer.querySelector('ul > li:first-child');
 firstLi.style.color = 'purple';
+// --------- block ---------
 
 
 // matches
@@ -24,12 +29,16 @@ for (let link of document.querySelector('.links').children) {
 		link.style.color = 'transparent';
 	}
 }
+// ---3---
+// --------- block ---------
 
 
 // closest
 let chapter = document.querySelector('.chapter');
 chapter.closest('ul').style.border = '1px solid gray';
 chapter.closest('.library').style.background = 'lightgray';
+// ---4---
+// --------- block ---------
 
 
 // getElementsBy*
@@ -40,8 +49,8 @@ let chapters = document
 	.getElementsByClassName('chapter');
 console.log(chapters);
 
-
 console.log(document.getElementsByName('inp'));
+// --------- block ---------
 
 
 // Live collections
@@ -56,6 +65,7 @@ document
 	.querySelector('.book').appendChild(document.createElement('li'));
 
 console.log(liCollection.length);
+// --------- block ---------
 
 
 // Task 1 - Search for elements
@@ -66,3 +76,4 @@ console.log(liCollection.length);
 // let firstInput = form.querySelector('input');
 // let inputs = form.querySelectorAll('input');
 // let lastInput = inputs[inputs.length - 1];
+// ---5---

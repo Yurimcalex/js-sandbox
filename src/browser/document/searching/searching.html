@@ -8,13 +8,26 @@
 	<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/atom-one-dark.min.css"/>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
+	<style>
+		#box, .ul-container, .links, .library, #inputs {
+			margin: 20px 0;
+		}
+
+		#box {
+			padding: 10px;
+		}
+
+		.links a {
+			color: white;
+		}
+	</style>
 </head>
 <body>
-	<div id="box">
+	<div id="box" data-target="1">
 		<div id="box-content">Text</div>
 	</div>
 
-	<div class="ul-container">
+	<div class="ul-container" data-target="2">
 		<ul>
 			<li>one</li>
 			<li>two</li>
@@ -25,22 +38,24 @@
 		</ul>
 	</div>
 
-	<div class="links">
+	<div class="links" data-target="3">
 		<a href="http://example.com/file.zip">example</a>
 		<a href="http://google.com">google</a>
 	</div>
 
-	<div class="library">
+	<div class="library" data-target="4">
 		<ul class="book">
 			<li class="chapter">Chapter 1</li>
 			<li class="chapter">Chapter 2</li>
 		</ul>
 	</div>
 
-	<div id="inputs">
+	<div id="inputs" data-target="5">
 		<input type="text" name="inp">
 		<input type="text" name="inp">
 	</div>
+
+	<script src="../../../js/showLogs.js"></script>
 	<script src="./searching.js" data-code></script>
 	<script src="../../../js/showCode.js"></script>
 	<script src="../../../js/changePage.js"></script>
