@@ -14,44 +14,36 @@ function createCodeBlock(blockText, target) {
 	return pre;
 }
 
-
 document.addEventListener('DOMContentLoaded', async (event) => {
 	const scriptText = await getScriptContent();
 
-	if (!window.markLogs) {
+	if (!window['LogBlock']) {
 		scriptText.split('// --------- block ---------')
 			.forEach(block => createCodeBlock(block.trim()));
-	
+
 	} else {
-		const [text, logsPosition] = markLogs(scriptText);
-		let lineCount = 0;
+		const logger = new LogBlock(scriptText);
+		let lineCounter = 0;
 		let lastElement;
 
-		text
-			.split('// --------- block ---------')	
+		logger.markedScriptText
+			.split('// --------- block ---------')
 			.forEach(block => {
 				const lines = block.split('\n');
-
-				lineCount += block.split('\n').length - 1;
-
+				lineCounter += lines.length - 1;
 				// for the last block
-				if (lineCount === text.split('\n').length - 1) {
-					lineCount += 1;
+				if (lineCounter === logger.markedScriptText.split('\n').length - 1) {
+					lineCounter += 1;
 				}
 
-				const pos = [];
-				logsPosition.forEach(p => {
-					if (p <= lineCount) pos.push(p);
-				})
-				logsPosition.splice(0, pos.length);
-
-
-
+				const lns = [];
+				logger.logLineNumbers.forEach(ln => {
+					if (ln <= lineCounter) lns.push(ln);
+				});
+				logger.logLineNumbers.splice(0, lns.length);
 
 				const lastLine = lines[lines.length - 2];
 				const match = lastLine.match(/---\d*---/);
-
-				
 				if (match) {
 					const attribute = match[0].slice(3, -3);
 					const elm = document.querySelector(`[data-target='${attribute}']`);
@@ -64,12 +56,12 @@ document.addEventListener('DOMContentLoaded', async (event) => {
 					lastElement.after(codeElement);
 				}
 
-				const logElement = createLog(pos.map(p => [[p], store[p]]));
+				const logElement = logger.createLogUI(lns.map(ln => [[ln], store[ln]]));
 				codeElement.after(logElement);
 				lastElement = logElement;
 			});
 	}
 
 	document.querySelectorAll('pre code')
-		.forEach((block) => hljs.highlightElement(block));
+		.forEach((code) => hljs.highlightElement(code));
 });
