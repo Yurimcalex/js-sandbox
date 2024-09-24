@@ -30,6 +30,7 @@ class LogBlock {
 	constructor(scriptText) {
 		this.scriptText = scriptText;
 		this.logLineNumbers = this._getLogLineNumbers();
+		this.markedScriptText = this._markLogs();
 	}
 
 	_getLogLineNumbers() {
@@ -40,6 +41,18 @@ class LogBlock {
 			}
 		});
 		return result;
+	}
+
+	_markLogs() {
+		return this.scriptText.split('\n')
+			.map((line, i) => {
+				if (this.logLineNumbers.includes(i + 1)) {
+					return line.replace(/console.log(.*)/g, str => `[${i + 1}] ${str}`);
+				} else {
+					return line;
+				}
+			})
+			.join('\n');
 	}
 }
 
