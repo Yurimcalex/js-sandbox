@@ -61,6 +61,19 @@ class LogBlock {
 			return arg;
 		});
 	}
+
+	createLogUI(logArgs) {
+		const container = document.createElement('div');
+		container.className = 'log';
+
+		logArgs.forEach((arr, ind) => container.innerHTML += `
+			<div>
+				<span>log [${arr[0]}]:</span> ${arr[1] ? this._prepareLogArgs(arr[1]).join(', ') : '-'}
+			</div>
+		`);
+
+		return container;
+	}
 }
 
 
