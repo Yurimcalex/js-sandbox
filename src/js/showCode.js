@@ -18,6 +18,11 @@ class CodeBlock {
 		document.body.append(pre);
 		return pre;
 	}
+
+	_highlightCode() {
+		document.querySelectorAll('pre code')
+			.forEach((code) => hljs.highlightElement(code));
+	}
 }
 
 
