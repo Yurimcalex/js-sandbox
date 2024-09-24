@@ -24,6 +24,15 @@ class CodeBlock {
 			.forEach((code) => hljs.highlightElement(code));
 	}
 
+	_getCurrLogLineNumbers(logLineNumbers, lineCounter) {
+		const result = [];
+		logLineNumbers.forEach(ln => {
+			if (ln <= lineCounter) result.push(ln);
+		});
+		logLineNumbers.splice(0, result.length);
+		return result;
+	}
+
 	render() {
 		document.addEventListener('DOMContentLoaded', async () => {
 			const scriptText = await this._getScriptText();
@@ -47,11 +56,12 @@ class CodeBlock {
 							lineCounter += 1;
 						}
 
-						const lns = [];
-						logger.logLineNumbers.forEach(ln => {
-							if (ln <= lineCounter) lns.push(ln);
-						});
-						logger.logLineNumbers.splice(0, lns.length);
+						const lns = this._getCurrLogLineNumbers(logger.logLineNumbers, lineCounter);
+						//const lns = [];
+						// logger.logLineNumbers.forEach(ln => {
+						// 	if (ln <= lineCounter) lns.push(ln);
+						// });
+						// logger.logLineNumbers.splice(0, lns.length);
 
 						const lastLine = lines[lines.length - 2];
 						const match = lastLine.match(/---\d*---/);
