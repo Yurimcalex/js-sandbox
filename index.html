@@ -259,6 +259,7 @@
 
 	<script>
 		savePageTopicNames();
+		getPagesSrc();
 
 		function savePageTopicNames() {
 			const links = document.querySelectorAll('h4>a');
@@ -267,6 +268,15 @@
 				const key = links[i].getAttribute('href');
 				localStorage.setItem(key, name);
 			}
+		}
+
+		function getPagesSrc() {
+			const links = document.querySelectorAll('h4>a');
+			const srcs = ['/'];
+			for (let i = 0; i < links.length; i += 1) {
+				srcs.push(links[i].getAttribute('href'));
+			}
+			localStorage.setItem('paths', JSON.stringify(srcs, null, 2));
 		}
 	</script>
 </body>

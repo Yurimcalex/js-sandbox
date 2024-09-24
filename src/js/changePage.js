@@ -114,6 +114,7 @@ class PageChanger {
       "src/additional/binDataFiles/fileFileReader/fileFileReader.html"
     ];
 
+    //this.paths = JSON.parse(localStorage.getItem('paths'));
     document.addEventListener("DOMContentLoaded", () => {
       const [prev, next] = this._createArrowsUI();
 
@@ -171,15 +172,3 @@ class PageChanger {
 }
 
 new PageChanger();
-
-
-function _getPagesSrc() {
-	const links = document.querySelectorAll('h4>a');
-	const srcs = ['/'];
-	for (let i = 0; i < links.length; i += 1) {
-		srcs.push(links[i].getAttribute('href'));
-	}
-	console.log(JSON.stringify(srcs, null, 2));
-}
-
-//_getPagesSrc();
