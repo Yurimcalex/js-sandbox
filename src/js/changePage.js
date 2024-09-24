@@ -141,6 +141,13 @@ class PageChanger {
     document.body.append(forwardBtn);
     return [backBtn, forwardBtn];
   }
+
+  _createCounterUI(currPageInd, pageAmount) {
+    const container = document.createElement('div');
+    container.className = 'page-counter';
+    container.innerHTML = `page ${currPageInd} of ${pageAmount}`;
+    document.body.prepend(container);
+  }
 }
 
 
