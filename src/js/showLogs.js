@@ -26,6 +26,13 @@ console = new Proxy(oldConsole, {
 });
 
 
+class LogBlock {
+	constructor(scriptText) {
+		this.scriptText = scriptText;
+	}
+}
+
+
 function findLogs(text) {
 	const logPositions = [];
 	text.split('\n').forEach((line, i) => {
