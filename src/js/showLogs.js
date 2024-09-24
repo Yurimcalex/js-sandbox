@@ -54,6 +54,13 @@ class LogBlock {
 			})
 			.join('\n');
 	}
+
+	_prepareLogArgs(arr) {
+		return arr.map(arg => {
+			if (typeof arg === 'object') return JSON.stringify(arg, null, 2);
+			return arg;
+		});
+	}
 }
 
 
