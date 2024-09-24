@@ -148,6 +148,13 @@ class PageChanger {
     container.innerHTML = `page ${currPageInd} of ${pageAmount}`;
     document.body.prepend(container);
   }
+
+  _createHeadingUI(pagePath) {
+    const container = document.createElement('h1');
+    container.className = 'page-topic';
+    container.textContent = localStorage.getItem(pagePath);
+    document.querySelector('.page-counter').after(container);
+  }
 }
 
 
