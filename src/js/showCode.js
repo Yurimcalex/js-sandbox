@@ -4,7 +4,7 @@ class CodeBlock {
 		this.scriptAttr = '[data-code]';
 	}
 
-	_getScriptText() {
+	async _getScriptText() {
 		const script = document.querySelector(this.scriptAttr);
 		return await fetch(script.src).then((res) => res.text());
 	}
@@ -23,73 +23,60 @@ class CodeBlock {
 		document.querySelectorAll('pre code')
 			.forEach((code) => hljs.highlightElement(code));
 	}
-}
 
+	render() {
+		document.addEventListener('DOMContentLoaded', async () => {
+			const scriptText = await this._getScriptText();
 
-async function getScriptContent() {
-	const script = document.querySelector('[data-code]');
-	return await fetch(script.src).then((res) => res.text());
-}
+			if (!window['LogBlock']) {
+				scriptText.split(this.delimiter)
+					.forEach(block => this._createUI(block.trim()));
 
+			} else {
+				const logger = new LogBlock(scriptText);
+				let lineCounter = 0;
+				let lastElement;
 
-function createCodeBlock(blockText, target) {
-	const pre = document.createElement('pre');
-	const code = document.createElement('code');
-	code.className = 'language-javascript';
-	pre.append(code);
-	code.innerHTML = blockText;
-	if (!target)  document.body.append(pre);
-	return pre;
-}
+				logger.markedScriptText
+					.split(this.delimiter)
+					.forEach(block => {
+						const lines = block.split('\n');
+						lineCounter += lines.length - 1;
+						// for the last block
+						if (lineCounter === logger.markedScriptText.split('\n').length - 1) {
+							lineCounter += 1;
+						}
 
-document.addEventListener('DOMContentLoaded', async (event) => {
-	const scriptText = await getScriptContent();
+						const lns = [];
+						logger.logLineNumbers.forEach(ln => {
+							if (ln <= lineCounter) lns.push(ln);
+						});
+						logger.logLineNumbers.splice(0, lns.length);
 
-	if (!window['LogBlock']) {
-		scriptText.split('// --------- block ---------')
-			.forEach(block => createCodeBlock(block.trim()));
+						const lastLine = lines[lines.length - 2];
+						const match = lastLine.match(/---\d*---/);
+						if (match) {
+							const attribute = match[0].slice(3, -3);
+							const elm = document.querySelector(`[data-target='${attribute}']`);
+							if (elm) lastElement = elm;
+						}
 
-	} else {
-		const logger = new LogBlock(scriptText);
-		let lineCounter = 0;
-		let lastElement;
+						const codeElement = this._createUI(block.trim());
 
-		logger.markedScriptText
-			.split('// --------- block ---------')
-			.forEach(block => {
-				const lines = block.split('\n');
-				lineCounter += lines.length - 1;
-				// for the last block
-				if (lineCounter === logger.markedScriptText.split('\n').length - 1) {
-					lineCounter += 1;
-				}
+						if (lastElement) {
+							lastElement.after(codeElement);
+						}
 
-				const lns = [];
-				logger.logLineNumbers.forEach(ln => {
-					if (ln <= lineCounter) lns.push(ln);
-				});
-				logger.logLineNumbers.splice(0, lns.length);
+						const logElement = logger.createLogUI(lns.map(ln => [[ln], store[ln]]));
+						codeElement.after(logElement);
+						lastElement = logElement;
+					});
+			}
 
-				const lastLine = lines[lines.length - 2];
-				const match = lastLine.match(/---\d*---/);
-				if (match) {
-					const attribute = match[0].slice(3, -3);
-					const elm = document.querySelector(`[data-target='${attribute}']`);
-					if (elm) lastElement = elm;
-				}
-
-				const codeElement = createCodeBlock(block.trim());
-
-				if (lastElement) {
-					lastElement.after(codeElement);
-				}
-
-				const logElement = logger.createLogUI(lns.map(ln => [[ln], store[ln]]));
-				codeElement.after(logElement);
-				lastElement = logElement;
-			});
+			this._highlightCode();
+		});
 	}
+}
 
-	document.querySelectorAll('pre code')
-		.forEach((code) => hljs.highlightElement(code));
-});
+
+(new CodeBlock()).render();
