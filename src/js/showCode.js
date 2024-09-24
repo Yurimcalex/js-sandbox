@@ -33,6 +33,18 @@ class CodeBlock {
 		return result;
 	}
 
+	_getTargetElement(codeLines) {
+		let result = null;
+		const lastLine = codeLines[codeLines.length - 2];
+		const match = lastLine.match(/---\d*---/);
+		if (match) {
+			const attribute = match[0].slice(3, -3);
+			const elm = document.querySelector(`[data-target='${attribute}']`);
+			if (elm) result = elm;
+		}
+		return result;
+	}
+
 	render() {
 		document.addEventListener('DOMContentLoaded', async () => {
 			const scriptText = await this._getScriptText();
@@ -57,26 +69,12 @@ class CodeBlock {
 						}
 
 						const lns = this._getCurrLogLineNumbers(logger.logLineNumbers, lineCounter);
-						//const lns = [];
-						// logger.logLineNumbers.forEach(ln => {
-						// 	if (ln <= lineCounter) lns.push(ln);
-						// });
-						// logger.logLineNumbers.splice(0, lns.length);
-
-						const lastLine = lines[lines.length - 2];
-						const match = lastLine.match(/---\d*---/);
-						if (match) {
-							const attribute = match[0].slice(3, -3);
-							const elm = document.querySelector(`[data-target='${attribute}']`);
-							if (elm) lastElement = elm;
-						}
-
+						
+						const target = this._getTargetElement(lines);
+						if (target) lastElement = target;
 						const codeElement = this._createUI(block.trim());
-
-						if (lastElement) {
-							lastElement.after(codeElement);
-						}
-
+						if (lastElement) lastElement.after(codeElement);
+						
 						const logElement = logger.createLogUI(lns.map(ln => [[ln], store[ln]]));
 						codeElement.after(logElement);
 						lastElement = logElement;
