@@ -1,7 +1,12 @@
 class CodeBlock {
 	constructor() {
 		this.delimiter = '// --------- block ---------';
-		
+		this.scriptAttr = '[data-code]';
+	}
+
+	_getScriptText() {
+		const script = document.querySelector(this.scriptAttr);
+		return await fetch(script.src).then((res) => res.text());
 	}
 }
 
