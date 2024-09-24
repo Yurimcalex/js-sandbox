@@ -129,6 +129,18 @@ class PageChanger {
 
     window.location.assign(`/${pageSrcs[nextPathInd]}`);
   }
+
+  _createArrowsUI() {
+    const backBtn = document.createElement('button');
+    const forwardBtn = document.createElement('button');
+    backBtn.textContent = '<';
+    backBtn.className = 'chp-back-btn';
+    forwardBtn.textContent = '>';
+    forwardBtn.className = 'chp-forward-btn';
+    document.body.append(backBtn);
+    document.body.append(forwardBtn);
+    return [backBtn, forwardBtn];
+  }
 }
 
 
