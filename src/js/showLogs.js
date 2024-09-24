@@ -29,6 +29,17 @@ console = new Proxy(oldConsole, {
 class LogBlock {
 	constructor(scriptText) {
 		this.scriptText = scriptText;
+		this.logLineNumbers = this._getLogLineNumbers();
+	}
+
+	_getLogLineNumbers() {
+		const result = [];
+		this.scriptText.split('\n').forEach((line, i) => {
+			if (line.includes('console')) {
+				result.push(i + 1);
+			}
+		});
+		return result;
 	}
 }
 
