@@ -115,8 +115,23 @@ class PageChanger {
     ]
   }
 
-  
+  change(currPathInd, dir) {
+    let nextPathInd;
+
+    if (currPathInd === 0 && dir === '-') return;
+    if (currPathInd === pageSrcs.length -1  && dir === '+') return;
+
+    if (dir === '-') {
+      nextPathInd = currPathInd - 1;
+    } else {
+      nextPathInd = currPathInd + 1;
+    }
+
+    window.location.assign(`/${pageSrcs[nextPathInd]}`);
+  }
 }
+
+
 
 const pageSrcs = [
   "",
