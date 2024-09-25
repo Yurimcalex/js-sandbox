@@ -101,4 +101,8 @@ class ToStringConverter {
 	_nullToStr(value) {
 		return 'null';
 	}
+
+	_booleanToStr(value) {
+		return value.toString();
+	}
 }
