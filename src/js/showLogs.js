@@ -150,4 +150,9 @@ class ToStringConverter {
 	_toStr(type, value) {
 		return this[`_${type}ToStr`](value);
 	}
+
+	convert(value) {
+		const type = this._getType(value);
+		return this._toStr(type, value);
+	}
 }
