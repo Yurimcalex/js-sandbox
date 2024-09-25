@@ -121,4 +121,8 @@ class ToStringConverter {
 	_symbolToStr(value) {
 		return value.toString();
 	}
+
+	_functionToStr(value) {
+		return value.toString();
+	}
 }
