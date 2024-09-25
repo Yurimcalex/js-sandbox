@@ -87,8 +87,8 @@ class ToStringConverter {
 				type = 'array';
 			} else if (value instanceof HTMLElement) {
 				type = 'htmlElement';
-			} else {
-				type = 'object';
+			} else if (value == null) {
+				type = 'null';
 			}
 		}
 		return type;
