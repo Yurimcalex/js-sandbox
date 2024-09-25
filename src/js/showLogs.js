@@ -141,9 +141,12 @@ class ToStringConverter {
 	}
 
 	_arrayToStr(value) {
-		return JSON.stringify(value, (key, val) => {
-			return this._toStr(typeof key, val);
-		});
+		return '[' + value.map(v => {
+			if (Array.isArray(v)) {
+				return this._arrayToStr(v);
+			}
+			return this._toStr(typeof v, v);
+		}).join(', ') + ']';
 	}
 
 	_objectToStr(value) {
