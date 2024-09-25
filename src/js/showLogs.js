@@ -105,4 +105,8 @@ class ToStringConverter {
 	_booleanToStr(value) {
 		return value.toString();
 	}
+
+	_stringToStr(value) {
+		return value;
+	}
 }
