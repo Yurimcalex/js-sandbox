@@ -31,6 +31,7 @@ class LogBlock {
 		this.scriptText = scriptText;
 		this.logLineNumbers = this._getLogLineNumbers();
 		this.markedScriptText = this._markLogs();
+		this.converter = new ToStringConverter();
 	}
 
 	_getLogLineNumbers() {
@@ -55,11 +56,15 @@ class LogBlock {
 			.join('\n');
 	}
 
+	// _prepareLogArgs(arr) {
+	// 	return arr.map(arg => {
+	// 		if (typeof arg === 'object') return JSON.stringify(arg, null, 2);
+	// 		return arg;
+	// 	});
+	// }
+
 	_prepareLogArgs(arr) {
-		return arr.map(arg => {
-			if (typeof arg === 'object') return JSON.stringify(arg, null, 2);
-			return arg;
-		});
+		return arr.map(arg => this.converter.convert(arg));
 	}
 
 	createLogUI(logArgs) {
@@ -128,10 +133,10 @@ class ToStringConverter {
 
 	_htmlElementToStr(value) {
 		let result = `${value.nodeName}`;
-		if (value.id) result += `#${value.id}`;
-		if (value.className) result += `.${value.className}`;
-		let attrs = Objects.entries(value.dataset);
-		if (attrs) result += attrs.reduce((acc , [name, v]) =>  acc + `data-${name}=${v}`, '');
+		if (value.id) result += ` #${value.id}`;
+		if (value.className) result += ` .${value.className}`;
+		let attrs = Object.entries(value.dataset);
+		if (attrs) result += attrs.reduce((acc , [name, v]) =>  acc + `[data-${name}]=${v} `, ' ');
 		return result;
 	}
 
