@@ -136,7 +136,9 @@ class ToStringConverter {
 	}
 
 	_arrayToStr(value) {
-
+		return JSON.stringify(value, (key, val) => {
+			return this._toStr(typeof key, val);
+		});
 	}
 
 	_toStr(type, value) {
