@@ -113,4 +113,8 @@ class ToStringConverter {
 	_numberToStr(value) {
 		return value.toString();
 	}
+
+	_bigintToStr(value) {
+		return `${value.toString()}n`;
+	}
 }
