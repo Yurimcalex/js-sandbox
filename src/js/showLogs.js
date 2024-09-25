@@ -117,4 +117,8 @@ class ToStringConverter {
 	_bigintToStr(value) {
 		return `${value.toString()}n`;
 	}
+
+	_symbolToStr(value) {
+		return value.toString();
+	}
 }
