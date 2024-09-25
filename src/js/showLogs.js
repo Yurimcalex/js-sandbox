@@ -125,4 +125,13 @@ class ToStringConverter {
 	_functionToStr(value) {
 		return value.toString();
 	}
+
+	_htmlElementToStr(value) {
+		let result = `${value.nodeName}`;
+		if (value.id) result += `#${value.id}`;
+		if (value.className) result += `.${value.className}`;
+		let attrs = Objects.entries(value.dataset);
+		if (attrs) result += attrs.reduce((acc , [name, v]) =>  acc + `data-${name}=${v}`, '');
+		return result;
+	}
 }
