@@ -93,4 +93,8 @@ class ToStringConverter {
 		}
 		return type;
 	}
+
+	_undefinedToStr(value) {
+		return 'undefined';
+	}
 }
