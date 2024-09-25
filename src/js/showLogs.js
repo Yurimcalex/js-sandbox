@@ -77,3 +77,20 @@ class LogBlock {
 }
 
 window['LogBlock'] = LogBlock;
+
+
+class ToStringConverter {
+	_getType(value) {
+		let type = typeof value;
+		if (type === 'object') {
+			if (Array.isArray(value)) {
+				type = 'array';
+			} else if (value instanceof HTMLElement) {
+				type = 'htmlElement';
+			} else {
+				type = 'object';
+			}
+		}
+		return type;
+	}
+}
