@@ -134,4 +134,12 @@ class ToStringConverter {
 		if (attrs) result += attrs.reduce((acc , [name, v]) =>  acc + `data-${name}=${v}`, '');
 		return result;
 	}
+
+	_arrayToStr(value) {
+
+	}
+
+	_toStr(type, value) {
+		return this[`_${type}ToStr`](value);
+	}
 }
