@@ -97,4 +97,8 @@ class ToStringConverter {
 	_undefinedToStr(value) {
 		return 'undefined';
 	}
+
+	_nullToStr(value) {
+		return 'null';
+	}
 }
