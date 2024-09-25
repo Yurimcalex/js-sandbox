@@ -109,4 +109,8 @@ class ToStringConverter {
 	_stringToStr(value) {
 		return value;
 	}
+
+	_numberToStr(value) {
+		return value.toString();
+	}
 }
