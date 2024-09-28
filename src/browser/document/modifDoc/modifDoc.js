@@ -35,6 +35,7 @@ container.insertAdjacentHTML('beforebegin', '<p>Beforebegin</p>');
 container.insertAdjacentHTML('afterend', '<p>Afterend</p>');
 container.insertAdjacentHTML('afterbegin', '<p>Afterbegin</p>');
 container.insertAdjacentHTML('beforeend', '<p>Beforeend</p>');
+// ---2---
 // --------- block ---------
 
 
@@ -54,7 +55,6 @@ let ol1 = ol.cloneNode(true);
 let ol2 = ol.cloneNode(false);
 
 clones.append(ol1, ol2);
-// ---2---
 // --------- block ---------
 
 
@@ -70,6 +70,7 @@ function getListContent() {
 }
 
 ul.append(getListContent());
+// ---3---
 // --------- block ---------
 
 
@@ -88,7 +89,6 @@ li6.innerHTML = '6';
 ul.replaceChild(li6, li5);
 
 ul.removeChild(ul.firstElementChild);
-// ---3---
 // --------- block ---------
 
 
@@ -96,6 +96,7 @@ ul.removeChild(ul.firstElementChild);
 setTimeout(() => {
 	//document.write('<h1>Erase previous content and add this one</h1>');
 }, 5000);
+// ---4---
 // --------- block ---------
 
 
@@ -121,8 +122,7 @@ function clear(elem) {
 
 
 // Task 3 - Why does the text remain
-table.remove();
-// ---4---
+//table.remove();
 // --------- block ---------
 
 
