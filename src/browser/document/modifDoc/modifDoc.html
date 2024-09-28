@@ -42,30 +42,39 @@
 		<strong>Hi there!</strong> You've read an important message.
 	</div>
 
+	<div id="div1_cont"></div>
+
 	<ol id="ol">
 		<li>0</li>
 		<li>1</li>
 		<li>2</li>
 	</ol>
+	<div data-target="1"></div>
 
-	<div id="container"></div>
+	<div id="clones"></div>
+
+	<div id="container" data-target="2"></div>
+
 
 	<script>
 		document.write('<b>Hello from JS</b>');
 	</script>
 
-	<div id="ul"></div>
 
-	<table id="table">
+	<div id="task1"></div>
+
+	<div id="ul" data-target="3"></div>
+
+	<table id="table" data-target="4">
 		Some text ...
 		<tr>
 			<td>Test</td>
 		</tr>
 	</table>
 
-	<div id="tree"></div>
+	<div id="tree" data-target="5"></div>
 
-	<ul id="ul_list">
+	<ul id="ul_list" data-target="6">
 	  <li>Animals
 	    <ul>
 	      <li>Mammals
@@ -102,15 +111,16 @@
 	  </li>
 	</ul>
 
-	<div id="calendar"></div>
+	<div id="calendar" data-target="7"></div>
 
-	<div id="clock"></div>
+	<div id="clock" data-target="8"></div>
 
-	<ul id="numbs_ul">
+	<ul id="numbs_ul" data-target="9">
   	<li id="one">1</li>
   	<li id="two">4</li>
 	</ul>
 
+	<script src="../../../js/showLogs.js"></script>
 	<script src="./modifDoc.js" data-code></script>
 	<script src="../../../js/showCode.js"></script>
 	<script src="../../../js/changePage.js"></script>

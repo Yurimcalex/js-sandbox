@@ -5,9 +5,12 @@ let textNode = document.createTextNode('Here I am');
 let div1 = document.createElement('div');
 div1.className = 'alert';
 div1.innerHTML = "<strong>Hi there!</strong> You've read an important message.";
+// ---1---
+// --------- block ---------
+
 
 // Insertion methods
-document.body.append(div1);
+div1_cont.append(div1);
 
 ol.before('before');
 ol.after('after');
@@ -24,6 +27,7 @@ div1.after(
 	'<p>It will be text only</p>',
 	document.createElement('hr')
 );
+// --------- block ---------
 
 
 // insertAdjacentHTML/Text/Element
@@ -31,6 +35,7 @@ container.insertAdjacentHTML('beforebegin', '<p>Beforebegin</p>');
 container.insertAdjacentHTML('afterend', '<p>Afterend</p>');
 container.insertAdjacentHTML('afterbegin', '<p>Afterbegin</p>');
 container.insertAdjacentHTML('beforeend', '<p>Beforeend</p>');
+// --------- block ---------
 
 
 // Node removal
@@ -41,13 +46,16 @@ setTimeout(() => {
 setInterval(() => {
 	ol.append(liFirst);
 }, 3000);
+// --------- block ---------
 
 
 // Cloning nodes: cloneNode
 let ol1 = ol.cloneNode(true);
 let ol2 = ol.cloneNode(false);
 
-document.body.append(ol1, ol2);
+clones.append(ol1, ol2);
+// ---2---
+// --------- block ---------
 
 
 // DocumentFragment
@@ -62,6 +70,7 @@ function getListContent() {
 }
 
 ul.append(getListContent());
+// --------- block ---------
 
 
 // Old-school insert/remove methods
@@ -79,12 +88,15 @@ li6.innerHTML = '6';
 ul.replaceChild(li6, li5);
 
 ul.removeChild(ul.firstElementChild);
+// ---3---
+// --------- block ---------
 
 
 // A word about document.write
 setTimeout(() => {
 	//document.write('<h1>Erase previous content and add this one</h1>');
 }, 5000);
+// --------- block ---------
 
 
 // Task 1 - createTextNode vs innerHTML vs textContent
@@ -95,8 +107,9 @@ setTimeout(() => {
 	//div.innerHTML = text;
 	div.textContent = text;
 
-	document.body.append(div);
+	task1.append(div);
 }
+// --------- block ---------
 
 
 // Task 2 - Create a function that removes everything from the element
@@ -104,10 +117,13 @@ function clear(elem) {
 	elem.innerHTML = '';
 	//elem.replaceWith(elem.cloneNode(false));
 }
+// --------- block ---------
 
 
 // Task 3 - Why does the text remain
 table.remove();
+// ---4---
+// --------- block ---------
 
 
 // Task 4 - Create a list
@@ -123,6 +139,7 @@ function createListFromUser() {
 }
 
 //console.log(createListFromUser());
+// --------- block ---------
 
 
 // Task 5 - Create a tree from the object
@@ -178,7 +195,9 @@ function createTreeHTML(container, data) {
 	container.innerHTML = html;
 }
 
-//createTreeHTML(document.getElementById('tree'), data);
+createTreeHTML(document.getElementById('tree'), data);
+// ---5---
+// --------- block ---------
 
 
 // Task 6 - Show descendants in a tree
@@ -195,6 +214,8 @@ function showDescedants(list) {
 }
 
 showDescedants(ul_list);
+// ---6---
+// --------- block ---------
 
 
 // Task 7 - Create a calendar
@@ -230,7 +251,9 @@ function createCalendar(elem, year, month) {
 	calendar.innerHTML = table;
 }
 
-//createCalendar(null, 2012, 10);
+createCalendar(null, 2012, 10);
+// ---7---
+// --------- block ---------
 
 
 // Task 8 - Colored clock with setInterval
@@ -280,25 +303,29 @@ function createClock(elem) {
 	}	
 }
 
-//createClock(clock);
+createClock(clock);
+// ---8---
+// --------- block ---------
 
 
 // Task 9 - Insert the HTML in the list
 numbs_ul
 	.children[0]
 	.insertAdjacentHTML('afterend', '<li>2</li><li>3</li>');
+// ---9---
+// --------- block ---------
 
 
 // Task 10 - Sort the table
 {
-	let rows = citizens.querySelectorAll('tbody > tr');
-	rows = [...rows].sort((a, b) => {
-		let aName = a.firstElementChild.textContent;
-		let bName = b.firstElementChild.textContent;
+	// let rows = citizens.querySelectorAll('tbody > tr');
+	// rows = [...rows].sort((a, b) => {
+	// 	let aName = a.firstElementChild.textContent;
+	// 	let bName = b.firstElementChild.textContent;
 		
-		if (aName > bName) return 1;
-		if (bName > aName) return -1;
-	});
+	// 	if (aName > bName) return 1;
+	// 	if (bName > aName) return -1;
+	// });
 
-	citizens.tBodies[0].append(...rows);
+	// citizens.tBodies[0].append(...rows);
 }
