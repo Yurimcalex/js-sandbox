@@ -33,15 +33,15 @@
 <body>
 	<div id="test" something="non-standard"></div>
 
-	<div id="elem" about="Elephant"></div>
+	<div id="elem" about="Elephant" data-target="1"></div>
 
-	<input type="text">
+	<input type="text" data-target="2">
 
 	<input type="checkbox" id="input1" checked>
 
 	<div id="div" style="color:purple;font-size:120%">Opapa!</div>
 
-	<a href="#someLink" id="a"></a>
+	<a href="#someLink" id="a" data-target="3"></a>
 
 	<div show-info="name"></div>
 	<div show-info="age"></div>
@@ -53,11 +53,11 @@
 
 	<div id="animal" data-animal="Elephant"></div>
 
-	<div id="bird" class="bird" data-local-bird="town">Sparrow</div>
+	<div id="bird" class="bird" data-local-bird="town" data-target="4">Sparrow</div>
 
-	<div data-widget-name="menu">Choose the genre</div>
+	<div data-widget-name="menu" data-target="5">Choose the genre</div>
 
-	<div id="someLinks">
+	<div id="someLinks" data-target="6">
 		<a name="list">the list</a>
 		<ul>
 		  <li><a href="http://google.com">http://google.com</a></li>
@@ -69,6 +69,7 @@
 		</ul>
 	</div>
 
+	<script src="../../../js/showLogs.js"></script>
 	<script src="./attrProps.js" data-code></script>
 	<script src="../../../js/showCode.js"></script>
 	<script src="../../../js/changePage.js"></script>

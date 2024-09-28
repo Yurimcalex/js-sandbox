@@ -19,6 +19,8 @@ Element.prototype.sayHi = function () {
 
 document.documentElement.sayHi();
 document.body.sayHi();
+// ---1---
+// --------- block ---------
 
 
 // HTML attributes
@@ -35,6 +37,7 @@ console.log(elem.outerHTML);
 for (let attr of elem.attributes) {
 	console.log(`${attr.name} = ${attr.value}`);
 }
+// --------- block ---------
 
 
 // Property-attribute synchronization
@@ -49,6 +52,8 @@ console.log(input.value);
 
 input.value = 'new text';
 console.log(input.getAttribute('value'));
+// ---2---
+// --------- block ---------
 
 
 // DOM properties are typed
@@ -61,6 +66,8 @@ console.log(div.style.color);
 
 console.log(a.getAttribute('href'));
 console.log(a.href);
+// ---3---
+// --------- block ---------
 
 
 // Non-standard attributes, dataset
@@ -80,11 +87,15 @@ console.log(animal.dataset.animal);
 
 console.log(bird.dataset.localBird);
 bird.dataset.localBird = 'village';
+// ---4---
+// --------- block ---------
 
 
 // Task 1 - get the attribute
 console.log(document.querySelector('[data-widget-name]').dataset.widgetName);
 console.log(document.querySelector('[data-widget-name]').getAttribute('data-widget-name'));
+// ---5---
+// --------- block ---------
 
 
 // Task 2 - Make external links orange
@@ -95,3 +106,4 @@ for (let link of links) {
 		link.style.color = 'orange';
 	}
 }
+// ---6---
