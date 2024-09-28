@@ -43,20 +43,21 @@ console.log(document.nodeName);
 
 
 // innerHTML: the contents
-console.log(container1.innerHTML);
-container1.innerHTML = '<div><h1>Header 1</h1></div>';
-container1.innerHTML += '<h2>Header 2</h2>';
+//console.log(container1.innerHTML);
+container1.innerHTML = '<div><h1>Heading 1</h1></div>';
+container1.innerHTML += '<h2>Heading 2</h2>';
 container1.innerHTML += '<script>alert("Ups!")</script>';
 // --------- block ---------
 
 
 // outerHTML: full HTML of the element
-console.log(container1.outerHTML);
+//console.log(container1.outerHTML);
 
 let container2 = document.querySelector('.container2');
 container2.outerHTML = '<b>something new ...</b>';
-console.log(container2.outerHTML);
-// ---2---
+//console.log(container2.outerHTML);
+console.log(container2, '<==');
+// ---3---
 // --------- block ---------
 
 
@@ -65,7 +66,6 @@ console.log(text.firstChild.data);
 console.log(document.body.lastChild.previousSibling.previousSibling.data);
 
 console.log(comment.firstChild.nextSibling.data);
-// ---3---
 // --------- block ---------
 
 
