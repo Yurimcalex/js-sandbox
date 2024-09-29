@@ -17,6 +17,7 @@ div1.classList.remove('full_width');
 for (let cls of div1.classList) {
 	console.log(cls);
 }
+// --------- block ---------
 
 
 // Element style
@@ -24,6 +25,7 @@ div1.style.backgroundColor = 'lightgray';
 div1.style.color = 'white';
 
 console.log(div1.style);
+// --------- block ---------
 
 
 // Resetting the style property
@@ -39,12 +41,14 @@ div1.style.cssText = `
 `;
 
 div1.setAttribute('style', 'font-size: 20px;');
+// --------- block ---------
 
 
 // Mind the units
 div1.style.margin = '10px';
 console.log(div1.style.marginTop);
 console.log(div1.style.marginRight);
+// --------- block ---------
 
 
 // Computed styles: getComputedStyle
