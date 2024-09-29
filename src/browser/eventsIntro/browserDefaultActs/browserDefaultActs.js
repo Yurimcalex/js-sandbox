@@ -7,6 +7,8 @@ google.onclick = function () {
 youtube.onclick = function (e) {
 	e.preventDefault();
 };
+// ---1---
+// --------- block ---------
 
 
 // Example: the menu
@@ -16,6 +18,8 @@ menu.onclick = function (e) {
 	console.log(href);
 	return false;
 };
+// ---2---
+// --------- block ---------
 
 
 // event.defaultPrevented
@@ -30,6 +34,8 @@ document.oncontextmenu = function (e) {
 	console.log('Log to console about document context menu!');
 	e.preventDefault();
 };
+// ---3---
+// --------- block ---------
 
 
 // Task 1 - Why return false doesn't work
@@ -37,6 +43,7 @@ function handler() {
 	console.log('handler...');
 	return false;
 }
+// --------- block ---------
 
 
 // Task 2 - Catch links in the document
@@ -46,6 +53,8 @@ contents.onclick = function (e) {
 		return confirm(`Do you really want to go to ${a.getAttribute('href')}`);
 	}
 }
+// ---4---
+// --------- block ---------
 
 
 // Task 3 - Image gallery
@@ -56,5 +65,5 @@ gallery.onclick = function (e) {
 		largeImg.src = href;
 		return false;
 	}
-	
 }
+// ---5---

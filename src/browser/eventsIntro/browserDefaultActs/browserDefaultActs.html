@@ -37,26 +37,30 @@
 		  margin: 0;
 		  padding: 0;
 		}
+
+		#clear {
+			clear: both;
+		}
 	</style>
 </head>
 <body>
-	<div>
+	<div data-target="1">
 		<a id="google" href="http://google.com">Google</a>
 		<a id="youtube" href="http://youtube">Youtube</a>
 	</div>
 
-	<ul id="menu" class="menu">
+	<ul id="menu" class="menu" data-target="2">
 	  <li><a href="/html">HTML</a></li>
 	  <li><a href="/javascript">JavaScript</a></li>
 	  <li><a href="/css">CSS</a></li>
 	</ul>
 
-	<div>
+	<div data-target="3">
 		<button id="ccm">Custom Context Menu</button>
 		<a href="https://w3.org" onclick="return handler()">the browser will go to w3.org</a>
 	</div>
 
-	<div id="contents">
+	<div id="contents" data-target="4">
 		<a href="https://wikipedia.org">Wikipedia</a>
 		<a href="https://w3.org">W3.org</a>
 	</div>
@@ -83,6 +87,9 @@
 		  </li>
 		</ul>
 	</div>
+	<div id="clear" data-target="5"></div>
+
+	<script src="../../../js/showLogs.js"></script>
 	<script src="./browserDefaultActs.js" data-code></script>
 	<script src="../../../js/showCode.js"></script>
 	<script src="../../../js/changePage.js"></script>
