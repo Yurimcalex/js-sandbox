@@ -14,6 +14,8 @@ function highlight(td) {
 	selectedTD = td;
 	selectedTD.classList.add('highlight');
 }
+// ---1---
+// --------- block ---------
 
 
 // Delegation example: actions in markup
@@ -44,6 +46,8 @@ class Menu {
 }
 
 new Menu(menu);
+// ---2---
+// --------- block ---------
 
 
 // The behavior pattern
@@ -59,6 +63,8 @@ document.addEventListener('click', function (e) {
 	let elem = document.getElementById(id);
 	elem.hidden = !elem.hidden;
 });
+// ---3---
+// --------- block ---------
 
 
 // Task 1 - Hide messages with delegation
@@ -71,6 +77,8 @@ container.addEventListener('click', function (e) {
 		}
 	}
 });
+// ---4---
+// --------- block ---------
 
 
 // Task 2 - Tree menu
@@ -92,6 +100,8 @@ tree.addEventListener('click', function (e) {
 		}
 	}
 });
+// ---5---
+// --------- block ---------
 
 
 // Task 3 - Sortable table
@@ -116,6 +126,8 @@ grid.addEventListener('click', function (e) {
 		this.tBodies[0].append(...rows);
 	}
 });
+// ---6---
+// --------- block ---------
 
 
 // Task 4 - tooltip behavior
@@ -146,3 +158,4 @@ document.addEventListener('mouseout', function (e) {
 	let tooltip = document.querySelector('.tooltip');
 	if (tooltip) tooltip.remove();
 });
+// ---7---
