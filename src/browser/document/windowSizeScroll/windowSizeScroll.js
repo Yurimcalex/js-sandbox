@@ -4,6 +4,7 @@ let html = document.documentElement;
 
 console.log(html.clientWidth, html.clientHeight);
 console.log(window.innerWidth, window.innerHeight);
+// --------- block ---------
 
 
 // Width/height ofthe document
@@ -16,6 +17,7 @@ function getDocumentScrollHeight() {
 }
 
 console.log(getDocumentScrollHeight());
+// --------- block ---------
 
 
 // Get the current scroll
@@ -23,6 +25,7 @@ let scrollX = window.pageXOffset;
 let scrollY = window.pageYOffset;
 
 console.log(`Scroll top: ${scrollY}, Scroll left: ${scrollX}`);
+// --------- block ---------
 
 
 // Scrolling: scrollTo, scrollBy, scrollIntoView
@@ -32,10 +35,12 @@ console.log(`Scroll top: ${scrollY}, Scroll left: ${scrollX}`);
 // 		window.scrollTo(0, 0);
 // 	}, 1000);
 // }, 3000);
+// --------- block ---------
 
 
 // scrollIntoView
 elem.scrollIntoView(true);
+// --------- block ---------
 
 
 // Forbid the scrolling
