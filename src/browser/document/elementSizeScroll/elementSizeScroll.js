@@ -2,6 +2,10 @@
 // offsetParent, offsetLeft/Top
 console.log(example.offsetParent);
 console.log(example.offsetLeft, example.offsetTop);
+// ---1---
+// --------- block ---------
+
+
 // offsetWidth/Height
 console.log(`width: ${example.offsetWidth}`);
 console.log(`height: ${example.offsetHeight}`);
@@ -11,16 +15,19 @@ function isHidden(elem) {
 }
 
 console.log(isHidden(example));
+// --------- block ---------
 
 
 // clientTop/Left
 console.log(`clientTop: ${example.clientTop}`);
 console.log(`clientLeft: ${example.clientLeft}`);
+// --------- block ---------
 
 
 // clientWidth/Height
 console.log(`clientWidth: ${example.clientWidth}`)
 console.log(`clientHeight: ${example.clientHeight}`);
+// --------- block ---------
 
 
 // scrollWidth/Height
@@ -29,6 +36,7 @@ console.log(`scrollHeight: ${example.scrollHeight}`);
 
 //setTimeout(() => example.style.height = `${example.scrollHeight}px`, 5000);
 //setTimeout(() => example.style.height = '', 7000);
+// --------- block ---------
 
 
 // scrollLeft/scrollTop
@@ -43,6 +51,7 @@ console.log(`scrollTop: ${example.scrollTop}`);
 // 	clearInterval(timer);
 // 	console.log(`scrollTop: ${example.scrollTop}`);
 // }, 10000);
+// --------- block ---------
 
 
 // Don't take width/height from CSS
@@ -50,6 +59,7 @@ console.log(`metric width: ${example.clientWidth}`);
 console.log(`computed style width: ${getComputedStyle(example).width}`);
 
 console.log(getComputedStyle(elem).width);
+// --------- block ---------
 
 
 // Task 1 - What's the scroll from the bottom?
@@ -58,6 +68,7 @@ function getScrollBottom(elem) {
 }
 
 console.log(getScrollBottom(example));
+// --------- block ---------
 
 
 // Task 2 - What is the scrollbar width?
@@ -75,6 +86,7 @@ function getScrollbarWidth() {
 }
 
 console.log(`Scrollbar width: ${getScrollbarWidth()}`);
+// --------- block ---------
 
 
 // Task 3 Place the ball in the field center
@@ -84,6 +96,8 @@ function center(parent, child) {
 }
 
 center(field, ball);
+// ---2---
+// --------- block ---------
 
 
 // Task 4 - The difference: CSS width versus clientWidth
