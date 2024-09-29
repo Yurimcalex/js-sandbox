@@ -9,6 +9,8 @@ conts.forEach(elem => {
 		//console.log(this.tagName);
 	});
 });
+// --------- block ---------
+
 
 // event.target
 level3.addEventListener('click', function (e) {
@@ -24,6 +26,7 @@ level1.addEventListener('click', function (e) {
 	console.log('fires on', e.target);
 	e.stopPropagation();
 });
+// --------- block ---------
 
 
 // Capturing
