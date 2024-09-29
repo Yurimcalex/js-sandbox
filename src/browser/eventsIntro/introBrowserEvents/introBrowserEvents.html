@@ -131,25 +131,31 @@
 	<input type="button" value="count apples" onclick="countApples()" />
 
 	<input id="btn1" type="button" value="Click me!" />
+  <div data-target="1"></div>
+
 	<input id="btn2" type="button" value="Click me!" />
 
 	<button id="btn3">Button</button>
 	<button id="btn4">Button</button>
+  <div data-target="2"></div>
 
-	<div>
+	<div data-target="3">
 		<p id="p_text">Some text ...</p>
 		<button id="hide_text">Hide text</button>
 	</div>
 
 	<button id="btn5">Click to hide</button>
-	<button id="btn6">Btn 6</button>
+  <div data-target="4"></div>
 
-	<div id="field">
+	<button id="btn6">Btn 6</button>
+  <div data-target="5"></div>
+
+	<div id="field" data-target="6">
 	   <img src="https://en.js.cx/clipart/ball.svg" id="ball"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 	   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 	 </div>
 
-	 <div id="slidingMenu">
+	 <div id="slidingMenu" data-target="7">
 	 	<div><span>▼</span>Sweeties (click me)!</div>
 	 	 <ul>
 	 	   <li>Cake</li>
@@ -159,7 +165,7 @@
 	 </div>
 
 	<button class="remove-button">[x]</button>
-	<div>
+	<div data-target="8">
 	  <div class="pane">
 	    <h3>Horse</h3>
 	    <p>The horse is one of two extant subspecies of Equus ferus. It is an odd-toed ungulate mammal belonging to the taxonomic family Equidae. The horse has evolved over the past 45 to 55 million years from a small multi-toed creature, Eohippus, into the large, single-toed animal of today.</p>
@@ -175,7 +181,7 @@
 	</div>
 
 
-	<div class="carousel">
+	<div class="carousel" data-target="9">
 		<button class="arrow">⇦</button>
 		<button class="arrow">⇨</button>
 		<ul>
@@ -191,6 +197,8 @@
 		  <li><img src="https://en.js.cx/carousel/10.png"></li>
 		</ul>
 	</div>
+
+  <script src="../../../js/showLogs.js"></script>
 	<script src="./introBrowserEvents.js" data-code></script>
   <script src="../../../js/showCode.js"></script>
   <script src="../../../js/changePage.js"></script>

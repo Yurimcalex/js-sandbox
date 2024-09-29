@@ -8,6 +8,8 @@ btn1.onclick = null;
 btn1.onclick = function () {
 	console.log(this.innerHTML);
 }
+// ---1---
+// --------- block ---------
 
 
 // addEventListener
@@ -25,6 +27,7 @@ btn1.addEventListener('click', handler2);
 document.addEventListener('DOMContentLoaded', function () {
 	console.log('DOM built!');
 });
+// --------- block ---------
 
 
 // Event object
@@ -32,6 +35,7 @@ btn2.onclick = function (e) {
 	console.log(e.type + ' at ' + e.currentTarget);
 	console.log('Coords: ' + e.clientX + ',' + e.clientY);
 };
+// --------- block ---------
 
 
 // Object handlers: handleEvent
@@ -73,6 +77,8 @@ class Menu_1 {
 }
 
 btn4.addEventListener('click', new Menu_1());
+// ---2---
+// --------- block ---------
 
 
 // Task 1 - Hide on click
@@ -80,18 +86,24 @@ hide_text.onclick = function () {
 	//p_text.style.display = 'none';
 	p_text.hidden = true;
 };
+// ---3---
+// --------- block ---------
 
 
 // Task 2 - Hide self
 btn5.onclick = function (e) {
 	this.hidden = true;
 }
+// ---4---
+// --------- block ---------
 
 
 // Task 3 - Which handlers run
 btn6.addEventListener('click', () => console.log('1'));
 btn6.removeEventListener('click', () => console.log('1'));
 btn6.onclick = () => console.log('2');
+// ---5---
+// --------- block ---------
 
 
 // Task 4 - Move the ball across the field
@@ -119,6 +131,8 @@ function moveBall(field, ball) {
 }
 
 moveBall(field, ball);
+// ---6---
+// --------- block ---------
 
 
 // Task 5 - Create a sliding menu
@@ -142,6 +156,8 @@ function createSlidingMenu() {
 }
 
 createSlidingMenu();
+// ---7---
+// --------- block ---------
 
 
 // Task 6 - Add a closing button
@@ -163,6 +179,8 @@ function addClosingButton() {
 }
 
 addClosingButton();
+// ---8---
+// --------- block ---------
 
 
 // Task 7 - carousel
@@ -188,3 +206,4 @@ function createCarousel() {
 }
 
 createCarousel();
+// ---9---
