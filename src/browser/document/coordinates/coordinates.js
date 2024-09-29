@@ -2,6 +2,7 @@
 // Element coordinates: getBoundingClientRect
 let coords = example.getBoundingClientRect();
 console.log(coords);
+// --------- block ---------
 
 
 // elementFromPoint(x, y)
@@ -11,6 +12,7 @@ let centerY = document.documentElement.clientHeight / 2;
 let elem = document.elementFromPoint(centerX, centerY);
 
 console.log(elem);
+// --------- block ---------
 
 
 // Using for fixed position
@@ -33,6 +35,7 @@ function createMessageUnder(elem, html) {
 // let message = createMessageUnder(example, 'Some message under...');
 // document.body.append(message);
 // setTimeout(() => message.remove(), 5000);
+// --------- block ---------
 
 
 // Document coordinates
@@ -61,6 +64,7 @@ function createMessageUnder_1(elem, html) {
 
 let message = createMessageUnder_1(example, '<b>Message</b>');
 //document.body.append(message);
+// --------- block ---------
 
 
 // Task 1 - find window coordinates of the field
@@ -97,6 +101,7 @@ console.log(fieldCoords);
 // Object.values(fieldCoords).map(([x, y]) => {
 // 	document.body.append(createMark(x, y));
 // });
+// --------- block ---------
 
 
 // Task 2 - show a note near the element
@@ -137,7 +142,9 @@ function showNote(anchor, position, html) {
 	positionAt(anchor, position, note);
 }
 
-['top-out', 'right-out', 'bottom-out',
- 'top-in', 'right-in', 'bottom-in'].forEach(p => {
-	showNote(example, p, p);
+setTimeout(() => {
+	['top-out', 'right-out', 'bottom-out',
+	 'top-in', 'right-in', 'bottom-in'].forEach(p => {
+		showNote(example, p, p);
+	});
 });
