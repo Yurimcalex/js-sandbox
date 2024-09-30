@@ -26,7 +26,7 @@
 	</style>
 </head>
 <body>
-	<div>
+	<div data-target="1">
 		<input id="inp1" type="text">
 		<input type="button" value="Button">
 		<select id="sel1">
@@ -37,17 +37,17 @@
 		</select>
 	</div>
 
-	<div>
+	<div data-target="2">
 		<input id="inp2" type="text">
 		<br/>
 		<div id="inp2Result"></div>
 	</div>
 
-	<div>
+	<div data-target="3">
 		<input id="inp3" type="text">
 	</div>
 
-	<div>
+	<div data-target="4">
 		Deposit calculator.
 		<form name="calculator">
 		  <table>
@@ -99,6 +99,9 @@
 		  </td>
 		</table>
 	</div>
+
+
+	<script src="../../../js/showLogs.js"></script>
 	<script src="./events.js" data-code></script>
 	<script src="../../../js/showCode.js"></script>
 	<script src="../../../js/changePage.js"></script>

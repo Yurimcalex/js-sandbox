@@ -7,12 +7,16 @@ inp1.onchange = function () {
 sel1.onchange = function () {
 	console.log(this.value);
 };
+// ---1---
+// --------- block ---------
 
 
 // Event: input
 inp2.oninput = function () {
 	inp2Result.innerHTML = inp2.value;
 };
+// ---2---
+// --------- block ---------
 
 
 // Events: cut, copy, paste
@@ -25,6 +29,8 @@ inp3.oncut = function (e) {
 	console.log(e.type + '-' + document.getSelection());
 	e.preventDefault();
 };
+// ---3---
+// --------- block ---------
 
 
 // Task 1 - Deposit calculator
@@ -46,3 +52,4 @@ form.onchange = function (e) {
 
 	window['height-after'].style.height = h + 'px';
 }
+// ---4---
