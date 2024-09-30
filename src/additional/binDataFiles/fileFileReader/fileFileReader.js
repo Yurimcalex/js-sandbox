@@ -4,6 +4,7 @@ inp.onchange = function () {
 	console.log(`File name: ${file.name}`);
 	console.log(`Last modified: ${file.lastModified}`);
 }
+// --------- block ---------
 
 
 // FileReader
