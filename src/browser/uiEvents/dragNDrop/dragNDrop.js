@@ -49,9 +49,12 @@ ball.onmousedown = function (e) {
 		return false;
 	};
 };
+// ---1---
+// --------- block ---------
 
 
 // Correcting positioning
+// --------- block ---------
 
 
 // Potential drop targets (droppables)
@@ -62,6 +65,7 @@ function enterDroppable(elm) {
 function leaveDroppable(elm) {
 	elm.style.background = '';
 }
+// --------- block ---------
 
 
 // Task 1 - Slider
@@ -94,6 +98,8 @@ thumb.onmousedown = function (e) {
 		return false;
 	};
 };
+// ---2---
+// --------- block ---------
 
 
 // Task 2 -  Drag superheroes around the field
@@ -153,3 +159,4 @@ document.addEventListener('mousedown', function (e) {
 		return false;
 	};
 });
+// ---3---
