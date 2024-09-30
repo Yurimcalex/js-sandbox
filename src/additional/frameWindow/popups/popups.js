@@ -5,6 +5,8 @@
 popup.onclick = () => {
 	window.open('https://google.com');
 };
+// ---1---
+// --------- block ---------
 
 
 // Example: a minimalistic window
@@ -37,6 +39,8 @@ let params1 = [
 openw.onclick = () => {
 	open('/', 'test', params1);
 };
+// ---2---
+// --------- block ---------
 
 
 // Accessing popup from window
@@ -55,6 +59,8 @@ another.onclick = () => {
 		nw.document.body.insertAdjacentHTML('afterbegin', html);
 	};
 };
+// ---3---
+// --------- block ---------
 
 
 // Accessing window from popup
@@ -64,6 +70,8 @@ btn1.onclick = () => {
 		'<script>window.opener.document.body.innerHTML="Test"<\/script>'
 	);
 };
+// ---4---
+// --------- block ---------
 
 
 // Closing a popup
@@ -76,6 +84,8 @@ btn2.onclick = () => {
 		}, 3000);
 	};
 };
+// ---5---
+// --------- block ---------
 
 
 // Moving and resizing
@@ -97,3 +107,4 @@ btn3.onclick = () => {
 		}, 2000);
 	}, 2000);
 };
+// ---6---
