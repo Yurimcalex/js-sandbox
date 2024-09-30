@@ -8,6 +8,8 @@ form1.onsubmit = function () {
 form1.elements[1].onclick = function () {
 	console.log('Click!');
 };
+// ---1---
+// --------- block ---------
 
 
 // Method: submit
@@ -15,11 +17,13 @@ let form = document.createElement('form');
 form.action = 'https://google.com/search';
 form.method = 'GET';
 form.innerHTML = '<input name="q" value="test">';
-document.body.append(form);
+f1.append(form);
 
 setTimeout(() => {
 	//form.submit();
 }, 3000);
+// ---2---
+// --------- block ---------
 
 
 // Task 1 - Modal form
@@ -84,3 +88,4 @@ function showPrompt(html, callback) {
 showPrompt('Enter something<br>...smart :)', function (value) {
 	console.log(value);
 });
+// ---3---
