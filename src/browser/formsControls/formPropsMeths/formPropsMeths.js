@@ -18,11 +18,14 @@ console.log(fieldset1);
 console.log(fieldset1.elements.login === form1.elements.login);
 
 console.log(form1.login === form1.elements.login);
+// ---1---
+// --------- block ---------
 
 
 // Backreference: element.form
 let login = form1.login;
 console.log(form1 === login.form);
+// --------- block ---------
 
 
 // Form elements
@@ -32,6 +35,8 @@ setTimeout(() => {
 	form2.txt.value = '...new text ...';
 	form2.checkbox.checked = false;
 }, 5000);
+// ---2---
+// --------- block ---------
 
 
 // select and option
@@ -45,6 +50,8 @@ setTimeout(() => {
 		}, 1000);
 	}, 1000);
 }, 3000);
+// ---3---
+// --------- block ---------
 
 
 let selected2 = Array.from(select2.options)
@@ -57,6 +64,7 @@ let option = new Option('Ananas', 'ananas');
 select1.append(option);
 
 console.log(select1.options[0].text, select1.options[1].index);
+// --------- block ---------
 
 
 // Task 1 - Add an option to select
@@ -66,3 +74,4 @@ console.log(selectedOption.value);
 let classicOption = new Option('Classic', 'classic');
 genres.append(classicOption);
 classicOption.selected = true;
+// ---4---

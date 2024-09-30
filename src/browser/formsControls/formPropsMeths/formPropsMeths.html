@@ -32,14 +32,15 @@
 				<input type="text" name="login">
 			</fieldset>
 		</form>
+		<div data-target="1"></div>
 
-		<form id="form2">
+		<form id="form2" data-target="2">
 			<input name="line" type="text" value="initial...">
 			<textarea name="txt">Some text</textarea>
 			<input name="checkbox" type="checkbox" checked>
 		</form>
 
-		<form>
+		<form data-target="3">
 			<select id="select1">
 				<option value="apple">Apple</option>
 				<option value="pear">Pear</option>
@@ -53,11 +54,13 @@
 			</select>
 		</form>
 
-		<select id="genres">
+		<select id="genres" data-target="4">
 		  <option value="rock">Rock</option>
 		  <option value="blues" selected>Blues</option>
 		</select>
 	</div>
+
+	<script src="../../../js/showLogs.js"></script>
 	<script src="./formPropsMeths.js" data-code></script>
 	<script src="../../../js/showCode.js"></script>
 	<script src="../../../js/changePage.js"></script>
