@@ -9,6 +9,7 @@ let someArr = new Uint8Array([0, 72, 101, 108, 108, 111, 0]);
 let binStr = someArr.subarray(1, -1);
 console.log(binStr);
 console.log(new TextDecoder().decode(binStr));
+// --------- block ---------
 
 
 // TextEncoder
