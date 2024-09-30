@@ -144,9 +144,9 @@
 	</style>
 </head>
 <body>
-	<div id="box"></div>
+	<div id="box" data-target="1"></div>
 
-	<div>
+	<div data-target="2">
 		<div id="lane">
 			<div></div>
 			<div></div>
@@ -157,14 +157,14 @@
 		<button id="clearLane">Clear</button>
 	</div>
 
-	<div style="overflow: hidden;">
+	<div style="overflow: hidden;" data-target="3">
 		<div id="parentCont">
 			<div id="child"></div>
 		</div>
 		<div id="estatus">Status</div>
 	</div>
 
-	<div id="boxes">
+	<div id="boxes" data-target="4">
 		<div>
 			<div>
 				<div>
@@ -174,7 +174,7 @@
 		</div>
 	</div>
 
-	<table id="table">
+	<table id="table" data-target="5">
 		<tr>
 			<td><span>data</span></td>
 			<td><span>data</span></td>
@@ -197,7 +197,7 @@
 		</tr>
 	</table>
 
-	<div id="task1">
+	<div id="task1" data-target="6">
 		<div data-tooltip="Here – is the house interior" id="house">
 		  <div data-tooltip="Here – is the roof" id="roof"></div>
 		  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -216,12 +216,14 @@
 		<span>text</span>
 		<span>text</span>
 	</div>
-	<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	<div data-target="7">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+	
+	<script src="../../../js/showLogs.js"></script>
 	<script src="./movingMouse.js" data-code></script>
 	<script src="../../../js/showCode.js"></script>
 	<script src="../../../js/changePage.js"></script>

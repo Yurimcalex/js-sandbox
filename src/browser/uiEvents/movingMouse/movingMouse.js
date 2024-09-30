@@ -11,6 +11,8 @@ box.onmouseout = function (e) {
 	this.innerHTML += `leave from: ${e.target.tagName}<br/>`;
 	this.innerHTML += `come to: ${e.relatedTarget.tagName}`;
 }
+// ---1---
+// --------- block ---------
 
 
 // Skipping elements
@@ -23,6 +25,8 @@ lane.onmouseover = function (e) {
 clearLane.onclick = function (e) {
 	[...lane.children].forEach(elm => elm.innerHTML = '');
 };
+// ---2---
+// --------- block ---------
 
 
 // Mouseout when leaving for a child
@@ -32,6 +36,8 @@ parentCont.onmouseout = function (e) {
 		relatedTarget(came to): ${e.relatedTarget.id};<br/>
 	`;
 };
+// ---3---
+// --------- block ---------
 
 
 // Events mouseenter and mouseleave
@@ -42,6 +48,8 @@ boxes.onmouseenter = function (e) {
 boxes.onmouseleave = function (e) {
 	console.log('leave from:', e.target);
 };
+// ---4---
+// --------- block ---------
 
 
 // Event delegation
@@ -67,6 +75,8 @@ table.onmouseout = function (e) {
 	currentElem.style.background = '';
 	currentElem = null;
 };
+// ---5---
+// --------- block ---------
 
 
 // Task 1 - Improved tooltip behavior
@@ -103,6 +113,8 @@ document.addEventListener('mouseout', function (e) {
 	elm = null;
 	currentTooltip = null;
 });
+// ---6---
+// --------- block ---------
 
 
 // Task 2 - Smart tooltip
@@ -154,3 +166,4 @@ new HoverIntent({
     tooltip.remove();
   }
 });
+// ---7---
