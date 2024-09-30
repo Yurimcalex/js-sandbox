@@ -13,17 +13,17 @@
 	</style>
 </head>
 <body>
-	<p id="text">Some text...</p>
+	<p id="text" data-target="1">Some text...</p>
 
-	<p id="p">Example: <i>italic</i> and <b>bold</b></p>
+	<p id="p" data-target="2">Example: <i>italic</i> and <b>bold</b></p>
 
-	<p id="p1">Example 1: <i>italic</i> and <b>bold</b></p>
+	<p id="p1" data-target="3">Example 1: <i>italic</i> and <b>bold</b></p>
 
-	<p id="p2">Example 1: <i>italic</i> and <b>bold</b></p>
+	<p id="p2" data-target="4">Example 1: <i>italic</i> and <b>bold</b></p>
 
-	<p id="p3">Example 1: <i>italic</i> and <b>bold</b></p>
+	<p id="p3" data-target="5">Example 1: <i>italic</i> and <b>bold</b></p>
 
-	<div>
+	<div data-target="6">
 		Cloned: <span id="cloned"></span>
 		<br>
 		As text: <span id="astext"></span>
@@ -32,13 +32,13 @@
 	<hr />
 	<p id="p4">Select me: <i>italic</i> and <b>bold</b></p>
 
-	<div>
+	<div data-target="7">
 		<textarea id="area" style="width:80%;height:60px">
 			Selecting in this text updates values below.
 		</textarea>
 	</div>
 
-	<div>
+	<div data-target="8">
 		<textarea id="area1" style="width:80%;height:60px">
 			Selecting in this text updates values below.
 		</textarea>
@@ -49,16 +49,17 @@
 		<button id="button">Wrap selection in stars *...*</button>
 	</div>
 
-	<div>
+	<div data-target="9">
 		<input id="input1" style="width:200px" value="Replace THIS in text">
 		<button id="button1">Replace THIS</button>
 	</div>
 
-	<div>
+	<div data-target="10">
 		<input id="input2" style="width:200px" value="Text Text Text Text Text">
 		<button id="button2">Insert "HELLO" at cursor</button>
 	</div>
 
+	<script src="../../../js/showLogs.js"></script>
 	<script src="./selectionRange.js" data-code></script>
 	<script src="../../../js/showCode.js"></script>
 	<script src="../../../js/changePage.js"></script>
