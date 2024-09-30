@@ -4,12 +4,14 @@ document.addEventListener('DOMContentLoaded', function () {
 	console.log('DOM is ready!');
 	console.log(`Image size: ${img.offsetWidth}x${img.offsetHeight}`);
 });
+// --------- block ---------
 
 
 // DOMContentLoaded and scripts
 let script = document.createElement('script');
 script.innerHTML = 'console.log("generated!")';
 document.body.append(script);
+// --------- block ---------
 
 
 // window.onload
@@ -17,6 +19,7 @@ window.onload = function () {
 	console.log('page loaded!');
 	console.log(`Image size: ${img.offsetWidth}x${img.offsetHeight}`);
 };
+// --------- block ---------
 
 
 // window.onunload
@@ -25,6 +28,7 @@ window.addEventListener('unload', function () {
 	console.log('leaving');
 	navigator.sendBeacon('/analytics', JSON.stringify(analyticsData));
 });
+// --------- block ---------
 
 
 // window.onbeforeunload
@@ -35,6 +39,7 @@ window.addEventListener('unload', function () {
 window.addEventListener("beforeunload", (event) => {
   event.returnValue = "There are unsaved changes. Leave now?";
 });
+// --------- block ---------
 
 
 // readyState
