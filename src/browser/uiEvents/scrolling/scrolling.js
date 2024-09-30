@@ -2,6 +2,8 @@
 window.addEventListener('scroll', function (e) {
 	scrollInfo.innerHTML = `Current scroll: ${window.pageYOffset}px`;
 });
+// ---1---
+// --------- block ---------
 
 
 // Task 1 - Endless page
@@ -21,6 +23,8 @@ section.addEventListener('scroll', function (e) {
 
 console.log(document.documentElement.getBoundingClientRect());
 console.log(document.documentElement.clientHeight);
+// ---2---
+// --------- block ---------
 
 
 // Task 2 - Up/down button
@@ -29,6 +33,7 @@ toTop.onclick = function (e) {
 	section.scrollTop = 0;
 	toTop.hidden = true;
 };
+// --------- block ---------
 
 
 // Task 3 - Load visible images
@@ -64,3 +69,4 @@ showImgs();
 document.addEventListener('scroll', function (e) {
 	showImgs();
 });
+// ---3---

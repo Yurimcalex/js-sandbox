@@ -46,8 +46,9 @@
 </head>
 <body>
 	<div id="scrollInfo">Current scroll:</div>
+	<div data-target="1"></div>
 
-	<div id="section">
+	<div id="section" data-target="2">
 		<div id="toTop" hidden>^</div>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -58,7 +59,7 @@
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor excepturi, nam aliquid labore atque nostrum enim tenetur possimus omnis at dignissimos sapiente dolores fuga. Sequi velit distinctio illum sit, labore?</p>
 	</div>
 
-	<section>
+	<section data-target="3">
 		<figure>
 		  <img src="" data-src="https://en.js.cx/clipart/solar/planets.jpg" width="640" height="360">
 		</figure>
@@ -191,6 +192,8 @@
 		  <img src="placeholder.svg" data-src="https://en.js.cx/clipart/solar/neptune.jpg" width="390" height="390">
 		</figure>
 	</section>
+
+	<script src="../../../js/showLogs.js"></script>
 	<script src="./scrolling.js" data-code></script>
 	<script src="../../../js/showCode.js"></script>
 	<script src="../../../js/changePage.js"></script>
