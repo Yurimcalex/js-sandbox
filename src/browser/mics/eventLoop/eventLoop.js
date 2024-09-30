@@ -42,6 +42,7 @@ function improvedCount() {
 }
 
 //improvedCount();
+// --------- block ---------
 
 
 // Use case 2: progress indication
@@ -67,6 +68,7 @@ function splittedCount1() {
 }
 
 //splittedCount1();
+// --------- block ---------
 
 
 // Use case 3: doing something after the event
@@ -77,6 +79,7 @@ menu.onclick = function () {
 
 	setTimeout(() => menu.dispatchEvent(customEvent));
 };
+// --------- block ---------
 
 
 // Makrotasks and Microtasks
@@ -85,6 +88,7 @@ Promise.resolve().then(() => console.log('promise'));
 console.log('code');
 
 console.log(queueMicrotask);
+// --------- block ---------
 
 
 // Task 1 - What will be the output of this code
