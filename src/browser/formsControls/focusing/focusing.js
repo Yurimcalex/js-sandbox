@@ -13,6 +13,8 @@ inputEmail.onfocus = function () {
 		error.innerHTML = '';
 	}
 };
+// ---1---
+// --------- block ---------
 
 
 // Methods focus/blur
@@ -24,6 +26,8 @@ uEmail.onblur = function () {
 		this.classList.remove('error');
 	}
 };
+// ---2---
+// --------- block ---------
 
 
 // Allow focusing on any element: tabindex
@@ -31,6 +35,8 @@ let li = document.createElement('li');
 li.textContent = 'Three';
 li.tabIndex = 3;
 tabList.append(li);
+// ---3---
+// --------- block ---------
 
 
 // Delegation: focusin/focusout
@@ -41,13 +47,15 @@ userData.addEventListener('focusin', () => {
 userData.addEventListener('focusout', () => {
 	userData.classList.remove('focused');
 });
+// ---4---
+// --------- block ---------
 
 
 // Task 1 - Editable div
 function ced() {
 	let div = document.createElement('div');
 	div.textContent = 'Click me and edit!'
-	document.body.append(div);
+	editableDiv.append(div);
 
 	let isEdit = false;
 
@@ -76,6 +84,8 @@ function ced() {
 }
 
 ced();
+// ---5---
+// --------- block ---------
 
 
 // Task 2 - Edit TD on click
@@ -133,6 +143,8 @@ function createEditingArea(width, height, content) {
 
 	return [area, text, ok, cancel];
 }
+// ---6---
+// --------- block ---------
 
 
 // Task 3 - Keyboard-driven mouse
@@ -172,3 +184,4 @@ mouse.onclick = function () {
 		mouse.removeAttribute('tabindex');
 	};
 };
+// ---7---
