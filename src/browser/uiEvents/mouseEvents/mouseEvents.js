@@ -4,6 +4,8 @@ button1.onclick = function (e) {
 		console.log('All right!');
 	}
 };
+// ---1---
+// --------- block ---------
 
 
 // Coordinates: clientX/Y, pageX/Y
@@ -15,6 +17,8 @@ document.onmousemove = function (e) {
 
 	coords.innerHTML = html;
 };
+// ---2---
+// --------- block ---------
 
 
 // Preventing selection on mousedown
@@ -32,6 +36,8 @@ noCopy.oncopy = function (e) {
 	console.log('Copying forbidden!');
 	return false;
 };
+// ---3---
+// --------- block ---------
 
 
 // Task 1 - Selectable list
@@ -55,3 +61,4 @@ ul.onclick = function (e) {
 		selectedItems = [li];
 	}
 };
+// ---4---

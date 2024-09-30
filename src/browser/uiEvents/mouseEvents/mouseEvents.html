@@ -19,11 +19,11 @@
 	</style>
 </head>
 <body>
-	<div>
+	<div data-target="1">
 		<button id="button1">Alt+Shift+Click on me!</button>
 	</div>
 
-	<div id="coords">Mouse coords</div>
+	<div id="coords" data-target="2">Mouse coords</div>
 
 	<div>
 		<span id="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -43,17 +43,19 @@
 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
 	</div>
 
-	<div>
+	<div data-target="3">
 		<span id="noCopy">...copying is forbidden...</span>
 	</div>
 
-	<ul id="ul">
+	<ul id="ul" data-target="4">
 	  <li>Christopher Robin</li>
 	  <li>Winnie-the-Pooh</li>
 	  <li>Tigger</li>
 	  <li>Kanga</li>
 	  <li>Rabbit. Just rabbit.</li>
 	</ul>
+
+	<script src="../../../js/showLogs.js"></script>
 	<script src="./mouseEvents.js" data-code></script>
 	<script src="../../../js/showCode.js"></script>
 	<script src="../../../js/changePage.js"></script>
