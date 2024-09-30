@@ -6,6 +6,7 @@ let hello = new Uint8Array([72, 101, 108, 108, 111]);
 let b = new Blob([hello, ' ', 'world'], {type: 'text/plain'});
 
 console.log(b);
+// --------- block ---------
 
 
 // Blob as URL
@@ -21,6 +22,7 @@ link.href = URL.createObjectURL(blob1);
 	//link.click();
 	URL.revokeObjectURL(link.href);
 }
+// --------- block ---------
 
 
 // Blob to base64
@@ -35,6 +37,7 @@ link.href = URL.createObjectURL(blob1);
 		//link.click();
 	}
 }
+// --------- block ---------
 
 
 // Image to blob
@@ -55,6 +58,7 @@ canvas.toBlob(function (blob) {
 	//link.click();
 	URL.revokeObjectURL(link.href);
 }, 'image/png');
+// --------- block ---------
 
 
 // From Blob to ArrayBuffer
@@ -65,6 +69,7 @@ async function f() {
 }
 
 f();
+// --------- block ---------
 
 
 // From Blob to stream
