@@ -23,13 +23,15 @@
 // iframeSame.onload = function () {
 // 	iframeSame.contentDocument.body.prepend('Hello, world!');
 // };
+// ---1---
+// --------- block ---------
 
 
 // Iframe: wrong document pitfall
 let oldDoc = iframeEarly.contentDocument;
 iframeEarly.onload = function () {
 	let newDoc = iframeEarly.contentDocument;
-	console.log(oldDoc === newDoc);
+	//console.log(oldDoc === newDoc);
 };
 
 let timer = setInterval(() => {
@@ -38,12 +40,15 @@ let timer = setInterval(() => {
 	console.log('New document is loaded!');
 	clearInterval(timer);
 }, 100);
+// ---2---
+// --------- block ---------
 
 
 // Collection: window.frames
-console.log(window.frames);
-console.log(iframeEarly.contentWindow == frames[2]);
-console.log(iframeEarly.contentWindow == frames.early);
+//console.log(window.frames);
+//console.log(iframeEarly.contentWindow == frames[2]);
+//console.log(iframeEarly.contentWindow == frames.early);
+// --------- block ---------
 
 
 // Cross-window messaging
