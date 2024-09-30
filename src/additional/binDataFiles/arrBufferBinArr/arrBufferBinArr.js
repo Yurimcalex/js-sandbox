@@ -8,6 +8,7 @@ console.log(Uint32Array.BYTES_PER_ELEMENT);
 
 console.log(view.length);
 console.log(view.byteLength);
+// --------- block ---------
 
 
 // TypedArray
@@ -26,6 +27,7 @@ let arr8_1 = new Uint8Array([1, 2, 3, 4]);
 let arr16_1 = new Uint16Array(arr8_1.buffer);
 
 console.log(arr16_1, arr16_1.length);
+// --------- block ---------
 
 
 // Out-of-bounds behavior
@@ -38,6 +40,7 @@ uint8array[0] = 256;
 uint8array[1] = 257;
 
 console.log(uint8array[0], uint8array[1]);
+// --------- block ---------
 
 
 // TypedArray methods
@@ -52,6 +55,7 @@ console.log(nw);
 
 nw.set([10, 9]);
 console.log(nw);
+// --------- block ---------
 
 
 // DataView
@@ -67,6 +71,7 @@ console.log(dataView.getUint32(0));
 dataView.setUint32(0, 0);
 
 console.log(dataView.getUint8(0));
+// --------- block ---------
 
 
 // Task 1 - Concatenate typed arrays
