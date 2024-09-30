@@ -8,6 +8,8 @@ observer.observe(elem, {
 	subtree: true,
 	characterDataOldValue: true
 });
+// ---1---
+// --------- block ---------
 
 
 // Dynamic highlight demo
@@ -43,3 +45,4 @@ setTimeout(() => {
 	`;
 	container.append(div);
 }, 5000);
+// ---2---
