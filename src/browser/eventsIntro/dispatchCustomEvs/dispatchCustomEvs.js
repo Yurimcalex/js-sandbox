@@ -14,6 +14,8 @@ let event1 = new Event('click', { bubbles: true });
 setTimeout(() => {
 	btn1.dispatchEvent(event1);
 }, 5000);
+// ---1---
+// --------- block ---------
 
 
 // Bubbling example
@@ -23,6 +25,8 @@ document.addEventListener('textclick', function (e) {
 
 let event2 = new Event('textclick', { bubbles: true });
 text.dispatchEvent(event2);
+// ---2---
+// --------- block ---------
 
 
 // MouseEvent, KeyboardEvent and others
@@ -40,6 +44,8 @@ clickMe.dispatchEvent(
 		}
 	)
 );
+// ---3---
+// --------- block ---------
 
 
 // event.preventDefault()
@@ -61,6 +67,8 @@ function hideRabbit() {
 		rabbit.hidden = true;
 	}
 }
+// ---4---
+// --------- block ---------
 
 
 // Events-in-events are synchronous
@@ -76,3 +84,4 @@ menu.onclick = function () {
 };
 
 document.addEventListener('menu-open', () => console.log('nested!!!'));
+// ---5---
